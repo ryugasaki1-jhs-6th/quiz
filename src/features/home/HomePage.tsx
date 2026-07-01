@@ -5,7 +5,7 @@ import { Button } from '@/shared/components';
 import { ROUTES } from '@/constants';
 
 export function HomePage() {
-  const { userProfile, isTeacher, signOut } = useAuth();
+  const { user, userProfile, isTeacher, signOut } = useAuth();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -33,16 +33,24 @@ export function HomePage() {
             Quiz App
           </h1>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              {userProfile?.displayName}
-              <span className="ml-2 px-2 py-0.5 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs">
-                {isTeacher ? '教師' : '生徒'}
-              </span>
-            </span>
-            <Link to={ROUTES.SETTINGS}>
-              <Button variant="ghost" size="sm">設定</Button>
-            </Link>
-            <Button variant="ghost" size="sm" onClick={signOut}>ログアウト</Button>
+            {user ? (
+              <>
+                <span className="text-sm text-gray-600 dark:text-gray-400">
+                  {userProfile?.displayName || (user.isAnonymous ? 'ゲスト' : user.email)}
+                  <span className="ml-2 px-2 py-0.5 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs">
+                    {isTeacher ? '教師' : '生徒'}
+                  </span>
+                </span>
+                <Link to={ROUTES.SETTINGS}>
+                  <Button variant="ghost" size="sm">設定</Button>
+                </Link>
+                <Button variant="ghost" size="sm" onClick={signOut}>ログアウト</Button>
+              </>
+            ) : (
+              <Link to={ROUTES.LOGIN}>
+                <Button size="sm">教師ログイン</Button>
+              </Link>
+            )}
           </div>
         </motion.header>
 

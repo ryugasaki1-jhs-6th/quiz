@@ -44,7 +44,8 @@ export function PlayerRoomPage() {
   });
 
   const myPlayer = useMemo(() => {
-    return players.find(p => p.id === user?.uid);
+    if (!user) return undefined;
+    return players.find(p => p.id === user.uid);
   }, [players, user]);
 
   const rankings: RankingEntry[] = useMemo(() => {
@@ -60,7 +61,8 @@ export function PlayerRoomPage() {
   }, [players]);
 
   const myRank = useMemo(() => {
-    return rankings.find(r => r.playerId === user?.uid)?.rank || 0;
+    if (!user) return 0;
+    return rankings.find(r => r.playerId === user.uid)?.rank || 0;
   }, [rankings, user]);
 
   useEffect(() => {

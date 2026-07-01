@@ -19,7 +19,7 @@ const joinSchema = z.object({
 type JoinForm = z.infer<typeof joinSchema>;
 
 export function JoinPage() {
-  const { user } = useAuth();
+  const { user, signInAnonymously } = useAuth();
   const navigate = useNavigate();
   const [savedNickname, setSavedNickname] = useLocalStorage(STORAGE_KEYS.NICKNAME, '');
   const [error, setError] = useState('');
@@ -34,10 +34,15 @@ export function JoinPage() {
   });
 
   const onSubmit = async (data: JoinForm) => {
-    if (!user) return;
     setError('');
     setIsLoading(true);
     try {
+      // Sign in anonymously if not already signed in
+      let currentUser = user;
+      if (!currentUser) {
+        currentUser = await signInAnonymously();
+      }
+
       const room = await getRoomByPin(data.pin);
       if (!room) {
         setError('このPINのゲームが見つかりません');
@@ -48,7 +53,7 @@ export function JoinPage() {
         return;
       }
 
-      await joinRoom(room.id, user.uid, data.nickname);
+      await joinRoom(room.id, currentUser.uid, data.nickname);
       setSavedNickname(data.nickname);
       navigate(`/room/${room.id}/play`);
     } catch {

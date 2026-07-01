@@ -3,6 +3,7 @@ import {
   User,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signInAnonymously as firebaseSignInAnonymously,
   signOut as firebaseSignOut,
   onAuthStateChanged,
   updateProfile,
@@ -18,6 +19,7 @@ interface AuthContextValue {
   isLoading: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, displayName: string, role: UserRole) => Promise<void>;
+  signInAnonymously: () => Promise<User>;
   signOut: () => Promise<void>;
   isTeacher: boolean;
 }
@@ -73,6 +75,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUserProfile(profile);
   }, []);
 
+  const signInAnonymously = useCallback(async () => {
+    const credential = await firebaseSignInAnonymously(auth);
+    return credential.user;
+  }, []);
+
   const signOut = useCallback(async () => {
     await firebaseSignOut(auth);
     setUserProfile(null);
@@ -81,7 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const isTeacher = userProfile?.role === 'teacher';
 
   return (
-    <AuthContext.Provider value={{ user, userProfile, isLoading, signIn, signUp, signOut, isTeacher }}>
+    <AuthContext.Provider value={{ user, userProfile, isLoading, signIn, signUp, signInAnonymously, signOut, isTeacher }}>
       {children}
     </AuthContext.Provider>
   );

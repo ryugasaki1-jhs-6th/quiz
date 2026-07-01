@@ -56,12 +56,14 @@ function AppRoutes() {
         <Route path={ROUTES.LOGIN} element={<PublicRoute><LoginPage /></PublicRoute>} />
         <Route path={ROUTES.REGISTER} element={<PublicRoute><RegisterPage /></PublicRoute>} />
 
-        {/* Protected routes */}
-        <Route path={ROUTES.HOME} element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
-        <Route path={ROUTES.JOIN} element={<ProtectedRoute><JoinPage /></ProtectedRoute>} />
+        {/* Semi-protected routes (allow guests) */}
+        <Route path={ROUTES.HOME} element={<HomePage />} />
+        <Route path={ROUTES.JOIN} element={<JoinPage />} />
+        <Route path="/room/:roomId/play" element={<PlayerRoomPage />} />
+
+        {/* Protected routes (require login) */}
         <Route path={ROUTES.SETTINGS} element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
         <Route path={ROUTES.HISTORY} element={<ProtectedRoute><HistoryPage /></ProtectedRoute>} />
-        <Route path="/room/:roomId/play" element={<ProtectedRoute><PlayerRoomPage /></ProtectedRoute>} />
 
         {/* Teacher routes */}
         <Route path={ROUTES.GAME_LIST} element={<TeacherRoute><GameListPage /></TeacherRoute>} />
