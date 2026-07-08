@@ -86,9 +86,20 @@ export const scoreAnswerSubmission = onDocumentCreated(
 export const incrementRoomPlayerCount = onDocumentCreated(
   'rooms/{roomId}/players/{playerId}',
   async (event) => {
-    const { roomId } = event.params;
+    const snap = event.data;
+    if (!snap) return;
+
+    const { roomId, playerId } = event.params;
     const db = getFirestore();
+    const playerRef = db.doc(`rooms/${roomId}/players/${playerId}`);
+    const player = snap.data();
     await Promise.all([
+      playerRef.set({
+        score: typeof player.score === 'number' ? player.score : 0,
+        correctCount: typeof player.correctCount === 'number' ? player.correctCount : 0,
+        streak: typeof player.streak === 'number' ? player.streak : 0,
+        updatedAt: typeof player.updatedAt === 'number' ? player.updatedAt : Date.now(),
+      }, { merge: true }),
       db.doc(`rooms/${roomId}`).set({
         playerCount: FieldValue.increment(1),
         updatedAt: Date.now(),

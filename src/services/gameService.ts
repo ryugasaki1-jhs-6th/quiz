@@ -139,6 +139,7 @@ export async function createGameFromTemplate(
     title: template.title,
     description: template.description,
     hostId,
+    status: 'draft',
     questionCount: 0,
     shuffleQuestions: true,
     shuffleChoices: true,

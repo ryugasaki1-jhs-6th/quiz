@@ -109,13 +109,21 @@ service cloud.firestore {
 
     function validOwnPlayerCreate(roomId, playerId) {
       return isSelf(playerId)
-        && request.resource.data.keys().hasAll([
+        && request.resource.data.keys().hasOnly([
           'roomId',
           'uid',
           'nickname',
           'score',
           'correctCount',
           'streak',
+          'isConnected',
+          'joinedAt',
+          'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'roomId',
+          'uid',
+          'nickname',
           'isConnected',
           'joinedAt',
           'updatedAt'

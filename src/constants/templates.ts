@@ -1,5 +1,13 @@
-import { QuizTemplate } from './templates';
-import { generateId } from '@/utils';
+import type { Question } from '@/types';
+
+type QuizTemplate = {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  subcategory: string;
+  questions: Omit<Question, 'id' | 'createdAt' | 'updatedAt' | 'gameId'>[];
+};
 
 export const QUIZ_TEMPLATES: QuizTemplate[] = [
   {
