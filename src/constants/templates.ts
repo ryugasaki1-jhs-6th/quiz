@@ -4148,5 +4148,634 @@ export const QUIZ_TEMPLATES: QuizTemplate[] = [
         "order": 9
       }
     ]
+  },
+  {
+    "id": "world-history-edo",
+    "title": "世界史：江戸時代と同時代の世界",
+    "description": "17世紀から19世紀半ば、日本が江戸時代だった頃の世界情勢を学ぶ20問。",
+    "category": "社会",
+    "subcategory": "世界史",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "text": "江戸幕府が開かれた1603年、イギリスで即位し、エリザベス1世の死後にステュアート朝を始めた王は？",
+        "choices": [
+          {
+            "id": "1",
+            "text": "ジェームズ1世",
+            "isCorrect": true
+          },
+          {
+            "id": "2",
+            "text": "チャールズ1世",
+            "isCorrect": false
+          },
+          {
+            "id": "3",
+            "text": "ルイ14世",
+            "isCorrect": false
+          },
+          {
+            "id": "4",
+            "text": "ヘンリー8世",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "エリザベス1世の死後、スコットランド王ジェームズ6世がジェームズ1世として即位しました。",
+        "imageUrl": null,
+        "order": 0
+      },
+      {
+        "type": "multiple-choice",
+        "text": "17世紀前半、中国で明が滅び、新しく成立した満州族の王朝は？",
+        "choices": [
+          {
+            "id": "5",
+            "text": "元",
+            "isCorrect": false
+          },
+          {
+            "id": "6",
+            "text": "清",
+            "isCorrect": true
+          },
+          {
+            "id": "7",
+            "text": "宋",
+            "isCorrect": false
+          },
+          {
+            "id": "8",
+            "text": "唐",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "満州族のヌルハチが建国し、後に中国全土を支配しました。",
+        "imageUrl": null,
+        "order": 1
+      },
+      {
+        "type": "multiple-choice",
+        "text": "17世紀後半、フランスで「太陽王」と呼ばれ、絶対王政の全盛期を築いた国王は？",
+        "choices": [
+          {
+            "id": "9",
+            "text": "ルイ13世",
+            "isCorrect": false
+          },
+          {
+            "id": "10",
+            "text": "ルイ14世",
+            "isCorrect": true
+          },
+          {
+            "id": "11",
+            "text": "ルイ16世",
+            "isCorrect": false
+          },
+          {
+            "id": "12",
+            "text": "ナポレオン",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "ヴェルサイユ宮殿を建設し、華やかな宮廷文化を築きました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀、イギリスで始まった、蒸気機関などの発明による経済と社会の激変を何という？",
+        "choices": [
+          {
+            "id": "13",
+            "text": "フランス革命",
+            "isCorrect": false
+          },
+          {
+            "id": "14",
+            "text": "産業革命",
+            "isCorrect": true
+          },
+          {
+            "id": "15",
+            "text": "宗教改革",
+            "isCorrect": false
+          },
+          {
+            "id": "16",
+            "text": "ルネサンス",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "ワットが蒸気機関を改良し、大量生産が可能になりました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1776年、イギリスの植民地だった北アメリカの13州が発表した文書は？",
+        "choices": [
+          {
+            "id": "17",
+            "text": "権利の章典",
+            "isCorrect": false
+          },
+          {
+            "id": "18",
+            "text": "独立宣言",
+            "isCorrect": true
+          },
+          {
+            "id": "19",
+            "text": "人権宣言",
+            "isCorrect": false
+          },
+          {
+            "id": "20",
+            "text": "マグナ・カルタ",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "自由と平等を掲げ、アメリカ合衆国が誕生しました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1789年、フランスで絶対王政に反対して市民が蜂起し、始まった革命は？",
+        "choices": [
+          {
+            "id": "21",
+            "text": "フランス革命",
+            "isCorrect": true
+          },
+          {
+            "id": "22",
+            "text": "ロシア革命",
+            "isCorrect": false
+          },
+          {
+            "id": "23",
+            "text": "光栄革命",
+            "isCorrect": false
+          },
+          {
+            "id": "24",
+            "text": "ピューリタン革命",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "バスティーユ牢獄の襲撃から始まり、人権宣言が発表されました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀後半、清の全盛期を築き、版図を最大に広げた皇帝は？",
+        "choices": [
+          {
+            "id": "25",
+            "text": "康熙帝",
+            "isCorrect": false
+          },
+          {
+            "id": "26",
+            "text": "乾隆帝",
+            "isCorrect": true
+          },
+          {
+            "id": "27",
+            "text": "雍正帝",
+            "isCorrect": false
+          },
+          {
+            "id": "28",
+            "text": "宣統帝",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "乾隆帝の時代、清は政治・経済・文化の絶頂期を迎えました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1840年、イギリスが清を破り、不平等条約を結ばせた戦争は？",
+        "choices": [
+          {
+            "id": "29",
+            "text": "アヘン戦争",
+            "isCorrect": true
+          },
+          {
+            "id": "30",
+            "text": "アロー戦争",
+            "isCorrect": false
+          },
+          {
+            "id": "31",
+            "text": "清仏戦争",
+            "isCorrect": false
+          },
+          {
+            "id": "32",
+            "text": "日清戦争",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "この戦争の敗北は、日本（幕末）にも大きな衝撃を与えました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "17世紀、インドで全盛期を迎え、タージ・マハルを建設した王朝は？",
+        "choices": [
+          {
+            "id": "33",
+            "text": "ムガル帝国",
+            "isCorrect": true
+          },
+          {
+            "id": "34",
+            "text": "オスマン帝国",
+            "isCorrect": false
+          },
+          {
+            "id": "35",
+            "text": "サファヴィー朝",
+            "isCorrect": false
+          },
+          {
+            "id": "36",
+            "text": "グプタ朝",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "シャー・ジャハーンが愛妃のためにタージ・マハルを建立しました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀、プロイセンの国王で「啓蒙専制君主」として知られ、富国強兵を進めたのは？",
+        "choices": [
+          {
+            "id": "37",
+            "text": "フリードリヒ2世",
+            "isCorrect": true
+          },
+          {
+            "id": "38",
+            "text": "マリア・テレジア",
+            "isCorrect": false
+          },
+          {
+            "id": "39",
+            "text": "エカチェリーナ2世",
+            "isCorrect": false
+          },
+          {
+            "id": "40",
+            "text": "ビスマルク",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「国家第一の僕」と称し、近代化を推進しました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "19世紀前半、中南米諸国の独立を支援し、ヨーロッパ諸国の介入を拒否したアメリカの大統領宣言は？",
+        "choices": [
+          {
+            "id": "41",
+            "text": "モンロー宣言",
+            "isCorrect": true
+          },
+          {
+            "id": "42",
+            "text": "リンカーン宣言",
+            "isCorrect": false
+          },
+          {
+            "id": "43",
+            "text": "ワシントン宣言",
+            "isCorrect": false
+          },
+          {
+            "id": "44",
+            "text": "トルーマン宣言",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "アメリカ大陸とヨーロッパの相互不干渉を唱えました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1857年、イギリスの支配に反対してインドで起きた大反乱を何という？",
+        "choices": [
+          {
+            "id": "45",
+            "text": "インド大反乱（セポイの乱）",
+            "isCorrect": true
+          },
+          {
+            "id": "46",
+            "text": "太平天国の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "47",
+            "text": "義和団事件",
+            "isCorrect": false
+          },
+          {
+            "id": "48",
+            "text": "塩の行進",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "東インド会社の傭兵セポイの蜂起から始まりました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "19世紀半ば、アメリカで奴隷制をめぐって起きた南北の戦争は？",
+        "choices": [
+          {
+            "id": "49",
+            "text": "南北戦争",
+            "isCorrect": true
+          },
+          {
+            "id": "50",
+            "text": "独立戦争",
+            "isCorrect": false
+          },
+          {
+            "id": "51",
+            "text": "第一次世界大戦",
+            "isCorrect": false
+          },
+          {
+            "id": "52",
+            "text": "米英戦争",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "リンカーン大統領のもと、北軍が勝利し奴隷制が廃止されました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀末、イギリスでジェームズ・ワットが改良し、産業革命の動力源となったものは？",
+        "choices": [
+          {
+            "id": "53",
+            "text": "蒸気機関",
+            "isCorrect": true
+          },
+          {
+            "id": "54",
+            "text": "ガソリンエンジン",
+            "isCorrect": false
+          },
+          {
+            "id": "55",
+            "text": "電気モーター",
+            "isCorrect": false
+          },
+          {
+            "id": "56",
+            "text": "水車",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "これにより工場での大量生産や蒸気船、蒸気機関車が可能になりました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀、フランスの思想家ルソーが著し、フランス革命に大きな影響を与えた本は？",
+        "choices": [
+          {
+            "id": "57",
+            "text": "社会契約論",
+            "isCorrect": true
+          },
+          {
+            "id": "58",
+            "text": "法の精神",
+            "isCorrect": false
+          },
+          {
+            "id": "59",
+            "text": "百科全書",
+            "isCorrect": false
+          },
+          {
+            "id": "60",
+            "text": "国富論",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "人民主権の考え方を説きました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "17世紀、イギリスで王権神授説を唱える王と議会が対立して起きた革命は？",
+        "choices": [
+          {
+            "id": "61",
+            "text": "ピューリタン革命",
+            "isCorrect": true
+          },
+          {
+            "id": "62",
+            "text": "産業革命",
+            "isCorrect": false
+          },
+          {
+            "id": "63",
+            "text": "ロシア革命",
+            "isCorrect": false
+          },
+          {
+            "id": "64",
+            "text": "二月革命",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "クロムウェルが指導し、一時的に共和制となりました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1688年、イギリスで流血なしに国王が交代し、立憲君主制が確立した革命は？",
+        "choices": [
+          {
+            "id": "65",
+            "text": "光栄革命",
+            "isCorrect": true
+          },
+          {
+            "id": "66",
+            "text": "フランス革命",
+            "isCorrect": false
+          },
+          {
+            "id": "67",
+            "text": "アメリカ独立革命",
+            "isCorrect": false
+          },
+          {
+            "id": "68",
+            "text": "産業革命",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "翌年「権利の章典」が発布されました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "19世紀前半、清でキリスト教の影響を受けた洪秀全が起こした大規模な反乱は？",
+        "choices": [
+          {
+            "id": "69",
+            "text": "太平天国の乱",
+            "isCorrect": true
+          },
+          {
+            "id": "70",
+            "text": "白蓮教徒の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "71",
+            "text": "義和団事件",
+            "isCorrect": false
+          },
+          {
+            "id": "72",
+            "text": "辛亥革命",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「滅満興漢」を掲げ、清を滅ぼそうとしました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀、イギリスの経済学者アダム・スミスが著し、自由放任主義を説いた本は？",
+        "choices": [
+          {
+            "id": "73",
+            "text": "諸国民の富（国富論）",
+            "isCorrect": true
+          },
+          {
+            "id": "74",
+            "text": "資本論",
+            "isCorrect": false
+          },
+          {
+            "id": "75",
+            "text": "人口論",
+            "isCorrect": false
+          },
+          {
+            "id": "76",
+            "text": "経済表",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「神の見えざる手」という言葉で知られます。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "18世紀、ロシアの女帝で、啓蒙専制君主として領土を拡大し近代化を進めたのは？",
+        "choices": [
+          {
+            "id": "77",
+            "text": "エカチェリーナ2世",
+            "isCorrect": true
+          },
+          {
+            "id": "78",
+            "text": "エリザヴェータ",
+            "isCorrect": false
+          },
+          {
+            "id": "79",
+            "text": "マリア・テレジア",
+            "isCorrect": false
+          },
+          {
+            "id": "80",
+            "text": "ヴィクトリア女王",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "ロシアをヨーロッパの大国へと成長させました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   }
 ];
