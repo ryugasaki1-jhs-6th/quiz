@@ -3512,6 +3512,325 @@ export const QUIZ_TEMPLATES: QuizTemplate[] = [
     ]
   },
   {
+    "id": "edo-period",
+    "title": "江戸時代",
+    "description": "江戸幕府の成立から三大改革、鎖国まで、江戸時代の基礎を学ぶ10問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "text": "徳川家康が征夷大将軍に任命され、江戸幕府を開いたのは西暦何年？",
+        "choices": [
+          {
+            "id": "1",
+            "text": "1600年",
+            "isCorrect": false
+          },
+          {
+            "id": "2",
+            "text": "1603年",
+            "isCorrect": true
+          },
+          {
+            "id": "3",
+            "text": "1615年",
+            "isCorrect": false
+          },
+          {
+            "id": "4",
+            "text": "1590年",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "1600年の関ヶ原の戦いの後、1603年に江戸幕府が開かれました。",
+        "imageUrl": null,
+        "order": 0
+      },
+      {
+        "type": "multiple-choice",
+        "text": "幕府が大名を統制するために制定した、城の修理の制限などを定めた法律は？",
+        "choices": [
+          {
+            "id": "5",
+            "text": "御成敗式目",
+            "isCorrect": false
+          },
+          {
+            "id": "6",
+            "text": "武家諸法度",
+            "isCorrect": true
+          },
+          {
+            "id": "7",
+            "text": "公事方御定書",
+            "isCorrect": false
+          },
+          {
+            "id": "8",
+            "text": "禁中並公家諸法度",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "武家諸法度は大名を厳しく統制するための法律です。",
+        "imageUrl": null,
+        "order": 1
+      },
+      {
+        "type": "multiple-choice",
+        "text": "3代将軍家光が制度化した、大名が1年おきに江戸と領地を往復する制度は？",
+        "choices": [
+          {
+            "id": "9",
+            "text": "参勤交代",
+            "isCorrect": true
+          },
+          {
+            "id": "10",
+            "text": "検地",
+            "isCorrect": false
+          },
+          {
+            "id": "11",
+            "text": "刀狩",
+            "isCorrect": false
+          },
+          {
+            "id": "12",
+            "text": "朱印船貿易",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "参勤交代により大名の経済力を削ぎ、反乱を防ぎました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "江戸幕府がキリスト教を禁止するために、人々にキリスト像などを踏ませたことは？",
+        "choices": [
+          {
+            "id": "13",
+            "text": "宗門改",
+            "isCorrect": false
+          },
+          {
+            "id": "14",
+            "text": "絵踏",
+            "isCorrect": true
+          },
+          {
+            "id": "15",
+            "text": "寺請制度",
+            "isCorrect": false
+          },
+          {
+            "id": "16",
+            "text": "踏み絵",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "踏ませる行為自体を「絵踏」、その板を「踏み絵」と呼びます。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "鎖国下の日本で、唯一ヨーロッパの国で貿易が許されていたのは？",
+        "choices": [
+          {
+            "id": "17",
+            "text": "イギリス",
+            "isCorrect": false
+          },
+          {
+            "id": "18",
+            "text": "スペイン",
+            "isCorrect": false
+          },
+          {
+            "id": "19",
+            "text": "ポルトガル",
+            "isCorrect": false
+          },
+          {
+            "id": "20",
+            "text": "オランダ",
+            "isCorrect": true
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "オランダは長崎の出島で貿易を行っていました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "5代将軍綱吉が出した、極端な動物愛護を命じた法令は？",
+        "choices": [
+          {
+            "id": "21",
+            "text": "生類憐みの令",
+            "isCorrect": true
+          },
+          {
+            "id": "22",
+            "text": "倹約令",
+            "isCorrect": false
+          },
+          {
+            "id": "23",
+            "text": "棄捐令",
+            "isCorrect": false
+          },
+          {
+            "id": "24",
+            "text": "人返し令",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "綱吉は「犬公方」とも呼ばれました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "8代将軍吉宗が行った、幕府の財政再建を目的とした改革は？",
+        "choices": [
+          {
+            "id": "25",
+            "text": "寛政の改革",
+            "isCorrect": false
+          },
+          {
+            "id": "26",
+            "text": "天保の改革",
+            "isCorrect": false
+          },
+          {
+            "id": "27",
+            "text": "享保の改革",
+            "isCorrect": true
+          },
+          {
+            "id": "28",
+            "text": "正徳の治",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "吉宗は目安箱の設置なども行いました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "吉宗の時代に定められた、裁判の基準となる法律は？",
+        "choices": [
+          {
+            "id": "29",
+            "text": "公事方御定書",
+            "isCorrect": true
+          },
+          {
+            "id": "30",
+            "text": "御成敗式目",
+            "isCorrect": false
+          },
+          {
+            "id": "31",
+            "text": "武家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "32",
+            "text": "養老律令",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "合理的な裁判を行うための基準となりました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "田沼意次が推奨した、商人の組合を何という？",
+        "choices": [
+          {
+            "id": "33",
+            "text": "座",
+            "isCorrect": false
+          },
+          {
+            "id": "34",
+            "text": "株仲間",
+            "isCorrect": true
+          },
+          {
+            "id": "35",
+            "text": "問屋制家内工業",
+            "isCorrect": false
+          },
+          {
+            "id": "36",
+            "text": "ギルド",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "株仲間に独占権を与える代わりに税を徴収しました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "松平定信が行った、朱子学以外の講義を禁止した改革は？",
+        "choices": [
+          {
+            "id": "37",
+            "text": "享保の改革",
+            "isCorrect": false
+          },
+          {
+            "id": "38",
+            "text": "寛政の改革",
+            "isCorrect": true
+          },
+          {
+            "id": "39",
+            "text": "天保の改革",
+            "isCorrect": false
+          },
+          {
+            "id": "40",
+            "text": "明治維新",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "寛政異学の禁と呼ばれます。",
+        "imageUrl": null,
+        "order": 9
+      }
+    ]
+  },
+  {
     "id": "edo-period-review",
     "title": "江戸時代の総復習",
     "description": "江戸時代の政治、外交、文化、人物を網羅した20問のテスト。",
