@@ -53,9 +53,9 @@ export function JoinPage() {
         return;
       }
 
-      await joinRoom(room.id, currentUser.uid, data.nickname);
+      await joinRoom(room.roomId, currentUser.uid, data.nickname);
       setSavedNickname(data.nickname);
-      navigate(`/room/${room.id}/play`);
+      navigate(`/room/${room.roomId}/play`);
     } catch {
       setError('参加に失敗しました');
     } finally {

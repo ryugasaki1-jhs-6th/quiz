@@ -28,6 +28,7 @@ export function PlayerRoomPage() {
   const [hasAnswered, setHasAnswered] = useState(false);
   const [, setSelectedAnswer] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const countdown = useCountdown({
     onTick: (remaining) => {
@@ -46,7 +47,10 @@ export function PlayerRoomPage() {
 
     const unsubRoom = subscribeToPublicRoomState(roomId, async (r) => {
       if (!r) {
-        navigate('/');
+        console.error('Room not found or insufficient permissions:', roomId);
+        setError('ゲームが見つからないか、接続に失敗しました');
+        setIsLoading(false);
+        // Do not navigate away immediately so user can see the error
         return;
       }
       setRoom(r);
@@ -112,6 +116,22 @@ export function PlayerRoomPage() {
   };
 
   if (isLoading) return <Loading fullScreen text="ゲームに接続中..." />;
+  
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
+        <div className="text-6xl mb-4">⚠️</div>
+        <h2 className="text-2xl font-bold mb-4">{error}</h2>
+        <button
+          onClick={() => navigate('/')}
+          className="px-6 py-2 bg-primary-600 rounded-lg font-bold"
+        >
+          ホームに戻る
+        </button>
+      </div>
+    );
+  }
+
   if (!room) return null;
 
   return (
