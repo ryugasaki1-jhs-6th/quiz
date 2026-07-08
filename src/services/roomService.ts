@@ -12,6 +12,7 @@ import {
   orderBy,
   onSnapshot,
   Unsubscribe,
+  increment,
 } from 'firebase/firestore';
 import { db } from '@/firebase/config';
 import {
@@ -30,6 +31,12 @@ import { generatePin, generateId, shuffleArray } from '@/utils';
 import { getGame, getQuestions } from './gameService';
 
 const PUBLIC_STATE_DOC = 'state';
+const SPEED_BONUS_MAX = 500;
+
+function calculateScore(timeTaken: number, timeLimit: number, points: number): number {
+  const timeRatio = Math.max(0, (timeLimit - timeTaken) / timeLimit);
+  return points + Math.round(timeRatio * SPEED_BONUS_MAX);
+}
 
 function toPublicQuestion(question: Question): Omit<PublicQuestion, 'id'> {
   return {
@@ -213,7 +220,73 @@ export async function getAnswersForQuestion(roomId: string, questionId: string):
   const answersRef = collection(db, COLLECTIONS.ROOMS, roomId, COLLECTIONS.ANSWERS);
   const q = query(answersRef, where('questionId', '==', questionId));
   const snapshot = await getDocs(q);
-  return snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Answer));
+  const existingAnswers = snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Answer));
+  if (existingAnswers.length > 0) return existingAnswers;
+
+  const roomSnap = await getDoc(doc(db, COLLECTIONS.ROOMS, roomId));
+  if (!roomSnap.exists()) return [];
+
+  const room = { id: roomSnap.id, ...roomSnap.data() } as Room;
+  const questionSnap = await getDoc(doc(db, COLLECTIONS.GAMES, room.gameId, COLLECTIONS.QUESTIONS, questionId));
+  if (!questionSnap.exists()) return [];
+
+  const question = { id: questionSnap.id, ...questionSnap.data() } as Question;
+  const submissionsRef = collection(
+    db,
+    COLLECTIONS.ROOMS,
+    roomId,
+    COLLECTIONS.ANSWER_SUBMISSIONS,
+    questionId,
+    COLLECTIONS.PLAYERS
+  );
+  const submissions = await getDocs(submissionsRef);
+  if (submissions.empty) return [];
+
+  const batch = writeBatch(db);
+  const answeredAt = Date.now();
+  const startedAt = typeof room.currentQuestionStartedAt === 'number' ? room.currentQuestionStartedAt : answeredAt;
+  const timeTaken = Math.max(0, (answeredAt - startedAt) / 1000);
+  const points = typeof question.points === 'number' ? question.points : 1000;
+  const timeLimit = typeof question.timeLimit === 'number' ? question.timeLimit : 20;
+  const answers = submissions.docs.map((submissionDoc) => {
+    const playerId = submissionDoc.id;
+    const choiceId = submissionDoc.data().choiceId as string;
+    const isCorrect = question.choices?.some(choice => choice.id === choiceId && choice.isCorrect === true) === true;
+    const score = isCorrect ? calculateScore(timeTaken, timeLimit, points) : 0;
+    const answer: Answer = {
+      id: `${questionId}_${playerId}`,
+      roomId,
+      questionId,
+      playerId,
+      choiceId,
+      isCorrect,
+      score,
+      answeredAt,
+      timeTaken,
+    };
+
+    batch.set(doc(db, COLLECTIONS.ROOMS, roomId, COLLECTIONS.ANSWERS, answer.id), {
+      roomId,
+      questionId,
+      playerId,
+      choiceId,
+      isCorrect,
+      score,
+      answeredAt,
+      timeTaken,
+    });
+    batch.update(doc(db, COLLECTIONS.ROOMS, roomId, COLLECTIONS.PLAYERS, playerId), {
+      score: increment(score),
+      correctCount: increment(isCorrect ? 1 : 0),
+      streak: isCorrect ? increment(1) : 0,
+      updatedAt: answeredAt,
+    });
+
+    return answer;
+  });
+
+  await batch.commit();
+  return answers;
 }
 
 /** Subscribe to room changes */

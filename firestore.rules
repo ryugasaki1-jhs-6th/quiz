@@ -140,6 +140,30 @@ service cloud.firestore {
       ]);
     }
 
+    function validHostPlayerScoreUpdate() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'score',
+        'correctCount',
+        'streak',
+        'updatedAt'
+      ]);
+    }
+
+    function validAnswerWrite(roomId, answerId) {
+      return request.resource.data.keys().hasOnly([
+        'roomId',
+        'questionId',
+        'playerId',
+        'choiceId',
+        'isCorrect',
+        'score',
+        'answeredAt',
+        'timeTaken'
+      ])
+      && request.resource.data.roomId == roomId
+      && answerId == request.resource.data.questionId + '_' + request.resource.data.playerId;
+    }
+
     function validPublicQuestion() {
       return request.resource.data.keys().hasOnly([
         'type',
@@ -213,15 +237,17 @@ service cloud.firestore {
       }
 
       match /players/{playerId} {
-        allow read: if isRoomHost(roomId) || isSelf(playerId);
+        allow read: if isRoomHost(roomId) || isSelf(playerId) || (signedIn() && isRoomPlayer(roomId, request.auth.uid));
         allow create: if validOwnPlayerCreate(roomId, playerId);
-        allow update: if isSelf(playerId) && validOwnPlayerUpdate();
+        allow update: if (isSelf(playerId) && validOwnPlayerUpdate())
+          || (isRoomHost(roomId) && validHostPlayerScoreUpdate());
         allow delete: if isRoomHost(roomId);
       }
 
       match /answers/{answerId} {
         allow read: if isRoomHost(roomId);
-        allow write: if false;
+        allow create, update: if isRoomHost(roomId) && validAnswerWrite(roomId, answerId);
+        allow delete: if false;
       }
 
       match /answerSubmissions/{questionId}/players/{playerId} {
@@ -232,7 +258,8 @@ service cloud.firestore {
           && get(roomPath(roomId)).data.currentPublicQuestionId == questionId
           && request.resource.data.keys().hasOnly(['choiceId'])
           && request.resource.data.choiceId is string;
-        allow read, update, delete: if false;
+        allow read: if isRoomHost(roomId);
+        allow update, delete: if false;
       }
 
       match /results/{resultId} {
