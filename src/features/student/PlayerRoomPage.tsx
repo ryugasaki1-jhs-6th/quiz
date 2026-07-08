@@ -8,10 +8,11 @@ import {
   subscribeToPublicRoomState,
   subscribeToPlayer,
   subscribeToPlayers,
+  subscribeToPlayerAnswer,
   getPublicQuestions,
   submitAnswer,
 } from '@/services';
-import { Player, PublicQuestion, PublicRoomState } from '@/types';
+import { Answer, Player, PublicQuestion, PublicRoomState } from '@/types';
 import { playSound } from '@/utils/sound';
 import { useCountdown } from '@/shared/hooks';
 import { ANSWER_COLORS } from '@/constants';
@@ -29,6 +30,7 @@ export function PlayerRoomPage() {
   const [currentQuestion, setCurrentQuestion] = useState<PublicQuestion | null>(null);
   const [hasAnswered, setHasAnswered] = useState(false);
   const [, setSelectedAnswer] = useState<string | null>(null);
+  const [myAnswer, setMyAnswer] = useState<Answer | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -72,6 +74,7 @@ export function PlayerRoomPage() {
       if (r.status === 'showing-question' || r.status === 'accepting-answers') {
         setHasAnswered(false);
         setSelectedAnswer(null);
+        setMyAnswer(null);
       }
     });
 
@@ -91,6 +94,13 @@ export function PlayerRoomPage() {
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomId, user, navigate]);
+
+  useEffect(() => {
+    if (!roomId || !user || !currentQuestion) return;
+    return subscribeToPlayerAnswer(roomId, currentQuestion.id, user.uid, (answer) => {
+      setMyAnswer(answer);
+    });
+  }, [roomId, user, currentQuestion?.id]);
 
   useEffect(() => {
     if (!room || questions.length === 0) return;
@@ -215,8 +225,24 @@ export function PlayerRoomPage() {
         </div>
       )}
 
+      {/* Answer result */}
+      {room.status === 'closed' && hasAnswered && myAnswer && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex-1 flex flex-col items-center justify-center p-4 text-center"
+        >
+          <div className="text-6xl mb-4">{myAnswer.isCorrect ? '○' : '×'}</div>
+          <h2 className={`text-3xl font-bold ${myAnswer.isCorrect ? 'text-green-400' : 'text-red-400'}`}>
+            {myAnswer.isCorrect ? '正解！' : '不正解'}
+          </h2>
+          <p className="text-gray-300 mt-3 text-xl">+{myAnswer.score}点</p>
+          <p className="text-gray-400 mt-2">次の画面を待っています...</p>
+        </motion.div>
+      )}
+
       {/* Answered - waiting for result */}
-      {(hasAnswered || (room.status === 'accepting-answers' && hasAnswered) || room.status === 'closed') && hasAnswered && (
+      {(hasAnswered || (room.status === 'accepting-answers' && hasAnswered) || room.status === 'closed') && hasAnswered && !(room.status === 'closed' && myAnswer) && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

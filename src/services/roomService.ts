@@ -362,6 +362,25 @@ export function subscribeToAnswers(
   });
 }
 
+/** Subscribe to a player's own answer result */
+export function subscribeToPlayerAnswer(
+  roomId: string,
+  questionId: string,
+  playerId: string,
+  callback: (answer: Answer | null) => void
+): Unsubscribe {
+  return onSnapshot(
+    doc(db, COLLECTIONS.ROOMS, roomId, COLLECTIONS.ANSWERS, `${questionId}_${playerId}`),
+    (docSnap) => {
+      if (docSnap.exists()) {
+        callback({ id: docSnap.id, ...docSnap.data() } as Answer);
+      } else {
+        callback(null);
+      }
+    }
+  );
+}
+
 /** Save question result */
 export async function saveQuestionResult(roomId: string, result: Omit<QuestionResult, 'id'>): Promise<void> {
   const resultId = `${roomId}_${result.questionId}`;

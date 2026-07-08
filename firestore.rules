@@ -245,7 +245,8 @@ service cloud.firestore {
       }
 
       match /answers/{answerId} {
-        allow read: if isRoomHost(roomId);
+        allow read: if isRoomHost(roomId)
+          || (signedIn() && isRoomPlayer(roomId, request.auth.uid) && resource.data.playerId == request.auth.uid);
         allow create, update: if isRoomHost(roomId) && validAnswerWrite(roomId, answerId);
         allow delete: if false;
       }
