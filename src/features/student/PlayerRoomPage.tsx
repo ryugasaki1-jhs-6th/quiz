@@ -7,6 +7,7 @@ import { Loading } from '@/shared/components';
 import {
   subscribeToPublicRoomState,
   subscribeToPlayer,
+  subscribeToPlayers,
   getPublicQuestions,
   submitAnswer,
 } from '@/services';
@@ -23,6 +24,7 @@ export function PlayerRoomPage() {
 
   const [room, setRoom] = useState<PublicRoomState | null>(null);
   const [myPlayer, setMyPlayer] = useState<Player | null>(null);
+  const [playerCount, setPlayerCount] = useState(0);
   const [questions, setQuestions] = useState<PublicQuestion[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<PublicQuestion | null>(null);
   const [hasAnswered, setHasAnswered] = useState(false);
@@ -77,9 +79,15 @@ export function PlayerRoomPage() {
       setMyPlayer(p);
     });
 
+    // Also subscribe to players to get real-time count
+    const unsubPlayers = subscribeToPlayers(roomId, (ps) => {
+      setPlayerCount(ps.length);
+    });
+
     return () => {
       unsubRoom();
       unsubPlayer();
+      unsubPlayers();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomId, user, navigate]);
@@ -152,7 +160,7 @@ export function PlayerRoomPage() {
           </div>
           <h2 className="text-2xl font-bold mb-2">待機中...</h2>
           <p className="text-gray-400">ゲームの開始を待っています</p>
-          <p className="text-gray-500 mt-4">{room.playerCount}人が参加中</p>
+          <p className="text-gray-500 mt-4">{playerCount || room.playerCount}人が参加中</p>
           {myPlayer && (
             <p className="text-primary-400 mt-2">あなた: {myPlayer.nickname}</p>
           )}
