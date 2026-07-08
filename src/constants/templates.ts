@@ -1,602 +1,7553 @@
+import { QuizTemplate } from './templates';
 import { generateId } from '@/utils';
-import { Question } from '@/types';
-
-export interface QuizTemplate {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  subcategory: string;
-  questions: Omit<Question, 'id' | 'createdAt' | 'updatedAt' | 'gameId'>[];
-}
 
 export const QUIZ_TEMPLATES: QuizTemplate[] = [
   {
-    id: 'jomon-period',
-    title: '縄文時代',
-    description: '土器の出現から定住生活の始まりまで、縄文時代の特徴を学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "jomon-period",
+    "title": "縄文時代",
+    "description": "縄文土器から三内丸山遺跡まで、縄文時代の生活と文化を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '縄文時代に使われていた、表面に縄の目の文様がある土器を何といいますか？',
-        choices: [
-          { id: generateId(), text: '縄文土器', isCorrect: true },
-          { id: generateId(), text: '弥生土器', isCorrect: false },
-          { id: generateId(), text: '須恵器', isCorrect: false },
-          { id: generateId(), text: '土師器', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "縄文時代に使われていた、表面に縄の目の文様がある土器は？",
+        "choices": [
+          {
+            "id": "d9797981",
+            "text": "縄文土器",
+            "isCorrect": true
+          },
+          {
+            "id": "a749e29d",
+            "text": "弥生土器",
+            "isCorrect": false
+          },
+          {
+            "id": "9e257d16",
+            "text": "須恵器",
+            "isCorrect": false
+          },
+          {
+            "id": "529cf8cf",
+            "text": "土師器",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '縄文土器は、厚手で黒褐色、低温で焼かれているのが特徴です。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "縄文土器は低温で焼かれ、厚手で黒褐色なのが特徴です。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '縄文時代の人々が住んでいた、地面を掘り下げて床にした住居を何といいますか？',
-        choices: [
-          { id: generateId(), text: '竪穴住居', isCorrect: true },
-          { id: generateId(), text: '高床倉庫', isCorrect: false },
-          { id: generateId(), text: '寝殿造', isCorrect: false },
-          { id: generateId(), text: '書院造', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "縄文時代の人々が住んでいた、地面を掘り下げた住居は？",
+        "choices": [
+          {
+            "id": "ad5d035c",
+            "text": "竪穴住居",
+            "isCorrect": true
+          },
+          {
+            "id": "5e130d53",
+            "text": "高床住居",
+            "isCorrect": false
+          },
+          {
+            "id": "2a4442e0",
+            "text": "寝殿造",
+            "isCorrect": false
+          },
+          {
+            "id": "2ad343fe",
+            "text": "書院造",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '竪穴住居は、半地下構造で保温性に優れていました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "地面を掘り下げて床にした竪穴住居が一般的でした。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代のゴミ捨て場で、当時の食生活がわかる場所は？",
+        "choices": [
+          {
+            "id": "80914b62",
+            "text": "貝塚",
+            "isCorrect": true
+          },
+          {
+            "id": "d65948c2",
+            "text": "古墳",
+            "isCorrect": false
+          },
+          {
+            "id": "9bb6a1a7",
+            "text": "都城",
+            "isCorrect": false
+          },
+          {
+            "id": "1d7f34c4",
+            "text": "環濠",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "貝塚からは貝殻や魚の骨、土器の破片などが見つかります。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "魔除けや豊作を祈って作られた、女性をかたどった土の人形は？",
+        "choices": [
+          {
+            "id": "d1ad3d71",
+            "text": "土偶",
+            "isCorrect": true
+          },
+          {
+            "id": "50757d19",
+            "text": "埴輪",
+            "isCorrect": false
+          },
+          {
+            "id": "ae7f16bb",
+            "text": "銅鐸",
+            "isCorrect": false
+          },
+          {
+            "id": "3bfb0de4",
+            "text": "石包丁",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土偶は縄文時代の精神生活を示す重要な遺物です。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "青森県にある、縄文時代最大級の集落跡は？",
+        "choices": [
+          {
+            "id": "715ee059",
+            "text": "三内丸山遺跡",
+            "isCorrect": true
+          },
+          {
+            "id": "d15928e6",
+            "text": "吉野ヶ里遺跡",
+            "isCorrect": false
+          },
+          {
+            "id": "99eecbba",
+            "text": "登呂遺跡",
+            "isCorrect": false
+          },
+          {
+            "id": "309a250e",
+            "text": "板付遺跡",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "巨大な木柱跡や多くの竪穴住居跡が見つかっています。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代に使われた石器で、表面を磨いて作られたものは？",
+        "choices": [
+          {
+            "id": "12e324dc",
+            "text": "磨製石器",
+            "isCorrect": true
+          },
+          {
+            "id": "8033bd76",
+            "text": "打製石器",
+            "isCorrect": false
+          },
+          {
+            "id": "7b3d591c",
+            "text": "鉄器",
+            "isCorrect": false
+          },
+          {
+            "id": "06bfd218",
+            "text": "青銅器",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "縄文時代は新石器時代にあたり、磨製石器が使われました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、狩猟のために新しく発達した道具は？",
+        "choices": [
+          {
+            "id": "63284651",
+            "text": "弓矢",
+            "isCorrect": true
+          },
+          {
+            "id": "4a6d20b3",
+            "text": "鉄砲",
+            "isCorrect": false
+          },
+          {
+            "id": "c78ccb23",
+            "text": "刀",
+            "isCorrect": false
+          },
+          {
+            "id": "e3001943",
+            "text": "槍",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "素早い小動物を仕留めるために弓矢が使われました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、食料の煮炊きや保存に使われた道具は？",
+        "choices": [
+          {
+            "id": "a0d185c1",
+            "text": "土器",
+            "isCorrect": true
+          },
+          {
+            "id": "440201f7",
+            "text": "木箱",
+            "isCorrect": false
+          },
+          {
+            "id": "ac9ba2a6",
+            "text": "冷蔵庫",
+            "isCorrect": false
+          },
+          {
+            "id": "ac886192",
+            "text": "石皿",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土器の出現により、食生活が大きく安定しました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、交易に使われた長野県や北海道産の黒い石は？",
+        "choices": [
+          {
+            "id": "34d05dda",
+            "text": "黒曜石",
+            "isCorrect": true
+          },
+          {
+            "id": "e6f80764",
+            "text": "ダイヤモンド",
+            "isCorrect": false
+          },
+          {
+            "id": "d220531f",
+            "text": "大理石",
+            "isCorrect": false
+          },
+          {
+            "id": "4463ac7b",
+            "text": "石灰岩",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "黒曜石は鋭い刃物（石器）の材料として広く流通しました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "新潟県糸魚川周辺でとれ、アクセサリーに使われた緑色の石は？",
+        "choices": [
+          {
+            "id": "8aca1873",
+            "text": "翡翠（ヒスイ）",
+            "isCorrect": true
+          },
+          {
+            "id": "4de35ae3",
+            "text": "ルビー",
+            "isCorrect": false
+          },
+          {
+            "id": "081f9a21",
+            "text": "サファイア",
+            "isCorrect": false
+          },
+          {
+            "id": "e0769e17",
+            "text": "エメラルド",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "ヒスイは縄文時代の代表的な装飾品の材料です。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "秋田県の大湯などにある、石を円形に並べた遺構は？",
+        "choices": [
+          {
+            "id": "29783e3a",
+            "text": "環状列石（ストーンサークル）",
+            "isCorrect": true
+          },
+          {
+            "id": "a6ec0d9c",
+            "text": "前方後円墳",
+            "isCorrect": false
+          },
+          {
+            "id": "b713c63b",
+            "text": "ピラミッド",
+            "isCorrect": false
+          },
+          {
+            "id": "a2fec982",
+            "text": "鳥居",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "祭祀や儀式に使われたと考えられています。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、丸木舟を使って行っていた活動は？",
+        "choices": [
+          {
+            "id": "acbf88d8",
+            "text": "漁労・交易",
+            "isCorrect": true
+          },
+          {
+            "id": "20622b22",
+            "text": "稲作",
+            "isCorrect": false
+          },
+          {
+            "id": "edfe4a16",
+            "text": "戦争",
+            "isCorrect": false
+          },
+          {
+            "id": "cfbf22e2",
+            "text": "城造り",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "海を渡って伊豆諸島などとも交易していました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、人々が主食としていた木の実は？",
+        "choices": [
+          {
+            "id": "0a011e57",
+            "text": "ドングリ・クリ",
+            "isCorrect": true
+          },
+          {
+            "id": "09d312aa",
+            "text": "米",
+            "isCorrect": false
+          },
+          {
+            "id": "9bd5b676",
+            "text": "麦",
+            "isCorrect": false
+          },
+          {
+            "id": "b8fb5d84",
+            "text": "トウモロコシ",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "森の恵みである堅果類は重要な食料でした。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、衣服の材料として使われた植物繊維は？",
+        "choices": [
+          {
+            "id": "eb0bd7b0",
+            "text": "カラムシ・麻",
+            "isCorrect": true
+          },
+          {
+            "id": "24d07adb",
+            "text": "綿",
+            "isCorrect": false
+          },
+          {
+            "id": "5e2db9bb",
+            "text": "絹",
+            "isCorrect": false
+          },
+          {
+            "id": "22191a34",
+            "text": "ナイロン",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "植物の繊維を編んだ「編布（あんぎん）」が使われました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代の社会について正しいものは？",
+        "choices": [
+          {
+            "id": "40f80209",
+            "text": "大きな貧富の差がなかった",
+            "isCorrect": true
+          },
+          {
+            "id": "1ab0a691",
+            "text": "厳しい身分制度があった",
+            "isCorrect": false
+          },
+          {
+            "id": "12475dda",
+            "text": "王が君臨していた",
+            "isCorrect": false
+          },
+          {
+            "id": "828b21f2",
+            "text": "奴隷がいた",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "集落内での格差はまだ小さかったと考えられています。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文土器の文様をつけるために使われた主なものは？",
+        "choices": [
+          {
+            "id": "59872b3c",
+            "text": "撚り紐",
+            "isCorrect": true
+          },
+          {
+            "id": "1a66fe26",
+            "text": "筆",
+            "isCorrect": false
+          },
+          {
+            "id": "31ba201b",
+            "text": "彫刻刀",
+            "isCorrect": false
+          },
+          {
+            "id": "586c7df0",
+            "text": "型紙",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "紐を土器の表面に転がして文様をつけました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、狩猟のパートナーとして大切にされた動物は？",
+        "choices": [
+          {
+            "id": "6a4b96e1",
+            "text": "犬",
+            "isCorrect": true
+          },
+          {
+            "id": "b97873b1",
+            "text": "猫",
+            "isCorrect": false
+          },
+          {
+            "id": "fd0d4547",
+            "text": "牛",
+            "isCorrect": false
+          },
+          {
+            "id": "447dc746",
+            "text": "馬",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "犬は家族のように扱われ、埋葬された例もあります。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代の期間として適切なものは？",
+        "choices": [
+          {
+            "id": "24aad7c5",
+            "text": "約1万年以上続いた",
+            "isCorrect": true
+          },
+          {
+            "id": "be1250e1",
+            "text": "約100年だった",
+            "isCorrect": false
+          },
+          {
+            "id": "3d69b3b9",
+            "text": "約500年だった",
+            "isCorrect": false
+          },
+          {
+            "id": "3fcb8939",
+            "text": "約2000年だった",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "非常に長い期間、安定した狩猟・採集文化が続きました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代、木の実を粉にするために使われた道具は？",
+        "choices": [
+          {
+            "id": "11727827",
+            "text": "石皿・磨石",
+            "isCorrect": true
+          },
+          {
+            "id": "be975c09",
+            "text": "石包丁",
+            "isCorrect": false
+          },
+          {
+            "id": "370ac4b7",
+            "text": "臼・杵",
+            "isCorrect": false
+          },
+          {
+            "id": "13c57315",
+            "text": "鉄の鍋",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "石の板の上で石を転がして粉にしました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "縄文時代の終わりに、九州北部に伝わったものは？",
+        "choices": [
+          {
+            "id": "21abb06a",
+            "text": "水田稲作",
+            "isCorrect": true
+          },
+          {
+            "id": "5bcd4a1b",
+            "text": "仏教",
+            "isCorrect": false
+          },
+          {
+            "id": "4b696845",
+            "text": "文字",
+            "isCorrect": false
+          },
+          {
+            "id": "0ad3fb1a",
+            "text": "キリスト教",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大陸から水田稲作が伝わり、弥生時代へと移り変わります。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'yayoi-period',
-    title: '弥生時代',
-    description: '稲作の伝来と金属器の使用、ムラからクニへの変化を学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "yayoi-period",
+    "title": "弥生時代",
+    "description": "稲作、金属器、卑弥呼、クニの成立など弥生時代の重要事項20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '弥生時代に大陸から伝わり、生活を大きく変えた農業は何ですか？',
-        choices: [
-          { id: generateId(), text: '稲作（水田稲作）', isCorrect: true },
-          { id: generateId(), text: '畑作', isCorrect: false },
-          { id: generateId(), text: '果樹栽培', isCorrect: false },
-          { id: generateId(), text: '酪農', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "弥生時代に大陸から伝わり、生活の基盤となった農業は？",
+        "choices": [
+          {
+            "id": "cee63ca9",
+            "text": "水田稲作",
+            "isCorrect": true
+          },
+          {
+            "id": "8237b7eb",
+            "text": "畑作",
+            "isCorrect": false
+          },
+          {
+            "id": "1cdf81ac",
+            "text": "酪農",
+            "isCorrect": false
+          },
+          {
+            "id": "7e250db3",
+            "text": "果樹園",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '稲作の伝来により、定住生活がより安定し、余剰生産物による貧富の差が生まれました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "稲作の伝来により、定住と組織化が進みました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '中国の歴史書「魏志倭人伝」に記されている、邪馬台国の女王は誰ですか？',
-        choices: [
-          { id: generateId(), text: '卑弥呼', isCorrect: true },
-          { id: generateId(), text: '持統天皇', isCorrect: false },
-          { id: generateId(), text: '北条政子', isCorrect: false },
-          { id: generateId(), text: '推古天皇', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "弥生土器の特徴として正しいものは？",
+        "choices": [
+          {
+            "id": "e2c708d1",
+            "text": "薄手で赤褐色、硬い",
+            "isCorrect": true
+          },
+          {
+            "id": "fdea5ae0",
+            "text": "厚手で黒褐色、柔らかい",
+            "isCorrect": false
+          },
+          {
+            "id": "0b4a9f64",
+            "text": "釉薬が塗られている",
+            "isCorrect": false
+          },
+          {
+            "id": "5d7c9155",
+            "text": "文様が非常に複雑",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '卑弥呼は30余りのクニをまとめ、魏から「親魏倭王」の称号と金印を授かりました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "弥生土器は縄文土器よりも高温で焼かれ、実用的でした。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代に稲を保存するために造られた建物は？",
+        "choices": [
+          {
+            "id": "bc3e06ed",
+            "text": "高床倉庫",
+            "isCorrect": true
+          },
+          {
+            "id": "f660b415",
+            "text": "竪穴住居",
+            "isCorrect": false
+          },
+          {
+            "id": "d1d9ef69",
+            "text": "石室",
+            "isCorrect": false
+          },
+          {
+            "id": "b55eeef2",
+            "text": "寝殿",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "湿気やネズミを防ぐために床を高くしました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "稲の穂をつみとるために使われた石器は？",
+        "choices": [
+          {
+            "id": "8f7fcd3b",
+            "text": "石包丁",
+            "isCorrect": true
+          },
+          {
+            "id": "f75334e9",
+            "text": "磨製石斧",
+            "isCorrect": false
+          },
+          {
+            "id": "585b326d",
+            "text": "打製石器",
+            "isCorrect": false
+          },
+          {
+            "id": "6c93c3b6",
+            "text": "石皿",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "穂首刈りを行うための道具です。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代に伝わった2種類の金属器は？",
+        "choices": [
+          {
+            "id": "85dbccc8",
+            "text": "青銅器と鉄器",
+            "isCorrect": true
+          },
+          {
+            "id": "8ef1867f",
+            "text": "金と銀",
+            "isCorrect": false
+          },
+          {
+            "id": "de8c46f3",
+            "text": "アルミニウムと銅",
+            "isCorrect": false
+          },
+          {
+            "id": "762dd54f",
+            "text": "鉄と金",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "青銅器は祭祀用、鉄器は武器や工具に使われました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "佐賀県にある、環濠集落の代表的な遺跡は？",
+        "choices": [
+          {
+            "id": "771069f6",
+            "text": "吉野ヶ里遺跡",
+            "isCorrect": true
+          },
+          {
+            "id": "a24847db",
+            "text": "三内丸山遺跡",
+            "isCorrect": false
+          },
+          {
+            "id": "d173ab1f",
+            "text": "登呂遺跡",
+            "isCorrect": false
+          },
+          {
+            "id": "3d1d5c4b",
+            "text": "板付遺跡",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "物見やぐらや柵を備えた大規模な集落跡です。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "「魏志倭人伝」に記された、30余りのクニをまとめた女王は？",
+        "choices": [
+          {
+            "id": "e8573d15",
+            "text": "卑弥呼",
+            "isCorrect": true
+          },
+          {
+            "id": "f10870a8",
+            "text": "持統天皇",
+            "isCorrect": false
+          },
+          {
+            "id": "544d91cd",
+            "text": "推古天皇",
+            "isCorrect": false
+          },
+          {
+            "id": "1a8a5449",
+            "text": "北条政子",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "邪馬台国の女王として魏に使いを送りました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "卑弥呼が魏の皇帝から授かった称号は？",
+        "choices": [
+          {
+            "id": "27f16f3c",
+            "text": "親魏倭王",
+            "isCorrect": true
+          },
+          {
+            "id": "8abaff77",
+            "text": "日本国王",
+            "isCorrect": false
+          },
+          {
+            "id": "28243e56",
+            "text": "征夷大将軍",
+            "isCorrect": false
+          },
+          {
+            "id": "a889fac8",
+            "text": "関白",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "金印とともに授けられました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1世紀頃、後漢の皇帝から金印を授かったクニは？",
+        "choices": [
+          {
+            "id": "6c4d3447",
+            "text": "奴国（なこく）",
+            "isCorrect": true
+          },
+          {
+            "id": "e1e40c01",
+            "text": "末盧国",
+            "isCorrect": false
+          },
+          {
+            "id": "3482652a",
+            "text": "伊都国",
+            "isCorrect": false
+          },
+          {
+            "id": "dadfd015",
+            "text": "邪馬台国",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「漢委奴国王」と刻まれた金印が志賀島で見つかっています。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、戦いに備えて周囲に堀を巡らせた集落を何という？",
+        "choices": [
+          {
+            "id": "a0261cae",
+            "text": "環濠集落",
+            "isCorrect": true
+          },
+          {
+            "id": "37fe03ae",
+            "text": "平城京",
+            "isCorrect": false
+          },
+          {
+            "id": "cc2c9b61",
+            "text": "城下町",
+            "isCorrect": false
+          },
+          {
+            "id": "8bfc5b95",
+            "text": "宿場町",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土地や水を巡る争いが増えたことを示しています。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、お祭りの道具として使われた青銅器は？",
+        "choices": [
+          {
+            "id": "9d3ff875",
+            "text": "銅鐸（どうたく）",
+            "isCorrect": true
+          },
+          {
+            "id": "66283269",
+            "text": "鉄剣",
+            "isCorrect": false
+          },
+          {
+            "id": "f1274e0f",
+            "text": "埴輪",
+            "isCorrect": false
+          },
+          {
+            "id": "9c693555",
+            "text": "土偶",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "釣り鐘のような形で、近畿地方を中心に多く見つかります。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、山の上に造られた防御性の高い集落を何という？",
+        "choices": [
+          {
+            "id": "e394f47d",
+            "text": "高地性集落",
+            "isCorrect": true
+          },
+          {
+            "id": "7241903e",
+            "text": "竪穴住居群",
+            "isCorrect": false
+          },
+          {
+            "id": "512de125",
+            "text": "古墳群",
+            "isCorrect": false
+          },
+          {
+            "id": "915d9449",
+            "text": "寺院跡",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "軍事的な緊張感があったことを示しています。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代の期間として適切なものは？",
+        "choices": [
+          {
+            "id": "057bb0b0",
+            "text": "紀元前4世紀頃〜紀元後3世紀頃",
+            "isCorrect": true
+          },
+          {
+            "id": "239bb5b5",
+            "text": "1万年間",
+            "isCorrect": false
+          },
+          {
+            "id": "220378a0",
+            "text": "100年間",
+            "isCorrect": false
+          },
+          {
+            "id": "f96fc514",
+            "text": "平安時代の直前",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "稲作が広まり、小国家が誕生した時代です。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、貧富の差や身分の違いが生まれた理由は？",
+        "choices": [
+          {
+            "id": "63b46114",
+            "text": "稲作による余剰生産物の蓄積",
+            "isCorrect": true
+          },
+          {
+            "id": "d5f9c54b",
+            "text": "文字の普及",
+            "isCorrect": false
+          },
+          {
+            "id": "a625553c",
+            "text": "仏教の伝来",
+            "isCorrect": false
+          },
+          {
+            "id": "93f52e28",
+            "text": "鉄砲の伝来",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "蓄えができることで、支配する者とされる者が現れました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "卑弥呼が政治を行う際に用いたとされる方法は？",
+        "choices": [
+          {
+            "id": "785cdf4d",
+            "text": "鬼道（まじない）",
+            "isCorrect": true
+          },
+          {
+            "id": "1f106521",
+            "text": "法律",
+            "isCorrect": false
+          },
+          {
+            "id": "9de6c169",
+            "text": "議会",
+            "isCorrect": false
+          },
+          {
+            "id": "56d1f509",
+            "text": "選挙",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "宗教的な権威で国を治めていました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "静岡県にある、弥生時代後期の水田跡が有名な遺跡は？",
+        "choices": [
+          {
+            "id": "fa494961",
+            "text": "登呂遺跡",
+            "isCorrect": true
+          },
+          {
+            "id": "cf7afbf6",
+            "text": "三内丸山遺跡",
+            "isCorrect": false
+          },
+          {
+            "id": "62f732a8",
+            "text": "吉野ヶ里遺跡",
+            "isCorrect": false
+          },
+          {
+            "id": "4d073f2d",
+            "text": "岩宿遺跡",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "あぜ道や水路の跡が見つかっています。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、中国の歴史書に日本は何と呼ばれていた？",
+        "choices": [
+          {
+            "id": "213f9367",
+            "text": "倭（わ）",
+            "isCorrect": true
+          },
+          {
+            "id": "1eb609ce",
+            "text": "日本",
+            "isCorrect": false
+          },
+          {
+            "id": "a9713272",
+            "text": "扶桑",
+            "isCorrect": false
+          },
+          {
+            "id": "a1c7fd44",
+            "text": "黄金の国",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「倭」という名で100余りの国に分かれていると記されました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、死者を葬るために使われた大きな土器は？",
+        "choices": [
+          {
+            "id": "503202c7",
+            "text": "甕棺（かめかん）",
+            "isCorrect": true
+          },
+          {
+            "id": "ad108dc4",
+            "text": "縄文土器",
+            "isCorrect": false
+          },
+          {
+            "id": "6f7c6b63",
+            "text": "須恵器",
+            "isCorrect": false
+          },
+          {
+            "id": "0b3fd105",
+            "text": "埴輪",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "九州地方北部でよく見られる埋葬方法です。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代の青銅器「銅鏡」が主に使われた目的は？",
+        "choices": [
+          {
+            "id": "a9d3ef04",
+            "text": "祭祀・宝物",
+            "isCorrect": true
+          },
+          {
+            "id": "14ca0036",
+            "text": "化粧用",
+            "isCorrect": false
+          },
+          {
+            "id": "d453d488",
+            "text": "武器",
+            "isCorrect": false
+          },
+          {
+            "id": "0c3c9995",
+            "text": "調理器具",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "権威の象徴や祭祀の道具として使われました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "弥生時代、朝鮮半島から伝わった技術ではないものは？",
+        "choices": [
+          {
+            "id": "605ab093",
+            "text": "火縄銃",
+            "isCorrect": true
+          },
+          {
+            "id": "32051882",
+            "text": "稲作",
+            "isCorrect": false
+          },
+          {
+            "id": "9564e008",
+            "text": "鉄器",
+            "isCorrect": false
+          },
+          {
+            "id": "4f47a865",
+            "text": "青銅器",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "火縄銃は戦国時代に伝わりました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'kofun-period',
-    title: '古墳時代',
-    description: '巨大な前方後円墳とヤマト王権の成立について学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "kofun-period",
+    "title": "古墳時代",
+    "description": "前方後円墳、ヤマト王権、埴輪、渡来人の文化を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '古墳時代に造られた、円形と方形を組み合わせた日本独特の形の古墳を何といいますか？',
-        choices: [
-          { id: generateId(), text: '前方後円墳', isCorrect: true },
-          { id: generateId(), text: '円墳', isCorrect: false },
-          { id: generateId(), text: '方墳', isCorrect: false },
-          { id: generateId(), text: '八角墳', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "古墳時代に造られた、円形と方形を組み合わせた日本特有の古墳は？",
+        "choices": [
+          {
+            "id": "c7c945d2",
+            "text": "前方後円墳",
+            "isCorrect": true
+          },
+          {
+            "id": "357fbb57",
+            "text": "円墳",
+            "isCorrect": false
+          },
+          {
+            "id": "a2c77fcd",
+            "text": "方墳",
+            "isCorrect": false
+          },
+          {
+            "id": "0ca839cc",
+            "text": "八角墳",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '前方後円墳は、ヤマト王権の影響力が及んだ範囲に広がっています。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "鍵穴のような形が特徴です。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '古墳の周囲や頂上に並べられた、素焼きの土製品を何といいますか？',
-        choices: [
-          { id: generateId(), text: '埴輪', isCorrect: true },
-          { id: generateId(), text: '土偶', isCorrect: false },
-          { id: generateId(), text: '銅鐸', isCorrect: false },
-          { id: generateId(), text: '勾玉', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "古墳の周囲に並べられた、素焼きの土製品を何という？",
+        "choices": [
+          {
+            "id": "54af3229",
+            "text": "埴輪（はにわ）",
+            "isCorrect": true
+          },
+          {
+            "id": "6e47bb5f",
+            "text": "土偶",
+            "isCorrect": false
+          },
+          {
+            "id": "6ee76910",
+            "text": "銅鐸",
+            "isCorrect": false
+          },
+          {
+            "id": "d99b8313",
+            "text": "勾玉",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '埴輪には家、馬、人などの形があり、当時の生活を知る手がかりになります。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "家、馬、人などの形があり、死者の霊を守るなどの意味がありました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "近畿地方を中心に成立し、日本を統一していった勢力は？",
+        "choices": [
+          {
+            "id": "d59f43e1",
+            "text": "ヤマト王権（大和朝廷）",
+            "isCorrect": true
+          },
+          {
+            "id": "4ac4e0e5",
+            "text": "邪馬台国",
+            "isCorrect": false
+          },
+          {
+            "id": "e2b9c4c2",
+            "text": "平氏",
+            "isCorrect": false
+          },
+          {
+            "id": "555e169e",
+            "text": "源氏",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大王（おおきみ）を中心とする連合政権です。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "日本最大の前方後円墳で、大仙陵古墳（仁徳天皇陵）がある場所は？",
+        "choices": [
+          {
+            "id": "cb482e73",
+            "text": "大阪府堺市",
+            "isCorrect": true
+          },
+          {
+            "id": "169d4d79",
+            "text": "奈良県明日香村",
+            "isCorrect": false
+          },
+          {
+            "id": "289697f9",
+            "text": "滋賀県大津市",
+            "isCorrect": false
+          },
+          {
+            "id": "d5361d9d",
+            "text": "福岡県太宰府市",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "世界最大級の面積を誇るお墓です。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "朝鮮半島や中国から移り住み、新しい技術や文化を伝えた人々は？",
+        "choices": [
+          {
+            "id": "fe7b73a8",
+            "text": "渡来人",
+            "isCorrect": true
+          },
+          {
+            "id": "c83af549",
+            "text": "遣隋使",
+            "isCorrect": false
+          },
+          {
+            "id": "7693d42c",
+            "text": "遣唐使",
+            "isCorrect": false
+          },
+          {
+            "id": "87014338",
+            "text": "御家人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "漢字、仏教、儒教、養蚕、陶芸などを伝えました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代の末期に大陸から伝わった、硬くて灰色の土器は？",
+        "choices": [
+          {
+            "id": "f3f1a0a9",
+            "text": "須恵器（すえき）",
+            "isCorrect": true
+          },
+          {
+            "id": "edb4eb28",
+            "text": "土師器",
+            "isCorrect": false
+          },
+          {
+            "id": "035a40e9",
+            "text": "弥生土器",
+            "isCorrect": false
+          },
+          {
+            "id": "2fe6c10b",
+            "text": "縄文土器",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "高温で焼かれ、実用的な器として使われました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "ヤマト王権の首長を何と呼んでいましたか？",
+        "choices": [
+          {
+            "id": "bd43e997",
+            "text": "大王（おおきみ）",
+            "isCorrect": true
+          },
+          {
+            "id": "01b00423",
+            "text": "将軍",
+            "isCorrect": false
+          },
+          {
+            "id": "e37e8e7c",
+            "text": "天皇",
+            "isCorrect": false
+          },
+          {
+            "id": "83e45637",
+            "text": "関白",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後に「天皇」という称号に変わっていきます。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "埼玉県や熊本県の古墳から見つかった、文字が刻まれた剣は？",
+        "choices": [
+          {
+            "id": "8eaf3101",
+            "text": "鉄剣（金錯銘鉄剣）",
+            "isCorrect": true
+          },
+          {
+            "id": "a86cf4d9",
+            "text": "草薙剣",
+            "isCorrect": false
+          },
+          {
+            "id": "a3d69227",
+            "text": "十握剣",
+            "isCorrect": false
+          },
+          {
+            "id": "d3c6b0a0",
+            "text": "村正",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "ワカタケル大王（雄略天皇）の名が刻まれていました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代、ヤマト王権が朝鮮半島のどこから鉄資源を得ていた？",
+        "choices": [
+          {
+            "id": "faf364b7",
+            "text": "加羅（伽耶）",
+            "isCorrect": true
+          },
+          {
+            "id": "2f4ac9a0",
+            "text": "高句麗",
+            "isCorrect": false
+          },
+          {
+            "id": "52ba6d2b",
+            "text": "新羅",
+            "isCorrect": false
+          },
+          {
+            "id": "68ce7d50",
+            "text": "百済",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "半島の南部と密接な関係がありました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳の内部に造られた、死者を安置するための部屋を何という？",
+        "choices": [
+          {
+            "id": "97cc13cd",
+            "text": "石室（せきしつ）",
+            "isCorrect": true
+          },
+          {
+            "id": "680d9850",
+            "text": "本堂",
+            "isCorrect": false
+          },
+          {
+            "id": "639b80c5",
+            "text": "寝殿",
+            "isCorrect": false
+          },
+          {
+            "id": "a0de91ca",
+            "text": "竪穴",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "竪穴式石室から、後に横穴式石室へと変化しました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "538年（または552年）、百済から伝わった宗教は？",
+        "choices": [
+          {
+            "id": "ec03b532",
+            "text": "仏教",
+            "isCorrect": true
+          },
+          {
+            "id": "f751946f",
+            "text": "キリスト教",
+            "isCorrect": false
+          },
+          {
+            "id": "17a992ab",
+            "text": "儒教",
+            "isCorrect": false
+          },
+          {
+            "id": "57b8cd37",
+            "text": "イスラム教",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "聖明王から仏像や経典が贈られました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代、有力な豪族を格付けするために作られた制度は？",
+        "choices": [
+          {
+            "id": "317cb5dd",
+            "text": "氏姓（しせい）制度",
+            "isCorrect": true
+          },
+          {
+            "id": "d90cca17",
+            "text": "冠位十二階",
+            "isCorrect": false
+          },
+          {
+            "id": "1472a797",
+            "text": "班田収授法",
+            "isCorrect": false
+          },
+          {
+            "id": "c82e702d",
+            "text": "身分制度",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "臣（おみ）や連（むらじ）といった姓を与えました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代、渡来人が伝えた文字は何ですか？",
+        "choices": [
+          {
+            "id": "161a9850",
+            "text": "漢字",
+            "isCorrect": true
+          },
+          {
+            "id": "672f5c15",
+            "text": "ひらがな",
+            "isCorrect": false
+          },
+          {
+            "id": "db247292",
+            "text": "カタカナ",
+            "isCorrect": false
+          },
+          {
+            "id": "d84cdf57",
+            "text": "アルファベット",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "記録や外交のために使われ始めました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "前方後円墳が全国に広がった理由として正しいものは？",
+        "choices": [
+          {
+            "id": "d3790473",
+            "text": "ヤマト王権の影響力が拡大したため",
+            "isCorrect": true
+          },
+          {
+            "id": "2de0375a",
+            "text": "流行したため",
+            "isCorrect": false
+          },
+          {
+            "id": "86c9909e",
+            "text": "中国から命令されたため",
+            "isCorrect": false
+          },
+          {
+            "id": "7adab7f8",
+            "text": "仏教の影響",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "各地の豪族が王権に服属した証と考えられています。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代に大陸から伝わった、馬を操るための道具などは？",
+        "choices": [
+          {
+            "id": "6bdee23a",
+            "text": "馬具",
+            "isCorrect": true
+          },
+          {
+            "id": "939036c6",
+            "text": "鉄砲",
+            "isCorrect": false
+          },
+          {
+            "id": "a9fd3fca",
+            "text": "農具",
+            "isCorrect": false
+          },
+          {
+            "id": "8841ac4b",
+            "text": "羅針盤",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "乗馬の風習とともに伝わりました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代の「埴輪」で、一番最初に出現した形は？",
+        "choices": [
+          {
+            "id": "0cc8d927",
+            "text": "円筒埴輪",
+            "isCorrect": true
+          },
+          {
+            "id": "18d1259e",
+            "text": "家形埴輪",
+            "isCorrect": false
+          },
+          {
+            "id": "98db9fc7",
+            "text": "人物埴輪",
+            "isCorrect": false
+          },
+          {
+            "id": "33d17d44",
+            "text": "動物埴輪",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土留めや聖域の境界を示すために置かれました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "ヤマト王権で祭祀を担当した、有力な豪族の姓は？",
+        "choices": [
+          {
+            "id": "cc88edcf",
+            "text": "連（むらじ）",
+            "isCorrect": true
+          },
+          {
+            "id": "1702c589",
+            "text": "臣（おみ）",
+            "isCorrect": false
+          },
+          {
+            "id": "1a982760",
+            "text": "公（きみ）",
+            "isCorrect": false
+          },
+          {
+            "id": "11439311",
+            "text": "首（おびと）",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "中臣氏や物部氏などが有名です。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代の末期、巨大な古墳が造られなくなった理由は？",
+        "choices": [
+          {
+            "id": "d0b66033",
+            "text": "仏教の広まりと薄葬令",
+            "isCorrect": true
+          },
+          {
+            "id": "cb2b665d",
+            "text": "石がなくなった",
+            "isCorrect": false
+          },
+          {
+            "id": "3f8a0446",
+            "text": "戦争が起きた",
+            "isCorrect": false
+          },
+          {
+            "id": "79292164",
+            "text": "天皇がいなくなった",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "寺院の建立にお金が使われるようになり、火葬も普及しました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代、渡来人が伝えた高度な機織りの技術は？",
+        "choices": [
+          {
+            "id": "e9b391ab",
+            "text": "養蚕・絹織物",
+            "isCorrect": true
+          },
+          {
+            "id": "3348f086",
+            "text": "綿織物",
+            "isCorrect": false
+          },
+          {
+            "id": "73c2fd75",
+            "text": "麻織物",
+            "isCorrect": false
+          },
+          {
+            "id": "8a0a6b07",
+            "text": "毛織物",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "衣服の文化が豊かになりました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "古墳時代の有力豪族で、後に聖徳太子と協力した一族は？",
+        "choices": [
+          {
+            "id": "2061a8c3",
+            "text": "蘇我氏",
+            "isCorrect": true
+          },
+          {
+            "id": "fb5e940f",
+            "text": "物部氏",
+            "isCorrect": false
+          },
+          {
+            "id": "68517569",
+            "text": "中臣氏",
+            "isCorrect": false
+          },
+          {
+            "id": "2af1181e",
+            "text": "大伴氏",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "渡来人と結びつき、仏教を積極的に受け入れました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'asuka-period',
-    title: '飛鳥時代',
-    description: '聖徳太子の政治から大化の改新まで、律令国家への歩みを学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "asuka-period",
+    "title": "飛鳥時代",
+    "description": "聖徳太子、大化の改新、律令国家への歩みを網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '推古天皇の摂政となり、冠位十二階や十七条の憲法を定めた人物は誰ですか？',
-        choices: [
-          { id: generateId(), text: '聖徳太子（厩戸王）', isCorrect: true },
-          { id: generateId(), text: '中大兄皇子', isCorrect: false },
-          { id: generateId(), text: '中臣鎌足', isCorrect: false },
-          { id: generateId(), text: '蘇馬入鹿', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "推古天皇の摂政として、冠位十二階や十七条の憲法を定めたのは？",
+        "choices": [
+          {
+            "id": "161e4fde",
+            "text": "聖徳太子",
+            "isCorrect": true
+          },
+          {
+            "id": "1595d96b",
+            "text": "中大兄皇子",
+            "isCorrect": false
+          },
+          {
+            "id": "2912fc3c",
+            "text": "中臣鎌足",
+            "isCorrect": false
+          },
+          {
+            "id": "a32857f1",
+            "text": "蘇我馬子",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '聖徳太子は仏教を厚く信じ、法隆寺を建立するなど文化の発展にも尽力しました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "天皇中心の国造りを目指しました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '645年、中大兄皇子らが蘇我氏を倒して始めた政治改革を何といいますか？',
-        choices: [
-          { id: generateId(), text: '大化の改新', isCorrect: true },
-          { id: generateId(), text: '壬申の乱', isCorrect: false },
-          { id: generateId(), text: '承久の乱', isCorrect: false },
-          { id: generateId(), text: '明治維新', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "聖徳太子が定めた、家柄ではなく能力で役人を採用する制度は？",
+        "choices": [
+          {
+            "id": "c2dd34f5",
+            "text": "冠位十二階",
+            "isCorrect": true
+          },
+          {
+            "id": "42632dc7",
+            "text": "十七条の憲法",
+            "isCorrect": false
+          },
+          {
+            "id": "58a088e7",
+            "text": "班田収授法",
+            "isCorrect": false
+          },
+          {
+            "id": "74663e29",
+            "text": "氏姓制度",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '大化の改新により、土地と人民を国家のものとする公地公民の制が目指されました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "冠の色で位を表しました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "聖徳太子が定めた、役人の心得を記した決まりは？",
+        "choices": [
+          {
+            "id": "2e8fd849",
+            "text": "十七条の憲法",
+            "isCorrect": true
+          },
+          {
+            "id": "6917c452",
+            "text": "大宝律令",
+            "isCorrect": false
+          },
+          {
+            "id": "b8d455a4",
+            "text": "御成敗式目",
+            "isCorrect": false
+          },
+          {
+            "id": "1c2e2576",
+            "text": "武家諸法度",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「和を以て貴しとなす」という言葉が有名です。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "聖徳太子が中国（隋）に送った使節を何という？",
+        "choices": [
+          {
+            "id": "96710572",
+            "text": "遣隋使",
+            "isCorrect": true
+          },
+          {
+            "id": "55435455",
+            "text": "遣唐使",
+            "isCorrect": false
+          },
+          {
+            "id": "2bd77368",
+            "text": "遣新羅使",
+            "isCorrect": false
+          },
+          {
+            "id": "1eed4596",
+            "text": "通信使",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "小野妹子らが送られました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "聖徳太子が建立した、世界最古の木造建築がある寺は？",
+        "choices": [
+          {
+            "id": "b1c13331",
+            "text": "法隆寺",
+            "isCorrect": true
+          },
+          {
+            "id": "200f3e25",
+            "text": "四天王寺",
+            "isCorrect": false
+          },
+          {
+            "id": "47cc6566",
+            "text": "東大寺",
+            "isCorrect": false
+          },
+          {
+            "id": "1e04736f",
+            "text": "興福寺",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "飛鳥文化を代表する寺院です。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "645年、中大兄皇子と中臣鎌足が蘇我氏を倒して始めた改革は？",
+        "choices": [
+          {
+            "id": "901bc82e",
+            "text": "大化の改新",
+            "isCorrect": true
+          },
+          {
+            "id": "1c882c03",
+            "text": "壬申の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "66b2856d",
+            "text": "建武の新政",
+            "isCorrect": false
+          },
+          {
+            "id": "c234d072",
+            "text": "明治維新",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "公地公民の制を目指しました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "大化の改新を始めた、後の中大兄皇子（天智天皇）の協力者は？",
+        "choices": [
+          {
+            "id": "e45336c4",
+            "text": "中臣鎌足（藤原鎌足）",
+            "isCorrect": true
+          },
+          {
+            "id": "8fb43af0",
+            "text": "蘇我入鹿",
+            "isCorrect": false
+          },
+          {
+            "id": "7160f1c2",
+            "text": "聖徳太子",
+            "isCorrect": false
+          },
+          {
+            "id": "29e0dddb",
+            "text": "足利尊氏",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後に藤原の姓を授かりました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "663年、日本が百済を助けるために唐・新羅の連合軍と戦ったのは？",
+        "choices": [
+          {
+            "id": "c35ee22d",
+            "text": "白村江（はくすきのえ）の戦い",
+            "isCorrect": true
+          },
+          {
+            "id": "58cf9da7",
+            "text": "元寇",
+            "isCorrect": false
+          },
+          {
+            "id": "ee3d3da0",
+            "text": "文禄の役",
+            "isCorrect": false
+          },
+          {
+            "id": "919ea575",
+            "text": "壬申の乱",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "日本は大敗し、防人の設置など国防を強化しました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "天智天皇の死後、大友皇子と大海人皇子が争った内乱は？",
+        "choices": [
+          {
+            "id": "75a9e1c2",
+            "text": "壬申の乱",
+            "isCorrect": true
+          },
+          {
+            "id": "15f10bac",
+            "text": "承久の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "1d46406e",
+            "text": "応仁の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "d9bdb3bb",
+            "text": "保元の乱",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大海人皇子が勝利し、天武天皇となりました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "天武天皇が建設を始め、持統天皇の時に完成した本格的な都は？",
+        "choices": [
+          {
+            "id": "f62eac95",
+            "text": "藤原京",
+            "isCorrect": true
+          },
+          {
+            "id": "cf70b582",
+            "text": "平城京",
+            "isCorrect": false
+          },
+          {
+            "id": "526e999e",
+            "text": "平安京",
+            "isCorrect": false
+          },
+          {
+            "id": "df98f946",
+            "text": "難波京",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "中国の都にならった最初の本格的な都城です。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "701年に制定された、唐の法律にならった本格的な律令は？",
+        "choices": [
+          {
+            "id": "1a71da5e",
+            "text": "大宝律令",
+            "isCorrect": true
+          },
+          {
+            "id": "d7157612",
+            "text": "養老律令",
+            "isCorrect": false
+          },
+          {
+            "id": "0f0e2215",
+            "text": "十七条の憲法",
+            "isCorrect": false
+          },
+          {
+            "id": "c2e75e1b",
+            "text": "公事方御定書",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "これにより「律令国家」の仕組みが整いました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "律令制度において、6歳以上の男女に土地を与える法は？",
+        "choices": [
+          {
+            "id": "e796f8d4",
+            "text": "班田収授法",
+            "isCorrect": true
+          },
+          {
+            "id": "760820fa",
+            "text": "墾田永年私財法",
+            "isCorrect": false
+          },
+          {
+            "id": "a8acffe3",
+            "text": "地租改正",
+            "isCorrect": false
+          },
+          {
+            "id": "6c31373f",
+            "text": "農地改革",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土地は死ぬと国に返されました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "班田収授法で与えられた土地を何という？",
+        "choices": [
+          {
+            "id": "d18595d9",
+            "text": "口分田（くぶんでん）",
+            "isCorrect": true
+          },
+          {
+            "id": "9aa4912d",
+            "text": "荘園",
+            "isCorrect": false
+          },
+          {
+            "id": "1fcfcd58",
+            "text": "知行地",
+            "isCorrect": false
+          },
+          {
+            "id": "38aabfb8",
+            "text": "名田",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "面積に応じて与えられました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "律令制度の税で、収穫の約3%の稲を納めるものは？",
+        "choices": [
+          {
+            "id": "43104168",
+            "text": "租（そ）",
+            "isCorrect": true
+          },
+          {
+            "id": "86a82ab7",
+            "text": "調",
+            "isCorrect": false
+          },
+          {
+            "id": "46b79ae9",
+            "text": "庸",
+            "isCorrect": false
+          },
+          {
+            "id": "e05c5999",
+            "text": "雑徭",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "主に地方の財源となりました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "律令制度の税で、地方の特産品を納めるものは？",
+        "choices": [
+          {
+            "id": "d2d2c65f",
+            "text": "調（ちょう）",
+            "isCorrect": true
+          },
+          {
+            "id": "e8548d9a",
+            "text": "租",
+            "isCorrect": false
+          },
+          {
+            "id": "fb1b5c42",
+            "text": "庸",
+            "isCorrect": false
+          },
+          {
+            "id": "fe422338",
+            "text": "防人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "都へ運ばれ、中央政府の財源となりました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "九州北部の守備のために、東国から送られた兵士を何という？",
+        "choices": [
+          {
+            "id": "fe91914f",
+            "text": "防人（さきもり）",
+            "isCorrect": true
+          },
+          {
+            "id": "8f8f4622",
+            "text": "武士",
+            "isCorrect": false
+          },
+          {
+            "id": "d9ceb794",
+            "text": "足軽",
+            "isCorrect": false
+          },
+          {
+            "id": "d84830e1",
+            "text": "近衛兵",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "万葉集には防人の歌も残っています。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "飛鳥時代の文化で、日本で最初の仏教文化を何という？",
+        "choices": [
+          {
+            "id": "b362a117",
+            "text": "飛鳥文化",
+            "isCorrect": true
+          },
+          {
+            "id": "a89ac3e1",
+            "text": "白鳳文化",
+            "isCorrect": false
+          },
+          {
+            "id": "d1339c4d",
+            "text": "天平文化",
+            "isCorrect": false
+          },
+          {
+            "id": "31cddd17",
+            "text": "弘仁・貞観文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "法隆寺の釈迦三尊像などが有名です。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "天武・持統天皇の時期を中心に栄えた、力強い文化を何という？",
+        "choices": [
+          {
+            "id": "5d2f17c8",
+            "text": "白鳳（はくほう）文化",
+            "isCorrect": true
+          },
+          {
+            "id": "5921461d",
+            "text": "飛鳥文化",
+            "isCorrect": false
+          },
+          {
+            "id": "5ba12835",
+            "text": "天平文化",
+            "isCorrect": false
+          },
+          {
+            "id": "649197cb",
+            "text": "国風文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "薬師寺東塔などが代表的です。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "飛鳥時代、戸籍（庚午年籍など）を作った目的は？",
+        "choices": [
+          {
+            "id": "aa13a7d0",
+            "text": "徴税と徴兵のため",
+            "isCorrect": true
+          },
+          {
+            "id": "f3dc10e8",
+            "text": "名前を決めるため",
+            "isCorrect": false
+          },
+          {
+            "id": "b1ff2ef6",
+            "text": "結婚を管理するため",
+            "isCorrect": false
+          },
+          {
+            "id": "51eae361",
+            "text": "歴史を記録するため",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "国民を把握し、律令政治を行う基盤としました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "日本で最初の鋳造貨幣と言われる、飛鳥時代の硬貨は？",
+        "choices": [
+          {
+            "id": "f55a995a",
+            "text": "富本銭（ふほんせん）",
+            "isCorrect": true
+          },
+          {
+            "id": "9a549979",
+            "text": "和同開珎",
+            "isCorrect": false
+          },
+          {
+            "id": "a91591e6",
+            "text": "寛永通宝",
+            "isCorrect": false
+          },
+          {
+            "id": "a84d6d3f",
+            "text": "慶長小判",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "近年、和同開珎より古いことが判明しました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'nara-period',
-    title: '奈良時代',
-    description: '平城京を中心に栄えた天平文化と、律令制度の確立を学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "nara-period",
+    "title": "奈良時代",
+    "description": "平城京、墾田永年私財法、天平文化、遣唐使を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '710年、唐の長安にならって奈良に造られた都を何といいますか？',
-        choices: [
-          { id: generateId(), text: '平城京', isCorrect: true },
-          { id: generateId(), text: '平安京', isCorrect: false },
-          { id: generateId(), text: '藤原京', isCorrect: false },
-          { id: generateId(), text: '難波京', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "710年、唐の長安にならって奈良に造られた都は？",
+        "choices": [
+          {
+            "id": "efc3ec37",
+            "text": "平城京",
+            "isCorrect": true
+          },
+          {
+            "id": "dc92d5bd",
+            "text": "平安京",
+            "isCorrect": false
+          },
+          {
+            "id": "03924a7a",
+            "text": "藤原京",
+            "isCorrect": false
+          },
+          {
+            "id": "6c8c4f59",
+            "text": "難波京",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '平城京は、碁盤の目のように区画された美しい都でした。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "元明天皇の時に遷都されました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '聖武天皇が国ごとに建てさせた、仏教の力で国を守るための寺を何といいますか？',
-        choices: [
-          { id: generateId(), text: '国分寺', isCorrect: true },
-          { id: generateId(), text: '東大寺', isCorrect: false },
-          { id: generateId(), text: '興福寺', isCorrect: false },
-          { id: generateId(), text: '唐招提寺', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "743年、新しく耕した土地を永久に自分のものにして良いとした法は？",
+        "choices": [
+          {
+            "id": "ccefcd8d",
+            "text": "墾田永年私財法",
+            "isCorrect": true
+          },
+          {
+            "id": "01e5beef",
+            "text": "班田収授法",
+            "isCorrect": false
+          },
+          {
+            "id": "5f643d54",
+            "text": "三世一身の法",
+            "isCorrect": false
+          },
+          {
+            "id": "47c61f94",
+            "text": "地租改正",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '聖武天皇は東大寺に大仏を造り、全国に国分寺・国分尼寺を建立しました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "これにより公地公民の原則が崩れ、荘園が生まれるきっかけとなりました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "聖武天皇の時代を中心に、唐の影響を強く受けて栄えた文化は？",
+        "choices": [
+          {
+            "id": "79869ec7",
+            "text": "天平文化",
+            "isCorrect": true
+          },
+          {
+            "id": "5b384f20",
+            "text": "飛鳥文化",
+            "isCorrect": false
+          },
+          {
+            "id": "051cb254",
+            "text": "白鳳文化",
+            "isCorrect": false
+          },
+          {
+            "id": "1584a205",
+            "text": "国風文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "国際色豊かな文化です。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "聖武天皇が奈良の東大寺に造らせた巨大な像は？",
+        "choices": [
+          {
+            "id": "10baf877",
+            "text": "大仏（盧舎那仏）",
+            "isCorrect": true
+          },
+          {
+            "id": "ebef0d17",
+            "text": "釈迦三尊像",
+            "isCorrect": false
+          },
+          {
+            "id": "1f13755f",
+            "text": "阿弥陀如来像",
+            "isCorrect": false
+          },
+          {
+            "id": "bc4382f6",
+            "text": "弥勒菩薩像",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "仏教の力で国を守ろうとしました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "聖武天皇の遺品などが納められている、東大寺の倉は？",
+        "choices": [
+          {
+            "id": "7886c322",
+            "text": "正倉院",
+            "isCorrect": true
+          },
+          {
+            "id": "0db29024",
+            "text": "高床倉庫",
+            "isCorrect": false
+          },
+          {
+            "id": "3dda587e",
+            "text": "宝物殿",
+            "isCorrect": false
+          },
+          {
+            "id": "61194898",
+            "text": "金閣",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "校倉造（あぜくらづくり）で有名です。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "日本に正しい戒律を伝えるため、5度の失敗を乗り越え来日した僧は？",
+        "choices": [
+          {
+            "id": "17a3e800",
+            "text": "鑑真（がんじん）",
+            "isCorrect": true
+          },
+          {
+            "id": "14536117",
+            "text": "空海",
+            "isCorrect": false
+          },
+          {
+            "id": "7cb3c4b8",
+            "text": "最澄",
+            "isCorrect": false
+          },
+          {
+            "id": "692b5086",
+            "text": "行基",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "唐招提寺を建立しました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "大仏建立のために民衆をまとめ、橋や堤防を造るなど社会貢献した僧は？",
+        "choices": [
+          {
+            "id": "ee09da86",
+            "text": "行基（ぎょうき）",
+            "isCorrect": true
+          },
+          {
+            "id": "ab770228",
+            "text": "鑑真",
+            "isCorrect": false
+          },
+          {
+            "id": "e25bb4ba",
+            "text": "道鏡",
+            "isCorrect": false
+          },
+          {
+            "id": "df98d8c9",
+            "text": "一遍",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後に大僧正の位を授かりました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "奈良時代、日本から唐へ送られた使節を何という？",
+        "choices": [
+          {
+            "id": "b194aeb7",
+            "text": "遣唐使",
+            "isCorrect": true
+          },
+          {
+            "id": "2955c230",
+            "text": "遣隋使",
+            "isCorrect": false
+          },
+          {
+            "id": "c61bfcf5",
+            "text": "遣新羅使",
+            "isCorrect": false
+          },
+          {
+            "id": "6e99426a",
+            "text": "朝鮮通信使",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "阿倍仲麻呂や吉備真備らが活躍しました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "日本最古の和歌集で、防人や農民の歌も収められているのは？",
+        "choices": [
+          {
+            "id": "5b825972",
+            "text": "万葉集",
+            "isCorrect": true
+          },
+          {
+            "id": "cdb62f78",
+            "text": "古今和歌集",
+            "isCorrect": false
+          },
+          {
+            "id": "31e6aa45",
+            "text": "新古今和歌集",
+            "isCorrect": false
+          },
+          {
+            "id": "8776e887",
+            "text": "懐風藻",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大伴家持らが編纂に関わったとされます。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "日本最古の歴史書で、神話から推古天皇までを記したものは？",
+        "choices": [
+          {
+            "id": "7052d840",
+            "text": "古事記",
+            "isCorrect": true
+          },
+          {
+            "id": "f9f097d5",
+            "text": "日本書紀",
+            "isCorrect": false
+          },
+          {
+            "id": "dd7d76f3",
+            "text": "風土記",
+            "isCorrect": false
+          },
+          {
+            "id": "409de0af",
+            "text": "万葉集",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "稗田阿礼が暗記し、太安万侶が書き留めました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "720年に完成した、漢文で記された正史（公式な歴史書）は？",
+        "choices": [
+          {
+            "id": "40d069c3",
+            "text": "日本書紀",
+            "isCorrect": true
+          },
+          {
+            "id": "a10a8d45",
+            "text": "古事記",
+            "isCorrect": false
+          },
+          {
+            "id": "24bda3cb",
+            "text": "風土記",
+            "isCorrect": false
+          },
+          {
+            "id": "a9c2f3e0",
+            "text": "万葉集",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "舎人親王らが編纂しました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "地方の産物や地理、伝承を国ごとにまとめた報告書は？",
+        "choices": [
+          {
+            "id": "52982416",
+            "text": "風土記",
+            "isCorrect": true
+          },
+          {
+            "id": "52ea5f5c",
+            "text": "古事記",
+            "isCorrect": false
+          },
+          {
+            "id": "5cac132b",
+            "text": "万葉集",
+            "isCorrect": false
+          },
+          {
+            "id": "821ff6d5",
+            "text": "日本書紀",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "出雲国風土記などがほぼ完全な形で残っています。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "奈良時代、都で大きな権力を持った僧で、天皇になろうとしたのは？",
+        "choices": [
+          {
+            "id": "2c738076",
+            "text": "道鏡",
+            "isCorrect": true
+          },
+          {
+            "id": "bd7f7712",
+            "text": "行基",
+            "isCorrect": false
+          },
+          {
+            "id": "9ba41a5b",
+            "text": "空海",
+            "isCorrect": false
+          },
+          {
+            "id": "ffc36282",
+            "text": "最澄",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "和気清麻呂の活躍で阻止されました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "律令制度で、成人男性に課された都での労働や布の納入は？",
+        "choices": [
+          {
+            "id": "ffe7491b",
+            "text": "庸（よう）",
+            "isCorrect": true
+          },
+          {
+            "id": "b42d70e7",
+            "text": "租",
+            "isCorrect": false
+          },
+          {
+            "id": "de0493d2",
+            "text": "調",
+            "isCorrect": false
+          },
+          {
+            "id": "da773352",
+            "text": "雑徭",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "労働の代わりに布を納めることが多かったです。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "奈良時代の農民の苦しい生活を詠んだ「貧窮問答歌」の作者は？",
+        "choices": [
+          {
+            "id": "4a5fdff2",
+            "text": "山上憶良",
+            "isCorrect": true
+          },
+          {
+            "id": "102577d6",
+            "text": "大伴家持",
+            "isCorrect": false
+          },
+          {
+            "id": "ef8e3ddc",
+            "text": "柿本人麻呂",
+            "isCorrect": false
+          },
+          {
+            "id": "fa82bcb5",
+            "text": "額田王",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "当時の社会問題を歌にしました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "聖武天皇が全国に建てさせた、国を守るための寺は？",
+        "choices": [
+          {
+            "id": "1a7c38cf",
+            "text": "国分寺・国分尼寺",
+            "isCorrect": true
+          },
+          {
+            "id": "76936d97",
+            "text": "法隆寺",
+            "isCorrect": false
+          },
+          {
+            "id": "6cb48623",
+            "text": "四天王寺",
+            "isCorrect": false
+          },
+          {
+            "id": "ba2ed4ad",
+            "text": "清水寺",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "各国の中心地に建立されました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "奈良時代、私的な土地（荘園）を持つようになった主な勢力は？",
+        "choices": [
+          {
+            "id": "ab9f2393",
+            "text": "貴族や大寺院",
+            "isCorrect": true
+          },
+          {
+            "id": "2533d40b",
+            "text": "農民",
+            "isCorrect": false
+          },
+          {
+            "id": "a01b4bef",
+            "text": "武士",
+            "isCorrect": false
+          },
+          {
+            "id": "1b21f78e",
+            "text": "渡来人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "墾田永年私財法を利用して土地を広げました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平城京の市（いち）で使われた、708年鋳造の貨幣は？",
+        "choices": [
+          {
+            "id": "52e1ec37",
+            "text": "和同開珎（わどうかいちん）",
+            "isCorrect": true
+          },
+          {
+            "id": "3592136d",
+            "text": "富本銭",
+            "isCorrect": false
+          },
+          {
+            "id": "a528cd99",
+            "text": "寛永通宝",
+            "isCorrect": false
+          },
+          {
+            "id": "2f265b58",
+            "text": "慶長小判",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "唐の開元通宝にならって作られました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "正倉院に納められている、ペルシャやインド由来の品々は何を示す？",
+        "choices": [
+          {
+            "id": "fce9deda",
+            "text": "シルクロードを通じた国際交流",
+            "isCorrect": true
+          },
+          {
+            "id": "21d06086",
+            "text": "日本独自の技術",
+            "isCorrect": false
+          },
+          {
+            "id": "cf38b3ed",
+            "text": "仏教の教え",
+            "isCorrect": false
+          },
+          {
+            "id": "198667c9",
+            "text": "戦争の記録",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "当時の日本が世界の文化とつながっていたことを示します。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "奈良時代、東北地方の蝦夷を抑えるために置かれた役所は？",
+        "choices": [
+          {
+            "id": "86816d1f",
+            "text": "多賀城",
+            "isCorrect": true
+          },
+          {
+            "id": "c4b7b28d",
+            "text": "大宰府",
+            "isCorrect": false
+          },
+          {
+            "id": "65b0f401",
+            "text": "秋田城",
+            "isCorrect": false
+          },
+          {
+            "id": "91255f3a",
+            "text": "鴻臚館",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大宰府は九州に置かれた「遠の朝廷」です。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'heian-period',
-    title: '平安時代',
-    description: '藤原氏の摂関政治と、国風文化の発展について学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "heian-period",
+    "title": "平安時代",
+    "description": "平安京、摂関政治、院政、国風文化、武士の台頭を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '平安時代、藤原氏が娘を天皇のきさきにして権力を握った政治を何といいますか？',
-        choices: [
-          { id: generateId(), text: '摂関政治', isCorrect: true },
-          { id: generateId(), text: '院政', isCorrect: false },
-          { id: generateId(), text: '執権政治', isCorrect: false },
-          { id: generateId(), text: '武家政治', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "794年、桓武天皇が京都に遷した新しい都は？",
+        "choices": [
+          {
+            "id": "16124021",
+            "text": "平安京",
+            "isCorrect": true
+          },
+          {
+            "id": "a4c14055",
+            "text": "平城京",
+            "isCorrect": false
+          },
+          {
+            "id": "f56470d8",
+            "text": "長岡京",
+            "isCorrect": false
+          },
+          {
+            "id": "1afec6b5",
+            "text": "恭仁京",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '藤原道長・頼通の親子が、摂関政治の全盛期を築きました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「鳴くよ（794）ウグイス平安京」で覚えられます。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '紫式部によって書かれた、平安時代の貴族の生活を描いた長編物語は何ですか？',
-        choices: [
-          { id: generateId(), text: '源氏物語', isCorrect: true },
-          { id: generateId(), text: '枕草子', isCorrect: false },
-          { id: generateId(), text: '竹取物語', isCorrect: false },
-          { id: generateId(), text: '平家物語', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "桓武天皇によって東北地方へ派遣された、初代征夷大将軍は？",
+        "choices": [
+          {
+            "id": "88fbd840",
+            "text": "坂上田村麻呂",
+            "isCorrect": true
+          },
+          {
+            "id": "9e88dbe5",
+            "text": "源頼朝",
+            "isCorrect": false
+          },
+          {
+            "id": "b1950de3",
+            "text": "足利尊氏",
+            "isCorrect": false
+          },
+          {
+            "id": "ba232f04",
+            "text": "徳川家康",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '源氏物語は、かな文字で書かれた世界最古級の長編小説です。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "アテルイ率いる蝦夷の抵抗を抑えました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "平安時代、藤原氏が娘を天皇の后にして実権を握った政治は？",
+        "choices": [
+          {
+            "id": "8f275833",
+            "text": "摂関政治",
+            "isCorrect": true
+          },
+          {
+            "id": "093932bb",
+            "text": "院政",
+            "isCorrect": false
+          },
+          {
+            "id": "3c3900d9",
+            "text": "執権政治",
+            "isCorrect": false
+          },
+          {
+            "id": "9483b734",
+            "text": "親政",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "摂政や関白の職を独占しました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "「この世をば わが世とぞ思う...」と詠んだ、摂関政治全盛期の人物は？",
+        "choices": [
+          {
+            "id": "0a70cc2f",
+            "text": "藤原道長",
+            "isCorrect": true
+          },
+          {
+            "id": "07166b68",
+            "text": "藤原頼通",
+            "isCorrect": false
+          },
+          {
+            "id": "6140a459",
+            "text": "藤原良房",
+            "isCorrect": false
+          },
+          {
+            "id": "dd1901ac",
+            "text": "藤原基経",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "4人の娘を次々と中宮や皇后にしました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "藤原頼通が宇治に建立した、極楽浄土を象徴する建物は？",
+        "choices": [
+          {
+            "id": "b319b519",
+            "text": "平等院鳳凰堂",
+            "isCorrect": true
+          },
+          {
+            "id": "0ec82aaa",
+            "text": "金閣",
+            "isCorrect": false
+          },
+          {
+            "id": "feafdb69",
+            "text": "銀閣",
+            "isCorrect": false
+          },
+          {
+            "id": "5ddaf4f7",
+            "text": "法隆寺",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "10円玉のデザインにもなっています。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "894年、菅原道真の提案で中止された中国への派遣事業は？",
+        "choices": [
+          {
+            "id": "d6c46970",
+            "text": "遣唐使",
+            "isCorrect": true
+          },
+          {
+            "id": "80ff9b1c",
+            "text": "遣隋使",
+            "isCorrect": false
+          },
+          {
+            "id": "19ecbf56",
+            "text": "通信使",
+            "isCorrect": false
+          },
+          {
+            "id": "42fb2e1a",
+            "text": "南蛮貿易",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「白紙（894）に戻そう遣唐使」で有名です。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "遣唐使の中止後、日本の風土に合った独自の文化が発達した。これを？",
+        "choices": [
+          {
+            "id": "c53cf13e",
+            "text": "国風文化",
+            "isCorrect": true
+          },
+          {
+            "id": "ea9da28e",
+            "text": "天平文化",
+            "isCorrect": false
+          },
+          {
+            "id": "56a40eba",
+            "text": "元禄文化",
+            "isCorrect": false
+          },
+          {
+            "id": "1de155bf",
+            "text": "東山文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "ひらがなやカタカナが普及しました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "紫式部によって書かれた、かな文字による世界最古級の長編小説は？",
+        "choices": [
+          {
+            "id": "ae3af68d",
+            "text": "源氏物語",
+            "isCorrect": true
+          },
+          {
+            "id": "b94a95c1",
+            "text": "枕草子",
+            "isCorrect": false
+          },
+          {
+            "id": "821f72cb",
+            "text": "竹取物語",
+            "isCorrect": false
+          },
+          {
+            "id": "e4aa5ff6",
+            "text": "伊勢物語",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "貴族社会の恋愛や人間模様を描きました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "清少納言によって書かれた、「春はあけぼの」で始まる随筆は？",
+        "choices": [
+          {
+            "id": "cb75b522",
+            "text": "枕草子",
+            "isCorrect": true
+          },
+          {
+            "id": "b1bbd43c",
+            "text": "源氏物語",
+            "isCorrect": false
+          },
+          {
+            "id": "be0a8452",
+            "text": "土佐日記",
+            "isCorrect": false
+          },
+          {
+            "id": "2b3185af",
+            "text": "更級日記",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "鋭い観察眼で宮廷生活を記しました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平安時代、天皇が譲位した後に「上皇」として政治を行う仕組みは？",
+        "choices": [
+          {
+            "id": "b96d3ced",
+            "text": "院政",
+            "isCorrect": true
+          },
+          {
+            "id": "12f7f464",
+            "text": "摂関政治",
+            "isCorrect": false
+          },
+          {
+            "id": "e56c0993",
+            "text": "執権政治",
+            "isCorrect": false
+          },
+          {
+            "id": "aa9ccd15",
+            "text": "公議政体",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "白河上皇が始めました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平安時代、地方の治安維持や荘園の警護から成長した武装集団は？",
+        "choices": [
+          {
+            "id": "b89df4b2",
+            "text": "武士",
+            "isCorrect": true
+          },
+          {
+            "id": "a0836112",
+            "text": "足軽",
+            "isCorrect": false
+          },
+          {
+            "id": "a361b1d5",
+            "text": "忍者",
+            "isCorrect": false
+          },
+          {
+            "id": "77de4181",
+            "text": "御家人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "源氏や平氏が有力な棟梁となりました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "11世紀、東北地方で起きた前九年の役・後三年の役で活躍した源氏は？",
+        "choices": [
+          {
+            "id": "33c8f09b",
+            "text": "源義家（八幡太郎）",
+            "isCorrect": true
+          },
+          {
+            "id": "0f4f0d2d",
+            "text": "源頼朝",
+            "isCorrect": false
+          },
+          {
+            "id": "3e7a6325",
+            "text": "源義経",
+            "isCorrect": false
+          },
+          {
+            "id": "fe91f4d8",
+            "text": "源為朝",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "武士の間で源氏の評価が高まるきっかけとなりました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1167年、武士として初めて太政大臣になり、政権を握ったのは？",
+        "choices": [
+          {
+            "id": "78130443",
+            "text": "平清盛",
+            "isCorrect": true
+          },
+          {
+            "id": "b20ccee9",
+            "text": "源頼朝",
+            "isCorrect": false
+          },
+          {
+            "id": "6b23c267",
+            "text": "北条時政",
+            "isCorrect": false
+          },
+          {
+            "id": "1b0cea57",
+            "text": "足利尊氏",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "日宋貿易を推進しました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平清盛が推進した、中国の王朝との貿易を何という？",
+        "choices": [
+          {
+            "id": "d316315c",
+            "text": "日宋貿易",
+            "isCorrect": true
+          },
+          {
+            "id": "e91db318",
+            "text": "日明貿易",
+            "isCorrect": false
+          },
+          {
+            "id": "6094df6a",
+            "text": "南蛮貿易",
+            "isCorrect": false
+          },
+          {
+            "id": "1481f0db",
+            "text": "朱印船貿易",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大輪田泊（現在の神戸港）を整備しました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平安時代、空海が開いた仏教の宗派は？",
+        "choices": [
+          {
+            "id": "ad8d8b1a",
+            "text": "真言宗",
+            "isCorrect": true
+          },
+          {
+            "id": "a91cc6d6",
+            "text": "天台宗",
+            "isCorrect": false
+          },
+          {
+            "id": "eb23ae45",
+            "text": "浄土宗",
+            "isCorrect": false
+          },
+          {
+            "id": "2fcd5747",
+            "text": "禅宗",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "高野山に金剛峯寺を建てました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平安時代、最澄が開いた仏教の宗派は？",
+        "choices": [
+          {
+            "id": "523d737f",
+            "text": "天台宗",
+            "isCorrect": true
+          },
+          {
+            "id": "6060086e",
+            "text": "真言宗",
+            "isCorrect": false
+          },
+          {
+            "id": "ce40207c",
+            "text": "浄土真宗",
+            "isCorrect": false
+          },
+          {
+            "id": "8366bcab",
+            "text": "日蓮宗",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "比叡山に延暦寺を建てました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "末法思想の影響で、阿弥陀仏にすがって極楽往生を願う信仰は？",
+        "choices": [
+          {
+            "id": "4f0fa03f",
+            "text": "浄土信仰",
+            "isCorrect": true
+          },
+          {
+            "id": "ec9b01e1",
+            "text": "密教",
+            "isCorrect": false
+          },
+          {
+            "id": "154f64bd",
+            "text": "禅宗",
+            "isCorrect": false
+          },
+          {
+            "id": "8379b827",
+            "text": "キリスト教",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "阿弥陀堂や阿弥陀如来像が多く造られました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平安時代の貴族の住居様式を何という？",
+        "choices": [
+          {
+            "id": "18b49f94",
+            "text": "寝殿造（しんでんづくり）",
+            "isCorrect": true
+          },
+          {
+            "id": "01124866",
+            "text": "書院造",
+            "isCorrect": false
+          },
+          {
+            "id": "6627772d",
+            "text": "武家造",
+            "isCorrect": false
+          },
+          {
+            "id": "9bc67b84",
+            "text": "校倉造",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "池や庭園を備えた開放的な造りです。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "平安時代、貴族の正装として定着した衣服は？（男性・女性）",
+        "choices": [
+          {
+            "id": "301532b7",
+            "text": "束帯・十二単",
+            "isCorrect": true
+          },
+          {
+            "id": "1591b118",
+            "text": "直垂・小袖",
+            "isCorrect": false
+          },
+          {
+            "id": "f41319b4",
+            "text": "羽織・袴",
+            "isCorrect": false
+          },
+          {
+            "id": "98269675",
+            "text": "洋服",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "国風文化を象徴する豪華な装束です。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1159年、源氏と平氏が争い、平氏が勝利して権力を握る契機となったのは？",
+        "choices": [
+          {
+            "id": "c0d59c46",
+            "text": "平治の乱",
+            "isCorrect": true
+          },
+          {
+            "id": "813aa7ca",
+            "text": "保元の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "90710751",
+            "text": "壬申の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "b0f9024a",
+            "text": "承久の乱",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "源義朝が敗れ、頼朝は伊豆へ流されました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'kamakura-period',
-    title: '鎌倉時代',
-    description: '源頼朝による武家政権の誕生と、元寇の試練を学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "kamakura-period",
+    "title": "鎌倉時代",
+    "description": "源頼朝、執権政治、元寇、鎌倉文化・仏教を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '1192年、征夷大将軍に任命され鎌倉幕府を開いた人物は誰ですか？',
-        choices: [
-          { id: generateId(), text: '源頼朝', isCorrect: true },
-          { id: generateId(), text: '源義経', isCorrect: false },
-          { id: generateId(), text: '北条時宗', isCorrect: false },
-          { id: generateId(), text: '足利尊氏', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "1192年、征夷大将軍に任命され鎌倉幕府を開いたのは？",
+        "choices": [
+          {
+            "id": "cac0a874",
+            "text": "源頼朝",
+            "isCorrect": true
+          },
+          {
+            "id": "55c9375f",
+            "text": "源義経",
+            "isCorrect": false
+          },
+          {
+            "id": "82cccfd4",
+            "text": "北条時政",
+            "isCorrect": false
+          },
+          {
+            "id": "6bce9e4d",
+            "text": "足利尊氏",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '源頼朝は、平氏を倒した後、日本で最初の本格的な武家政権を樹立しました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "日本初の本格的な武家政権です。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '13世紀後半、モンゴル帝国（元）が2度にわたって日本に攻めてきた出来事を何といいますか？',
-        choices: [
-          { id: generateId(), text: '元寇', isCorrect: true },
-          { id: generateId(), text: '白村江の戦い', isCorrect: false },
-          { id: generateId(), text: '刀伊の入寇', isCorrect: false },
-          { id: generateId(), text: '応仁の乱', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "将軍と御家人の間の「恩恵」と「奉仕」の関係を何という？",
+        "choices": [
+          {
+            "id": "6d9bfbfb",
+            "text": "御恩と奉公",
+            "isCorrect": true
+          },
+          {
+            "id": "cc27da87",
+            "text": "下剋上",
+            "isCorrect": false
+          },
+          {
+            "id": "94122c6d",
+            "text": "封建制",
+            "isCorrect": false
+          },
+          {
+            "id": "17ad0710",
+            "text": "寄進",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '元寇（文永の役・弘安の役）では、鎌倉武士が激しく抵抗し、暴風雨の助けもあり元軍を退けました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土地を仲立ちとした主従関係です。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "源頼朝が全国の国ごとに置いた、軍事・警察担当の役職は？",
+        "choices": [
+          {
+            "id": "702ab8ec",
+            "text": "守護",
+            "isCorrect": true
+          },
+          {
+            "id": "3fde12bf",
+            "text": "地頭",
+            "isCorrect": false
+          },
+          {
+            "id": "515c84c1",
+            "text": "管領",
+            "isCorrect": false
+          },
+          {
+            "id": "1048553f",
+            "text": "探題",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "主に御家人が任命されました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "源頼朝が荘園や公領ごとに置いた、徴税・管理担当の役職は？",
+        "choices": [
+          {
+            "id": "b367d047",
+            "text": "地頭",
+            "isCorrect": true
+          },
+          {
+            "id": "b7781a93",
+            "text": "守護",
+            "isCorrect": false
+          },
+          {
+            "id": "bb7b87cc",
+            "text": "検非違使",
+            "isCorrect": false
+          },
+          {
+            "id": "2ec9b6ef",
+            "text": "執権",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "土地の管理実務を担いました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "頼朝の死後、幕府の実権を握った北条氏が就いた役職は？",
+        "choices": [
+          {
+            "id": "cb24fda3",
+            "text": "執権",
+            "isCorrect": true
+          },
+          {
+            "id": "5bba2ca0",
+            "text": "将軍",
+            "isCorrect": false
+          },
+          {
+            "id": "a92cd977",
+            "text": "関白",
+            "isCorrect": false
+          },
+          {
+            "id": "a074c3ad",
+            "text": "管領",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "北条時政・義時らが確立しました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1221年、後鳥羽上皇が幕府を倒そうとして起こした内乱は？",
+        "choices": [
+          {
+            "id": "92a50047",
+            "text": "承久の乱",
+            "isCorrect": true
+          },
+          {
+            "id": "d31b4251",
+            "text": "壬申の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "6badb2f7",
+            "text": "応仁の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "ceddb5ad",
+            "text": "保元の乱",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "幕府側が勝利し、朝廷への支配力が強まりました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "承久の乱の後、朝廷を監視するために京都に置かれた役所は？",
+        "choices": [
+          {
+            "id": "5b19aed5",
+            "text": "六波羅探題",
+            "isCorrect": true
+          },
+          {
+            "id": "5a452d27",
+            "text": "大宰府",
+            "isCorrect": false
+          },
+          {
+            "id": "f6d218c8",
+            "text": "鎌倉府",
+            "isCorrect": false
+          },
+          {
+            "id": "3742c9a3",
+            "text": "京都所司代",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "西国の統治も担当しました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1232年、北条泰時が定めた武士のための最初の法律は？",
+        "choices": [
+          {
+            "id": "7c71d3c4",
+            "text": "御成敗式目（貞永式目）",
+            "isCorrect": true
+          },
+          {
+            "id": "6ee3b567",
+            "text": "十七条の憲法",
+            "isCorrect": false
+          },
+          {
+            "id": "77d54648",
+            "text": "武家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "1863aa93",
+            "text": "公事方御定書",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "裁判の基準を明確にしました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "13世紀後半、2度にわたり日本に攻めてきたモンゴル帝国（元）の軍を？",
+        "choices": [
+          {
+            "id": "cb15da90",
+            "text": "元寇（文永・弘安の役）",
+            "isCorrect": true
+          },
+          {
+            "id": "e355c3ab",
+            "text": "刀伊の入寇",
+            "isCorrect": false
+          },
+          {
+            "id": "558ee8e4",
+            "text": "白村江の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "19686449",
+            "text": "黒船来航",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "フビライ・ハンの命令で攻めてきました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "元寇の際、防塁を築くなどして指揮を執った八代執権は？",
+        "choices": [
+          {
+            "id": "89b43a37",
+            "text": "北条時宗",
+            "isCorrect": true
+          },
+          {
+            "id": "563290b6",
+            "text": "北条泰時",
+            "isCorrect": false
+          },
+          {
+            "id": "f3c61cf4",
+            "text": "北条時政",
+            "isCorrect": false
+          },
+          {
+            "id": "9828a053",
+            "text": "北条高時",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "禅宗を深く信仰していました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "元寇後、生活が苦しくなった御家人の借金を帳消しにするために出した令は？",
+        "choices": [
+          {
+            "id": "d08f0be6",
+            "text": "徳政令",
+            "isCorrect": true
+          },
+          {
+            "id": "41d803e5",
+            "text": "倹約令",
+            "isCorrect": false
+          },
+          {
+            "id": "e29a356f",
+            "text": "武家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "de56de92",
+            "text": "禁中並公家諸法度",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "永仁の徳政令が有名ですが、効果は一時的でした。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "鎌倉時代、農業で普及し始めた、同じ土地で年に2回作る方法は？",
+        "choices": [
+          {
+            "id": "8675abb1",
+            "text": "二毛作",
+            "isCorrect": true
+          },
+          {
+            "id": "74c169ac",
+            "text": "輪作",
+            "isCorrect": false
+          },
+          {
+            "id": "f5189cfb",
+            "text": "裏作",
+            "isCorrect": false
+          },
+          {
+            "id": "608fb2de",
+            "text": "転作",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "麦を裏作として作るようになりました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "鎌倉時代、定期的に開かれるようになった取引の場を何という？",
+        "choices": [
+          {
+            "id": "a7d9d31e",
+            "text": "三斎市（定期市）",
+            "isCorrect": true
+          },
+          {
+            "id": "7d13378a",
+            "text": "楽市",
+            "isCorrect": false
+          },
+          {
+            "id": "d8c2ce52",
+            "text": "宿場",
+            "isCorrect": false
+          },
+          {
+            "id": "a7ab213d",
+            "text": "門前町",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "月に3回開かれる市などが一般的でした。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "親鸞が開いた、念仏を唱えれば救われると説いた宗派は？",
+        "choices": [
+          {
+            "id": "029eada2",
+            "text": "浄土真宗",
+            "isCorrect": true
+          },
+          {
+            "id": "89551b6b",
+            "text": "浄土宗",
+            "isCorrect": false
+          },
+          {
+            "id": "2eb78fa8",
+            "text": "時宗",
+            "isCorrect": false
+          },
+          {
+            "id": "09efb752",
+            "text": "日蓮宗",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "悪人正機説が特徴です。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "道元が開いた、ひたすら座禅を組むことを重視した宗派は？",
+        "choices": [
+          {
+            "id": "bcb83228",
+            "text": "曹洞宗",
+            "isCorrect": true
+          },
+          {
+            "id": "14f3e1b4",
+            "text": "臨済宗",
+            "isCorrect": false
+          },
+          {
+            "id": "9fb47653",
+            "text": "真言宗",
+            "isCorrect": false
+          },
+          {
+            "id": "2b2add1b",
+            "text": "天台宗",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "只管打坐を説きました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "栄西が伝え、幕府の保護を受けて武士に広まった宗派は？",
+        "choices": [
+          {
+            "id": "6de49221",
+            "text": "臨済宗",
+            "isCorrect": true
+          },
+          {
+            "id": "c7346f80",
+            "text": "曹洞宗",
+            "isCorrect": false
+          },
+          {
+            "id": "7aad8bce",
+            "text": "浄土宗",
+            "isCorrect": false
+          },
+          {
+            "id": "f5353533",
+            "text": "日蓮宗",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "座禅とともに茶の習慣も伝えました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "鎌倉時代の文化で、運慶・快慶らが制作した東大寺の像は？",
+        "choices": [
+          {
+            "id": "a1f63152",
+            "text": "金剛力士像",
+            "isCorrect": true
+          },
+          {
+            "id": "ad33754d",
+            "text": "大仏",
+            "isCorrect": false
+          },
+          {
+            "id": "931fe888",
+            "text": "釈迦三尊像",
+            "isCorrect": false
+          },
+          {
+            "id": "3b27b422",
+            "text": "阿弥陀如来像",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "南大門にあり、力強い表現が特徴です。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "源平の争乱を語り継いだ、琵琶法師によって広まった軍記物語は？",
+        "choices": [
+          {
+            "id": "30965c97",
+            "text": "平家物語",
+            "isCorrect": true
+          },
+          {
+            "id": "eede54fa",
+            "text": "源氏物語",
+            "isCorrect": false
+          },
+          {
+            "id": "36618856",
+            "text": "太平記",
+            "isCorrect": false
+          },
+          {
+            "id": "fa056fbe",
+            "text": "平治物語",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「祇園精舎の鐘の声...」で始まります。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "鎌倉時代の武士の住居様式を何という？",
+        "choices": [
+          {
+            "id": "5c38d915",
+            "text": "武家造",
+            "isCorrect": true
+          },
+          {
+            "id": "4ebe64a2",
+            "text": "寝殿造",
+            "isCorrect": false
+          },
+          {
+            "id": "d5db6ea6",
+            "text": "書院造",
+            "isCorrect": false
+          },
+          {
+            "id": "8bb01074",
+            "text": "校倉造",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "質素で実用的な造りです。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "鎌倉幕府を最終的に倒した、足利尊氏とともに活躍した武将は？",
+        "choices": [
+          {
+            "id": "1dbc2b77",
+            "text": "新田義貞",
+            "isCorrect": true
+          },
+          {
+            "id": "7cd3f3e3",
+            "text": "源頼朝",
+            "isCorrect": false
+          },
+          {
+            "id": "09f33d32",
+            "text": "北条高時",
+            "isCorrect": false
+          },
+          {
+            "id": "636a7f10",
+            "text": "平清盛",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "鎌倉に攻め込み、幕府を滅亡させました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'nanbokucho-period',
-    title: '南北朝時代',
-    description: '後醍醐天皇の建武の新政と、2つの朝廷が並立した時代を学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "nanbokucho-period",
+    "title": "南北朝時代",
+    "description": "建武の新政、南北朝の動乱、足利尊氏を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '鎌倉幕府を倒した後、後醍醐天皇が行った天皇中心の新しい政治を何といいますか？',
-        choices: [
-          { id: generateId(), text: '建武の新政', isCorrect: true },
-          { id: generateId(), text: '寛政の改革', isCorrect: false },
-          { id: generateId(), text: '天保の改革', isCorrect: false },
-          { id: generateId(), text: '享保の改革', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "鎌倉幕府滅亡後、後醍醐天皇が始めた天皇中心の政治は？",
+        "choices": [
+          {
+            "id": "88f5c4b8",
+            "text": "建武の新政",
+            "isCorrect": true
+          },
+          {
+            "id": "dc42ab54",
+            "text": "院政",
+            "isCorrect": false
+          },
+          {
+            "id": "b203a990",
+            "text": "摂関政治",
+            "isCorrect": false
+          },
+          {
+            "id": "42c5419f",
+            "text": "明治維新",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '建武の新政は、武士の不満を買い、わずか2年余りで崩壊しました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "武士の不満を買い、短期間で失敗しました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '後醍醐天皇が逃れた吉野の朝廷（南朝）に対し、足利尊氏が京都に立てた朝廷を何といいますか？',
-        choices: [
-          { id: generateId(), text: '北朝', isCorrect: true },
-          { id: generateId(), text: '西朝', isCorrect: false },
-          { id: generateId(), text: '東朝', isCorrect: false },
-          { id: generateId(), text: '新朝', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "建武の新政に反旗を翻し、京都に別の天皇を立てた武将は？",
+        "choices": [
+          {
+            "id": "3a1b6c4c",
+            "text": "足利尊氏",
+            "isCorrect": true
+          },
+          {
+            "id": "5935e0b2",
+            "text": "新田義貞",
+            "isCorrect": false
+          },
+          {
+            "id": "4877318c",
+            "text": "楠木正成",
+            "isCorrect": false
+          },
+          {
+            "id": "7d129cc7",
+            "text": "北条高時",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '約60年間にわたり、京都の北朝と吉野の南朝が対立し続けました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "室町幕府の初代将軍となりました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "後醍醐天皇が逃れた奈良の場所で、南朝が置かれたのは？",
+        "choices": [
+          {
+            "id": "041a4e1a",
+            "text": "吉野",
+            "isCorrect": true
+          },
+          {
+            "id": "d73d4a0c",
+            "text": "飛鳥",
+            "isCorrect": false
+          },
+          {
+            "id": "af83c00e",
+            "text": "斑鳩",
+            "isCorrect": false
+          },
+          {
+            "id": "46f9b6f6",
+            "text": "平城京",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "山深い吉野に朝廷を移しました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "京都の朝廷（北朝）と吉野の朝廷（南朝）が並立した時代を？",
+        "choices": [
+          {
+            "id": "9d852d99",
+            "text": "南北朝時代",
+            "isCorrect": true
+          },
+          {
+            "id": "29c4d415",
+            "text": "戦国時代",
+            "isCorrect": false
+          },
+          {
+            "id": "57db08ef",
+            "text": "安土桃山時代",
+            "isCorrect": false
+          },
+          {
+            "id": "450af2aa",
+            "text": "鎌倉時代",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "約60年間にわたり内乱が続きました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南朝側の名将で、湊川の戦いで足利尊氏に敗れた人物は？",
+        "choices": [
+          {
+            "id": "2d59f3c7",
+            "text": "楠木正成",
+            "isCorrect": true
+          },
+          {
+            "id": "404d82cb",
+            "text": "足利直義",
+            "isCorrect": false
+          },
+          {
+            "id": "a8a741f7",
+            "text": "高師直",
+            "isCorrect": false
+          },
+          {
+            "id": "c04bb35e",
+            "text": "新田義貞",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "忠臣として後に神格化されました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "足利尊氏が定めた、室町幕府の政治方針を示す式目は？",
+        "choices": [
+          {
+            "id": "89cd902a",
+            "text": "建武式目",
+            "isCorrect": true
+          },
+          {
+            "id": "0c77351a",
+            "text": "御成敗式目",
+            "isCorrect": false
+          },
+          {
+            "id": "db131c5d",
+            "text": "武家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "446cdb75",
+            "text": "十七条の憲法",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "鎌倉幕府の政治を継承する姿勢を示しました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝の動乱を描いた軍記物語を何という？",
+        "choices": [
+          {
+            "id": "af49e52e",
+            "text": "太平記",
+            "isCorrect": true
+          },
+          {
+            "id": "374bf545",
+            "text": "平家物語",
+            "isCorrect": false
+          },
+          {
+            "id": "5ee34031",
+            "text": "源氏物語",
+            "isCorrect": false
+          },
+          {
+            "id": "2cbc25af",
+            "text": "保元物語",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後醍醐天皇や足利尊氏らの活躍が描かれています。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "足利尊氏と弟の直義が対立し、幕府を二分した内乱は？",
+        "choices": [
+          {
+            "id": "efd3809a",
+            "text": "観応の擾乱（かんのうのじょうらん）",
+            "isCorrect": true
+          },
+          {
+            "id": "6c65d2b7",
+            "text": "承久の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "86e66e2c",
+            "text": "壬申の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "f936affb",
+            "text": "応仁の乱",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "この混乱により南北朝の合一が遅れました。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、地方で軍事・警察権に加え行政・裁判権も握った守護を？",
+        "choices": [
+          {
+            "id": "074b2101",
+            "text": "守護大名",
+            "isCorrect": true
+          },
+          {
+            "id": "5004e714",
+            "text": "地頭",
+            "isCorrect": false
+          },
+          {
+            "id": "d73a7015",
+            "text": "戦国大名",
+            "isCorrect": false
+          },
+          {
+            "id": "2091121d",
+            "text": "管領",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "一国を支配する領主へと成長していきました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1392年、南北朝の合一を成し遂げた室町幕府三代将軍は？",
+        "choices": [
+          {
+            "id": "c8c6f070",
+            "text": "足利義満",
+            "isCorrect": true
+          },
+          {
+            "id": "17923794",
+            "text": "足利義政",
+            "isCorrect": false
+          },
+          {
+            "id": "4ed6d969",
+            "text": "足利尊氏",
+            "isCorrect": false
+          },
+          {
+            "id": "3bf6ceff",
+            "text": "足利義昭",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "幕府の全盛期を築きました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、朝鮮半島や中国沿岸を襲った海賊集団を何という？",
+        "choices": [
+          {
+            "id": "f4193e62",
+            "text": "倭寇（わこう）",
+            "isCorrect": true
+          },
+          {
+            "id": "f36b6d0f",
+            "text": "蒙古",
+            "isCorrect": false
+          },
+          {
+            "id": "967ad5a0",
+            "text": "南蛮",
+            "isCorrect": false
+          },
+          {
+            "id": "21643581",
+            "text": "防人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "前期倭寇は日本人が中心でした。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、荘園領主への年貢納入を拒否した新興の武士層を？",
+        "choices": [
+          {
+            "id": "5fc6e76c",
+            "text": "悪党",
+            "isCorrect": true
+          },
+          {
+            "id": "fe9edc53",
+            "text": "御家人",
+            "isCorrect": false
+          },
+          {
+            "id": "3e2edb01",
+            "text": "足軽",
+            "isCorrect": false
+          },
+          {
+            "id": "e1d7b531",
+            "text": "地侍",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "幕府や荘園の支配に抵抗しました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、土地の所有権を巡る裁判が急増した。その理由は？",
+        "choices": [
+          {
+            "id": "e66141ff",
+            "text": "戦乱による領地の奪い合い",
+            "isCorrect": true
+          },
+          {
+            "id": "90513998",
+            "text": "人口の増加",
+            "isCorrect": false
+          },
+          {
+            "id": "b8240f05",
+            "text": "法律が変わったため",
+            "isCorrect": false
+          },
+          {
+            "id": "0ee54022",
+            "text": "文字の普及",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "恩賞や安堵を求めて多くの武士が訴えを起こしました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "後醍醐天皇を助けて鎌倉を攻め落としたが、後に尊氏と戦った武将は？",
+        "choices": [
+          {
+            "id": "82874ba5",
+            "text": "新田義貞",
+            "isCorrect": true
+          },
+          {
+            "id": "44dcca34",
+            "text": "足利義詮",
+            "isCorrect": false
+          },
+          {
+            "id": "919b5e20",
+            "text": "北条泰時",
+            "isCorrect": false
+          },
+          {
+            "id": "682800b7",
+            "text": "源頼朝",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "南朝側の主力として戦いました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、公家や武士の間で流行した、派手な格好や振る舞いを？",
+        "choices": [
+          {
+            "id": "d2d74d1e",
+            "text": "ばさら",
+            "isCorrect": true
+          },
+          {
+            "id": "73b0e465",
+            "text": "いき",
+            "isCorrect": false
+          },
+          {
+            "id": "14108ef5",
+            "text": "わび・さび",
+            "isCorrect": false
+          },
+          {
+            "id": "afcb311a",
+            "text": "みやび",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "佐々木道誉などが有名です。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、神道を中心に日本の正統性を説いた北畠親房の著書は？",
+        "choices": [
+          {
+            "id": "b68500b0",
+            "text": "神皇正統記",
+            "isCorrect": true
+          },
+          {
+            "id": "069f4d16",
+            "text": "太平記",
+            "isCorrect": false
+          },
+          {
+            "id": "3219a174",
+            "text": "愚管抄",
+            "isCorrect": false
+          },
+          {
+            "id": "1d9d0ef3",
+            "text": "方丈記",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "南朝の正統性を主張しました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、農業で肥料として使われるようになったものは？",
+        "choices": [
+          {
+            "id": "84595497",
+            "text": "刈敷（かりしき）・草木灰",
+            "isCorrect": true
+          },
+          {
+            "id": "2096e7ab",
+            "text": "化学肥料",
+            "isCorrect": false
+          },
+          {
+            "id": "6bea1a1b",
+            "text": "油粕",
+            "isCorrect": false
+          },
+          {
+            "id": "2e9d9374",
+            "text": "堆肥",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "生産力の向上に貢献しました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、手工業者が結成した同業者組合を何という？",
+        "choices": [
+          {
+            "id": "13d38654",
+            "text": "座",
+            "isCorrect": true
+          },
+          {
+            "id": "28179d73",
+            "text": "株仲間",
+            "isCorrect": false
+          },
+          {
+            "id": "10162c28",
+            "text": "ギルド",
+            "isCorrect": false
+          },
+          {
+            "id": "b7b2a209",
+            "text": "講",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "寺社に奉仕する代わりに販売独占権を得ました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、物資の輸送を担った運送業者は？",
+        "choices": [
+          {
+            "id": "016671b7",
+            "text": "問（とい）・問丸",
+            "isCorrect": true
+          },
+          {
+            "id": "5418c63f",
+            "text": "飛脚",
+            "isCorrect": false
+          },
+          {
+            "id": "a55f30bc",
+            "text": "馬借",
+            "isCorrect": false
+          },
+          {
+            "id": "5e31103d",
+            "text": "車借",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "商業の発展を支えました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南北朝時代、戦乱の中で成長した「国人（こくじん）」とは？",
+        "choices": [
+          {
+            "id": "73f6ee31",
+            "text": "地方に住む有力な武士",
+            "isCorrect": true
+          },
+          {
+            "id": "d23948b8",
+            "text": "都の貴族",
+            "isCorrect": false
+          },
+          {
+            "id": "c0c2bd23",
+            "text": "外国からの使者",
+            "isCorrect": false
+          },
+          {
+            "id": "1061ec09",
+            "text": "農民のリーダー",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後の戦国大名の母体となる層です。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'muromachi-period',
-    title: '室町時代',
-    description: '足利氏の幕府と、金閣・銀閣に代表される文化を学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "muromachi-period",
+    "title": "室町時代",
+    "description": "足利義満、勘合貿易、応仁の乱、北山・東山文化を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '室町幕府三代将軍で、南北朝の合一を果たし、京都に金閣を建てた人物は誰ですか？',
-        choices: [
-          { id: generateId(), text: '足利義満', isCorrect: true },
-          { id: generateId(), text: '足利義政', isCorrect: false },
-          { id: generateId(), text: '足利尊氏', isCorrect: false },
-          { id: generateId(), text: '足利義昭', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "室町幕府三代将軍で、南北朝合一や金閣の建立を行ったのは？",
+        "choices": [
+          {
+            "id": "1b97636c",
+            "text": "足利義満",
+            "isCorrect": true
+          },
+          {
+            "id": "465da825",
+            "text": "足利義政",
+            "isCorrect": false
+          },
+          {
+            "id": "7b07597c",
+            "text": "足利尊氏",
+            "isCorrect": false
+          },
+          {
+            "id": "161f8fdc",
+            "text": "足利義昭",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '足利義満は、明との勘合貿易を始め、幕府の権威を高めました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "公家と武家の両方の権力を掌握しました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '1467年、将軍の世継ぎ争いから始まり、11年間も続いた戦乱を何といいますか？',
-        choices: [
-          { id: generateId(), text: '応仁の乱', isCorrect: true },
-          { id: generateId(), text: '保元の乱', isCorrect: false },
-          { id: generateId(), text: '平治の乱', isCorrect: false },
-          { id: generateId(), text: '観応の擾乱', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "足利義満が明（中国）と行った、証明書を用いる貿易を何という？",
+        "choices": [
+          {
+            "id": "aa8d7106",
+            "text": "勘合貿易（日明貿易）",
+            "isCorrect": true
+          },
+          {
+            "id": "08bceef2",
+            "text": "日宋貿易",
+            "isCorrect": false
+          },
+          {
+            "id": "3f0eb0b6",
+            "text": "南蛮貿易",
+            "isCorrect": false
+          },
+          {
+            "id": "395f9a93",
+            "text": "朱印船貿易",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '応仁の乱により京都は荒廃し、下剋上の風潮が広まって戦国時代へと突入しました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "倭寇と区別するために勘合符を使いました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "室町幕府で将軍を補佐し、政治の実務を担った最高職は？",
+        "choices": [
+          {
+            "id": "9956090f",
+            "text": "管領（かんれい）",
+            "isCorrect": true
+          },
+          {
+            "id": "94d32ac0",
+            "text": "執権",
+            "isCorrect": false
+          },
+          {
+            "id": "d2202558",
+            "text": "老中",
+            "isCorrect": false
+          },
+          {
+            "id": "34cf734c",
+            "text": "大老",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "細川・斯波・畠山の三家が交代で務めました（三管領）。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1467年、将軍の世継ぎ争いから始まり、11年間続いた大乱は？",
+        "choices": [
+          {
+            "id": "e48bea25",
+            "text": "応仁の乱",
+            "isCorrect": true
+          },
+          {
+            "id": "400f6d6d",
+            "text": "承久の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "637e90c5",
+            "text": "保元の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "38c2c847",
+            "text": "壬申の乱",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "戦国時代へと突入するきっかけとなりました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "応仁の乱の時の八代将軍で、銀閣を建てた人物は？",
+        "choices": [
+          {
+            "id": "19bd264b",
+            "text": "足利義政",
+            "isCorrect": true
+          },
+          {
+            "id": "a3143b4c",
+            "text": "足利義満",
+            "isCorrect": false
+          },
+          {
+            "id": "bd058747",
+            "text": "足利義教",
+            "isCorrect": false
+          },
+          {
+            "id": "cd4a4db1",
+            "text": "足利義昭",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "政治よりも文化に関心を持ちました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "足利義満の時代、華やかな貴族文化と武士の文化が融合した文化を？",
+        "choices": [
+          {
+            "id": "b4749a90",
+            "text": "北山文化",
+            "isCorrect": true
+          },
+          {
+            "id": "5d1d6291",
+            "text": "東山文化",
+            "isCorrect": false
+          },
+          {
+            "id": "c394fd1e",
+            "text": "元禄文化",
+            "isCorrect": false
+          },
+          {
+            "id": "6b6d7109",
+            "text": "天平文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "金閣（鹿苑寺）が代表的です。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "足利義政の時代、わび・さびを重んじる質素で深い味わいの文化を？",
+        "choices": [
+          {
+            "id": "57cef53e",
+            "text": "東山文化",
+            "isCorrect": true
+          },
+          {
+            "id": "bd883ec3",
+            "text": "北山文化",
+            "isCorrect": false
+          },
+          {
+            "id": "561b45f6",
+            "text": "桃山文化",
+            "isCorrect": false
+          },
+          {
+            "id": "e58ced0f",
+            "text": "国風文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "銀閣（慈照寺）や書院造が代表的です。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "東山文化で確立された、現代の和室の原型となる建築様式は？",
+        "choices": [
+          {
+            "id": "86444051",
+            "text": "書院造",
+            "isCorrect": true
+          },
+          {
+            "id": "db5c5aa3",
+            "text": "寝殿造",
+            "isCorrect": false
+          },
+          {
+            "id": "050040dd",
+            "text": "武家造",
+            "isCorrect": false
+          },
+          {
+            "id": "baea387c",
+            "text": "校倉造",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "畳、障子、床の間などが特徴です。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "観阿弥・世阿弥親子が大成させた、仮面を用いる舞台芸術は？",
+        "choices": [
+          {
+            "id": "7f185a63",
+            "text": "能（猿楽の能）",
+            "isCorrect": true
+          },
+          {
+            "id": "2ec6a7c4",
+            "text": "歌舞伎",
+            "isCorrect": false
+          },
+          {
+            "id": "e5be7cd0",
+            "text": "人形浄瑠璃",
+            "isCorrect": false
+          },
+          {
+            "id": "ed51dee0",
+            "text": "落語",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "幕府の保護を受けて発展しました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代、農民たちが結成した自治組織を何という？",
+        "choices": [
+          {
+            "id": "098b7f29",
+            "text": "惣（そう）",
+            "isCorrect": true
+          },
+          {
+            "id": "50572fa0",
+            "text": "五人組",
+            "isCorrect": false
+          },
+          {
+            "id": "269eb08d",
+            "text": "座",
+            "isCorrect": false
+          },
+          {
+            "id": "074dbab7",
+            "text": "株仲間",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "村の掟を定め、団結して領主に抵抗することもありました。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "農民たちが徳政（借金の帳消し）を求めて起こした暴動を？",
+        "choices": [
+          {
+            "id": "13ef64bb",
+            "text": "土一揆（どいっき）",
+            "isCorrect": true
+          },
+          {
+            "id": "0ef09ae0",
+            "text": "百姓一揆",
+            "isCorrect": false
+          },
+          {
+            "id": "59a5c9a7",
+            "text": "打ちこわし",
+            "isCorrect": false
+          },
+          {
+            "id": "1cf85616",
+            "text": "米騒動",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "正長の土一揆などが有名です。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1488年、浄土真宗の門徒が守護を倒して100年間自治を行った一揆は？",
+        "choices": [
+          {
+            "id": "3b630adc",
+            "text": "加賀の一向一揆",
+            "isCorrect": true
+          },
+          {
+            "id": "1d557f5a",
+            "text": "山城の国一揆",
+            "isCorrect": false
+          },
+          {
+            "id": "0887c2ea",
+            "text": "島原の乱",
+            "isCorrect": false
+          },
+          {
+            "id": "3b504c07",
+            "text": "天草一揆",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「百姓の持ちたる国」と呼ばれました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代、運送業者（馬借など）が徳政を求めて起こした一揆は？",
+        "choices": [
+          {
+            "id": "2cba6a3b",
+            "text": "徳政一揆",
+            "isCorrect": true
+          },
+          {
+            "id": "eda5346a",
+            "text": "国一揆",
+            "isCorrect": false
+          },
+          {
+            "id": "20ffd64d",
+            "text": "一向一揆",
+            "isCorrect": false
+          },
+          {
+            "id": "79e8258c",
+            "text": "島原の一揆",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "京都などの都市部で頻発しました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "水墨画を大成させ、「四季山水図」などを描いた画僧は？",
+        "choices": [
+          {
+            "id": "03a85fb7",
+            "text": "雪舟",
+            "isCorrect": true
+          },
+          {
+            "id": "937651cf",
+            "text": "狩野永徳",
+            "isCorrect": false
+          },
+          {
+            "id": "ef4f0064",
+            "text": "葛飾北斎",
+            "isCorrect": false
+          },
+          {
+            "id": "78dd6688",
+            "text": "尾形光琳",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "明に渡って本場の技法を学びました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代に広まった、お茶の味を飲み分ける遊びから発展した文化は？",
+        "choices": [
+          {
+            "id": "849435a9",
+            "text": "茶の湯（茶道）",
+            "isCorrect": true
+          },
+          {
+            "id": "0889af4b",
+            "text": "生け花",
+            "isCorrect": false
+          },
+          {
+            "id": "d1fc8903",
+            "text": "香道",
+            "isCorrect": false
+          },
+          {
+            "id": "336d3f4b",
+            "text": "書道",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "村田珠光らが「わび茶」を始めました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代、庶民の間で流行した絵入りの物語本を何という？",
+        "choices": [
+          {
+            "id": "b2f0bc39",
+            "text": "御伽草子（おとぎぞうし）",
+            "isCorrect": true
+          },
+          {
+            "id": "564e9c0b",
+            "text": "源氏物語",
+            "isCorrect": false
+          },
+          {
+            "id": "48cbba06",
+            "text": "浮世草子",
+            "isCorrect": false
+          },
+          {
+            "id": "9f9600c8",
+            "text": "読本",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "一寸法師や浦島太郎などが含まれます。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代の農業で、広く使われるようになった鉄製の道具は？",
+        "choices": [
+          {
+            "id": "5680f33d",
+            "text": "備中鍬（びっちゅうぐわ）",
+            "isCorrect": true
+          },
+          {
+            "id": "8f5e0f4e",
+            "text": "石包丁",
+            "isCorrect": false
+          },
+          {
+            "id": "a12b1cc5",
+            "text": "千歯扱き",
+            "isCorrect": false
+          },
+          {
+            "id": "0c8d3625",
+            "text": "踏車",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "深く耕すことが可能になり、収穫量が増えました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代、商業の発展に伴い使われた中国の貨幣は？",
+        "choices": [
+          {
+            "id": "cb22eb81",
+            "text": "洪武通宝・永楽通宝",
+            "isCorrect": true
+          },
+          {
+            "id": "17da38f5",
+            "text": "和同開珎",
+            "isCorrect": false
+          },
+          {
+            "id": "756a9f2c",
+            "text": "寛永通宝",
+            "isCorrect": false
+          },
+          {
+            "id": "5f68cf32",
+            "text": "慶長小判",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "明から大量に輸入されました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代、金融業者として活動した質屋のような場所は？",
+        "choices": [
+          {
+            "id": "19d03c1c",
+            "text": "土倉（どそう）・酒屋",
+            "isCorrect": true
+          },
+          {
+            "id": "f9788752",
+            "text": "両替商",
+            "isCorrect": false
+          },
+          {
+            "id": "cb746089",
+            "text": "銀行",
+            "isCorrect": false
+          },
+          {
+            "id": "81ec7a23",
+            "text": "問丸",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "幕府の重要な税源にもなりました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "室町時代、関東地方を統治するために置かれた役職は？",
+        "choices": [
+          {
+            "id": "4bc10a22",
+            "text": "鎌倉公方",
+            "isCorrect": true
+          },
+          {
+            "id": "23f236c0",
+            "text": "六波羅探題",
+            "isCorrect": false
+          },
+          {
+            "id": "83e4c7d0",
+            "text": "関東管領",
+            "isCorrect": false
+          },
+          {
+            "id": "3d7400e6",
+            "text": "大宰府",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後に幕府と対立するようになりました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'sengoku-period',
-    title: '戦国時代',
-    description: '下剋上の世の中と、各地で勢力を競った戦国大名について学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "sengoku-period",
+    "title": "戦国時代",
+    "description": "下剋上、戦国大名、鉄砲・キリスト教の伝来を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '下の者が上の者を実力で倒す、戦国時代の風潮を何といいますか？',
-        choices: [
-          { id: generateId(), text: '下剋上', isCorrect: true },
-          { id: generateId(), text: '封建制', isCorrect: false },
-          { id: generateId(), text: '実力主義', isCorrect: false },
-          { id: generateId(), text: '御恩と奉公', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "下の者が上の者を実力で倒す、戦国時代の社会風潮を何という？",
+        "choices": [
+          {
+            "id": "d6ddbb2a",
+            "text": "下剋上",
+            "isCorrect": true
+          },
+          {
+            "id": "ebfa0a54",
+            "text": "封建制",
+            "isCorrect": false
+          },
+          {
+            "id": "092e6957",
+            "text": "実力主義",
+            "isCorrect": false
+          },
+          {
+            "id": "bc03734e",
+            "text": "御恩と奉公",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '下剋上により、身分が低くても実力があれば大名になれる時代となりました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "身分に関わらず実力者がのし上がりました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '戦国大名が領地を治めるために独自に定めた法律を何といいますか？',
-        choices: [
-          { id: generateId(), text: '分国法', isCorrect: true },
-          { id: generateId(), text: '公事方御定書', isCorrect: false },
-          { id: generateId(), text: '御成敗式目', isCorrect: false },
-          { id: generateId(), text: '十七条の憲法', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "各地で独自の領国支配を行った有力な武士を何という？",
+        "choices": [
+          {
+            "id": "76511088",
+            "text": "戦国大名",
+            "isCorrect": true
+          },
+          {
+            "id": "836e35a8",
+            "text": "守護大名",
+            "isCorrect": false
+          },
+          {
+            "id": "5b636e22",
+            "text": "地頭",
+            "isCorrect": false
+          },
+          {
+            "id": "443de0cd",
+            "text": "御家人",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '分国法は、領国内の武士や民衆を統制するために作られました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "富国強兵に努め、天下を狙いました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "戦国大名が領地を治めるために独自に定めた法律を何という？",
+        "choices": [
+          {
+            "id": "ac91dcaa",
+            "text": "分国法",
+            "isCorrect": true
+          },
+          {
+            "id": "3ce21940",
+            "text": "御成敗式目",
+            "isCorrect": false
+          },
+          {
+            "id": "590bf205",
+            "text": "武家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "41478721",
+            "text": "公事方御定書",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「喧嘩両成敗」などの厳しい決まりがありました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1543年、種子島に漂着したポルトガル人によって伝えられた武器は？",
+        "choices": [
+          {
+            "id": "db4bc9a7",
+            "text": "鉄砲（火縄銃）",
+            "isCorrect": true
+          },
+          {
+            "id": "8da88e67",
+            "text": "大砲",
+            "isCorrect": false
+          },
+          {
+            "id": "1e802be4",
+            "text": "日本刀",
+            "isCorrect": false
+          },
+          {
+            "id": "84b03849",
+            "text": "弓矢",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "戦い方を大きく変えることになりました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1549年、鹿児島に来航し、キリスト教を伝えた宣教師は？",
+        "choices": [
+          {
+            "id": "b2dcc93f",
+            "text": "フランシスコ・ザビエル",
+            "isCorrect": true
+          },
+          {
+            "id": "7c13c104",
+            "text": "ルイス・フロイス",
+            "isCorrect": false
+          },
+          {
+            "id": "740bc950",
+            "text": "ペリー",
+            "isCorrect": false
+          },
+          {
+            "id": "d8bcaa96",
+            "text": "マルコ・ポーロ",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "イエズス会の創設メンバーの一人です。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "キリスト教を保護し、自らも信者となった戦国大名を何という？",
+        "choices": [
+          {
+            "id": "2180abd0",
+            "text": "キリシタン大名",
+            "isCorrect": true
+          },
+          {
+            "id": "991afe42",
+            "text": "南蛮大名",
+            "isCorrect": false
+          },
+          {
+            "id": "98926472",
+            "text": "貿易大名",
+            "isCorrect": false
+          },
+          {
+            "id": "86773019",
+            "text": "守護大名",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大友宗麟や高山右近などが有名です。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "戦国時代、日本とスペイン・ポルトガルの間で行われた貿易を？",
+        "choices": [
+          {
+            "id": "86ffcd95",
+            "text": "南蛮貿易",
+            "isCorrect": true
+          },
+          {
+            "id": "f799339c",
+            "text": "勘合貿易",
+            "isCorrect": false
+          },
+          {
+            "id": "dbb64c91",
+            "text": "日宋貿易",
+            "isCorrect": false
+          },
+          {
+            "id": "8950a300",
+            "text": "朱印船貿易",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "生糸や硝石（火薬の原料）などが輸入されました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "「越後の虎」と呼ばれ、武田信玄と川中島で戦った大名は？",
+        "choices": [
+          {
+            "id": "81270b67",
+            "text": "上杉謙信",
+            "isCorrect": true
+          },
+          {
+            "id": "cec95d76",
+            "text": "織田信長",
+            "isCorrect": false
+          },
+          {
+            "id": "a923a424",
+            "text": "徳川家康",
+            "isCorrect": false
+          },
+          {
+            "id": "cac647d8",
+            "text": "伊達政宗",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "義理に厚い名将として知られます。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "「甲斐の虎」と呼ばれ、強力な騎馬軍団を率いた大名は？",
+        "choices": [
+          {
+            "id": "93c46982",
+            "text": "武田信玄",
+            "isCorrect": true
+          },
+          {
+            "id": "bf059545",
+            "text": "北条氏康",
+            "isCorrect": false
+          },
+          {
+            "id": "0bad2d57",
+            "text": "毛利元就",
+            "isCorrect": false
+          },
+          {
+            "id": "5f447685",
+            "text": "島津義弘",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「人は城、人は石垣...」の言葉が有名です。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "中国地方の小規模な国人から、一代で中国全土を制した知将は？",
+        "choices": [
+          {
+            "id": "e76f238f",
+            "text": "毛利元就",
+            "isCorrect": true
+          },
+          {
+            "id": "d2698bf4",
+            "text": "尼子経久",
+            "isCorrect": false
+          },
+          {
+            "id": "20f6ae75",
+            "text": "宇喜多直家",
+            "isCorrect": false
+          },
+          {
+            "id": "2402a33b",
+            "text": "陶晴賢",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「三本の矢」の教えが有名です。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "戦国時代、城の周囲に家臣や商人を住まわせて形成された町は？",
+        "choices": [
+          {
+            "id": "35beecec",
+            "text": "城下町",
+            "isCorrect": true
+          },
+          {
+            "id": "f8f4a149",
+            "text": "門前町",
+            "isCorrect": false
+          },
+          {
+            "id": "7e6ddfa1",
+            "text": "宿場町",
+            "isCorrect": false
+          },
+          {
+            "id": "1eebdcb1",
+            "text": "港町",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "政治と経済の中心地となりました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "戦国大名が城下町に商人を集めるために出した、商売の自由化令は？",
+        "choices": [
+          {
+            "id": "56676f19",
+            "text": "楽市・楽座",
+            "isCorrect": true
+          },
+          {
+            "id": "d9ef8497",
+            "text": "徳政令",
+            "isCorrect": false
+          },
+          {
+            "id": "e52ccb04",
+            "text": "倹約令",
+            "isCorrect": false
+          },
+          {
+            "id": "a07fba7f",
+            "text": "株仲間",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "織田信長などが積極的に導入しました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "戦国時代、鉱山開発が進み、大量に生産されるようになった貴金属は？",
+        "choices": [
+          {
+            "id": "52331158",
+            "text": "金・銀",
+            "isCorrect": true
+          },
+          {
+            "id": "6012032c",
+            "text": "銅",
+            "isCorrect": false
+          },
+          {
+            "id": "1ca605d5",
+            "text": "鉄",
+            "isCorrect": false
+          },
+          {
+            "id": "49925a2a",
+            "text": "アルミニウム",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "石見銀山などが有名です。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1560年、織田信長が今川義元を少数の兵で破った戦いは？",
+        "choices": [
+          {
+            "id": "fa1a8989",
+            "text": "桶狭間の戦い",
+            "isCorrect": true
+          },
+          {
+            "id": "e67ebcd9",
+            "text": "長篠の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "0421cc92",
+            "text": "姉川の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "84321033",
+            "text": "本能寺の変",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "信長が天下へ名乗りを上げるきっかけとなりました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1575年、織田・徳川連合軍が鉄砲隊を活用して武田軍を破った戦いは？",
+        "choices": [
+          {
+            "id": "5b9f5ec7",
+            "text": "長篠の戦い",
+            "isCorrect": true
+          },
+          {
+            "id": "9a928266",
+            "text": "関ヶ原の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "da6f27a8",
+            "text": "山崎の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "f44d0686",
+            "text": "小牧・長久手の戦い",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "鉄砲の集団利用が勝敗を分けました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "織田信長が、仏教勢力の抵抗を抑えるために焼き討ちした場所は？",
+        "choices": [
+          {
+            "id": "89034838",
+            "text": "比叡山延暦寺",
+            "isCorrect": true
+          },
+          {
+            "id": "592663f4",
+            "text": "本願寺",
+            "isCorrect": false
+          },
+          {
+            "id": "d5411502",
+            "text": "東大寺",
+            "isCorrect": false
+          },
+          {
+            "id": "df0bbc9d",
+            "text": "清水寺",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「第六天魔王」と自称しました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "織田信長が室町幕府を滅亡させたのは何年ですか？",
+        "choices": [
+          {
+            "id": "1d627dd7",
+            "text": "1573年",
+            "isCorrect": true
+          },
+          {
+            "id": "c265d607",
+            "text": "1560年",
+            "isCorrect": false
+          },
+          {
+            "id": "586e702a",
+            "text": "1582年",
+            "isCorrect": false
+          },
+          {
+            "id": "4fc0f363",
+            "text": "1467年",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "足利義昭を追放しました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "戦国時代、堺や博多などの都市で商人たちが自治を行った。これを？",
+        "choices": [
+          {
+            "id": "3433c9dc",
+            "text": "自由都市（自治都市）",
+            "isCorrect": true
+          },
+          {
+            "id": "ef1c32d2",
+            "text": "城下町",
+            "isCorrect": false
+          },
+          {
+            "id": "27b18476",
+            "text": "宿場町",
+            "isCorrect": false
+          },
+          {
+            "id": "009bef40",
+            "text": "宗教都市",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "堺は「東洋のベニス」と呼ばれました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "戦国時代、情報を収集したり暗殺を行ったりした特殊な技能集団は？",
+        "choices": [
+          {
+            "id": "dac4ee18",
+            "text": "忍者（忍び）",
+            "isCorrect": true
+          },
+          {
+            "id": "2f3a8e50",
+            "text": "足軽",
+            "isCorrect": false
+          },
+          {
+            "id": "414d6610",
+            "text": "国人",
+            "isCorrect": false
+          },
+          {
+            "id": "79bcf169",
+            "text": "地侍",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "伊賀や甲賀が有名です。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1582年、明智光秀が織田信長を襲い、自害させた事件は？",
+        "choices": [
+          {
+            "id": "e871b3da",
+            "text": "本能寺の変",
+            "isCorrect": true
+          },
+          {
+            "id": "bac7b9a5",
+            "text": "本能寺の役",
+            "isCorrect": false
+          },
+          {
+            "id": "8fc311ec",
+            "text": "山崎の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "79483ff8",
+            "text": "清洲会議",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "信長の天下統一の夢が絶たれました。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'azuchi-momoyama-period',
-    title: '安土桃山時代',
-    description: '織田信長と豊臣秀吉による天下統一の歩みを学びます。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "azuchi-momoyama-period",
+    "title": "安土桃山時代",
+    "description": "織田信長、豊臣秀吉、天下統一、桃山文化を網羅した20問。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '楽市・楽座や関所の廃止を行い、経済を活性化させた戦国武将は誰ですか？',
-        choices: [
-          { id: generateId(), text: '織田信長', isCorrect: true },
-          { id: generateId(), text: '豊臣秀吉', isCorrect: false },
-          { id: generateId(), text: '武田信玄', isCorrect: false },
-          { id: generateId(), text: '上杉謙信', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "本能寺の変の後、山崎の戦いで明智光秀を破った信長の家臣は？",
+        "choices": [
+          {
+            "id": "ef4e9bdb",
+            "text": "豊臣秀吉（羽柴秀吉）",
+            "isCorrect": true
+          },
+          {
+            "id": "54c4dc40",
+            "text": "徳川家康",
+            "isCorrect": false
+          },
+          {
+            "id": "8d5dc594",
+            "text": "柴田勝家",
+            "isCorrect": false
+          },
+          {
+            "id": "c131061d",
+            "text": "前田利家",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '織田信長は、既存の特権を排除し、自由な商売を認めることで城下町を繁栄させました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "信長の後継者争いに勝利しました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '豊臣秀吉が全国の田畑を調査し、収穫量を石高で表した政策を何といいますか？',
-        choices: [
-          { id: generateId(), text: '太閤検地', isCorrect: true },
-          { id: generateId(), text: '刀狩', isCorrect: false },
-          { id: generateId(), text: '検地', isCorrect: false },
-          { id: generateId(), text: '地租改正', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "豊臣秀吉が全国の田畑を調査し、収穫量を石高で表した政策は？",
+        "choices": [
+          {
+            "id": "51eccecc",
+            "text": "太閤検地",
+            "isCorrect": true
+          },
+          {
+            "id": "e254f6cb",
+            "text": "刀狩",
+            "isCorrect": false
+          },
+          {
+            "id": "b7b3d533",
+            "text": "地租改正",
+            "isCorrect": false
+          },
+          {
+            "id": "352810b9",
+            "text": "農地改革",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '太閤検地と刀狩により、武士と農民の身分をはっきり分ける「兵農分離」が進みました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "全国の土地を統一した基準で把握しました。",
+        "imageUrl": null,
+        "order": 1
       },
-    ],
+      {
+        "type": "multiple-choice",
+        "text": "豊臣秀吉が農民から武器を取り上げ、一揆を防いだ政策は？",
+        "choices": [
+          {
+            "id": "68d35fa6",
+            "text": "刀狩",
+            "isCorrect": true
+          },
+          {
+            "id": "29efbcc1",
+            "text": "太閤検地",
+            "isCorrect": false
+          },
+          {
+            "id": "3da22932",
+            "text": "身分統制令",
+            "isCorrect": false
+          },
+          {
+            "id": "c855cc5a",
+            "text": "兵農分離",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「大仏建立のため」という名目で行われました。",
+        "imageUrl": null,
+        "order": 2
+      },
+      {
+        "type": "multiple-choice",
+        "text": "太閤検地と刀狩により、武士と農民の身分を明確に分けたことを？",
+        "choices": [
+          {
+            "id": "d065043c",
+            "text": "兵農分離",
+            "isCorrect": true
+          },
+          {
+            "id": "171af17e",
+            "text": "士農工商",
+            "isCorrect": false
+          },
+          {
+            "id": "f78ca87d",
+            "text": "封建制",
+            "isCorrect": false
+          },
+          {
+            "id": "96f12d77",
+            "text": "下剋上",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "近世社会の基礎となりました。",
+        "imageUrl": null,
+        "order": 3
+      },
+      {
+        "type": "multiple-choice",
+        "text": "豊臣秀吉が関白となり、四国・九州・関東を平定して天下統一したのは何年？",
+        "choices": [
+          {
+            "id": "b29407ef",
+            "text": "1590年",
+            "isCorrect": true
+          },
+          {
+            "id": "f3cab14d",
+            "text": "1582年",
+            "isCorrect": false
+          },
+          {
+            "id": "b6ae2844",
+            "text": "1600年",
+            "isCorrect": false
+          },
+          {
+            "id": "8d022413",
+            "text": "1603年",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "北条氏を滅ぼし、全国統一を果たしました。",
+        "imageUrl": null,
+        "order": 4
+      },
+      {
+        "type": "multiple-choice",
+        "text": "豊臣秀吉がキリスト教の広まりを警戒して出した令は？",
+        "choices": [
+          {
+            "id": "28a1f5dd",
+            "text": "バテレン追放令",
+            "isCorrect": true
+          },
+          {
+            "id": "0b81e9e6",
+            "text": "禁教令",
+            "isCorrect": false
+          },
+          {
+            "id": "5b96f55d",
+            "text": "鎖国令",
+            "isCorrect": false
+          },
+          {
+            "id": "cdab6f18",
+            "text": "踏絵令",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "宣教師の追放を命じましたが、貿易は継続しました。",
+        "imageUrl": null,
+        "order": 5
+      },
+      {
+        "type": "multiple-choice",
+        "text": "豊臣秀吉が2度にわたり朝鮮半島へ大軍を送った出来事は？",
+        "choices": [
+          {
+            "id": "f927bebd",
+            "text": "朝鮮出兵（文禄・慶長の役）",
+            "isCorrect": true
+          },
+          {
+            "id": "468b913a",
+            "text": "元寇",
+            "isCorrect": false
+          },
+          {
+            "id": "290c6f7c",
+            "text": "白村江の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "143855be",
+            "text": "日清戦争",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "秀吉の死により撤退しましたが、大きな被害を残しました。",
+        "imageUrl": null,
+        "order": 6
+      },
+      {
+        "type": "multiple-choice",
+        "text": "安土桃山時代、大名や豪商の富を背景に栄えた豪華な文化を？",
+        "choices": [
+          {
+            "id": "f4b6bd84",
+            "text": "桃山文化",
+            "isCorrect": true
+          },
+          {
+            "id": "5667ce20",
+            "text": "元禄文化",
+            "isCorrect": false
+          },
+          {
+            "id": "e9cc70d3",
+            "text": "東山文化",
+            "isCorrect": false
+          },
+          {
+            "id": "3376f527",
+            "text": "北山文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "城郭建築や金屏風などが特徴です。",
+        "imageUrl": null,
+        "order": 7
+      },
+      {
+        "type": "multiple-choice",
+        "text": "桃山文化を代表する、壮大な城郭建築の例は？",
+        "choices": [
+          {
+            "id": "a362ae91",
+            "text": "姫路城（白鷺城）",
+            "isCorrect": true
+          },
+          {
+            "id": "70faa6c6",
+            "text": "江戸城",
+            "isCorrect": false
+          },
+          {
+            "id": "131bec85",
+            "text": "平城京",
+            "isCorrect": false
+          },
+          {
+            "id": "c05bba09",
+            "text": "金閣",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "天守閣を持つ平山城が普及しました。",
+        "imageUrl": null,
+        "order": 8
+      },
+      {
+        "type": "multiple-choice",
+        "text": "狩野派の絵師で、安土城や大坂城の障壁画を描いたのは？",
+        "choices": [
+          {
+            "id": "2c882912",
+            "text": "狩野永徳",
+            "isCorrect": true
+          },
+          {
+            "id": "037a5317",
+            "text": "雪舟",
+            "isCorrect": false
+          },
+          {
+            "id": "2575c8b4",
+            "text": "尾形光琳",
+            "isCorrect": false
+          },
+          {
+            "id": "d2379ad1",
+            "text": "葛飾北斎",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「唐獅子図屏風」などが有名です。",
+        "imageUrl": null,
+        "order": 9
+      },
+      {
+        "type": "multiple-choice",
+        "text": "豊臣秀吉に仕え、茶の湯を芸術の域まで高めた茶人は？",
+        "choices": [
+          {
+            "id": "dfcb12c8",
+            "text": "千利休",
+            "isCorrect": true
+          },
+          {
+            "id": "eb127792",
+            "text": "村田珠光",
+            "isCorrect": false
+          },
+          {
+            "id": "5604155f",
+            "text": "武野紹鴎",
+            "isCorrect": false
+          },
+          {
+            "id": "8e53c9a8",
+            "text": "古田織部",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「わび茶」を大成させました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "安土桃山時代、出雲の阿国が京都で始めた芸能は？",
+        "choices": [
+          {
+            "id": "53a32575",
+            "text": "かぶき踊り（歌舞伎）",
+            "isCorrect": true
+          },
+          {
+            "id": "525b5fa3",
+            "text": "能",
+            "isCorrect": false
+          },
+          {
+            "id": "4ad5e5dd",
+            "text": "狂言",
+            "isCorrect": false
+          },
+          {
+            "id": "862667dc",
+            "text": "人形浄瑠璃",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "後の歌舞伎の起源となりました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "安土桃山時代、日本に来航したヨーロッパ人を何と呼んだ？",
+        "choices": [
+          {
+            "id": "684059f3",
+            "text": "南蛮人",
+            "isCorrect": true
+          },
+          {
+            "id": "cf992540",
+            "text": "紅毛人",
+            "isCorrect": false
+          },
+          {
+            "id": "59751ec1",
+            "text": "唐人",
+            "isCorrect": false
+          },
+          {
+            "id": "306af311",
+            "text": "渡来人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "スペイン人やポルトガル人を指しました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "南蛮人が伝えた、カステラや天ぷら、パンなどの文化を何という？",
+        "choices": [
+          {
+            "id": "881212c6",
+            "text": "南蛮文化",
+            "isCorrect": true
+          },
+          {
+            "id": "5578b6cf",
+            "text": "欧米文化",
+            "isCorrect": false
+          },
+          {
+            "id": "fc9f5811",
+            "text": "唐風文化",
+            "isCorrect": false
+          },
+          {
+            "id": "c6c15eb9",
+            "text": "国風文化",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "活版印刷術なども伝えられました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "織田信長が天下統一の拠点として琵琶湖畔に築いた城は？",
+        "choices": [
+          {
+            "id": "c4e0796f",
+            "text": "安土城",
+            "isCorrect": true
+          },
+          {
+            "id": "d14988e5",
+            "text": "大坂城",
+            "isCorrect": false
+          },
+          {
+            "id": "9ad5da38",
+            "text": "伏見城",
+            "isCorrect": false
+          },
+          {
+            "id": "0c40bb30",
+            "text": "聚楽第",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "日本で初めて本格的な天守閣を持ちました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "豊臣秀吉が天下統一の拠点として、石山本願寺の跡地に築いた城は？",
+        "choices": [
+          {
+            "id": "35bff0f5",
+            "text": "大坂城",
+            "isCorrect": true
+          },
+          {
+            "id": "eaf0a5dd",
+            "text": "安土城",
+            "isCorrect": false
+          },
+          {
+            "id": "06b620c0",
+            "text": "名古屋城",
+            "isCorrect": false
+          },
+          {
+            "id": "bb6a514b",
+            "text": "熊本城",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "黄金の茶室など、豪華を極めました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "安土桃山時代、海外への渡航を許可するために発行された文書は？",
+        "choices": [
+          {
+            "id": "1517a9fc",
+            "text": "朱印状",
+            "isCorrect": true
+          },
+          {
+            "id": "eb9f4b7f",
+            "text": "勘合符",
+            "isCorrect": false
+          },
+          {
+            "id": "e49e0179",
+            "text": "パスポート",
+            "isCorrect": false
+          },
+          {
+            "id": "a1076011",
+            "text": "免状",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "秀吉や後の家康が発行しました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1587年、秀吉が九州平定後に博多で出したキリスト教に関する命令は？",
+        "choices": [
+          {
+            "id": "3a3d8866",
+            "text": "バテレン追放令",
+            "isCorrect": true
+          },
+          {
+            "id": "655fe70d",
+            "text": "禁教令",
+            "isCorrect": false
+          },
+          {
+            "id": "6b25c07a",
+            "text": "鎖国令",
+            "isCorrect": false
+          },
+          {
+            "id": "b7ddc77a",
+            "text": "宣教許可令",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "神社仏閣の破壊などを理由に出されました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "安土桃山時代、庶民の間で親しまれた絵入りの短い物語は？",
+        "choices": [
+          {
+            "id": "65111c28",
+            "text": "御伽草子",
+            "isCorrect": true
+          },
+          {
+            "id": "3da018fc",
+            "text": "浮世草子",
+            "isCorrect": false
+          },
+          {
+            "id": "518009fa",
+            "text": "読本",
+            "isCorrect": false
+          },
+          {
+            "id": "3d7d6b9a",
+            "text": "滑稽本",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "室町時代から続き、さらに普及しました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1600年、徳川家康率いる東軍と石田三成率いる西軍が戦ったのは？",
+        "choices": [
+          {
+            "id": "c4621b56",
+            "text": "関ヶ原の戦い",
+            "isCorrect": true
+          },
+          {
+            "id": "3af97dff",
+            "text": "山崎の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "fdcf0590",
+            "text": "小牧・長久手の戦い",
+            "isCorrect": false
+          },
+          {
+            "id": "abec9467",
+            "text": "大坂の陣",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「天下分け目の戦い」と呼ばれます。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
   },
   {
-    id: 'edo-period-review',
-    title: '江戸時代の総復習',
-    description: '中学校の歴史で習う江戸時代の政治、外交、文化、人物を網羅した復習テストです。',
-    category: '社会',
-    subcategory: '歴史',
-    questions: [
+    "id": "edo-period-review",
+    "title": "江戸時代の総復習",
+    "description": "江戸時代の政治、外交、文化、人物を網羅した20問のテスト。",
+    "category": "社会",
+    "subcategory": "歴史",
+    "questions": [
       {
-        type: 'multiple-choice',
-        text: '1603年、江戸幕府を開き初代将軍となった人物は誰ですか？',
-        choices: [
-          { id: generateId(), text: '徳川家康', isCorrect: true },
-          { id: generateId(), text: '徳川家光', isCorrect: false },
-          { id: generateId(), text: '織田信長', isCorrect: false },
-          { id: generateId(), text: '豊臣秀吉', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "1603年、江戸幕府を開き初代将軍となった人物は？",
+        "choices": [
+          {
+            "id": "5eb96762",
+            "text": "徳川家康",
+            "isCorrect": true
+          },
+          {
+            "id": "60681c1b",
+            "text": "徳川家光",
+            "isCorrect": false
+          },
+          {
+            "id": "093f6c4b",
+            "text": "織田信長",
+            "isCorrect": false
+          },
+          {
+            "id": "226d3583",
+            "text": "豊臣秀吉",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '徳川家康は関ヶ原の戦いに勝利した後、1603年に征夷大将軍に任命され江戸幕府を開きました。',
-        imageUrl: null,
-        order: 0,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "関ヶ原の戦いに勝利して天下を掌握しました。",
+        "imageUrl": null,
+        "order": 0
       },
       {
-        type: 'multiple-choice',
-        text: '三代将軍・徳川家光が定めた、大名が1年おきに江戸と領地を行き来する制度は何ですか？',
-        choices: [
-          { id: generateId(), text: '参勤交代', isCorrect: true },
-          { id: generateId(), text: '武家諸法度', isCorrect: false },
-          { id: generateId(), text: '禁中並公家諸法度', isCorrect: false },
-          { id: generateId(), text: '目安箱', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "三代将軍・徳川家光が定めた、大名が江戸と領地を往復する制度は？",
+        "choices": [
+          {
+            "id": "5de5c221",
+            "text": "参勤交代",
+            "isCorrect": true
+          },
+          {
+            "id": "7f497aae",
+            "text": "武家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "17f75d23",
+            "text": "禁中並公家諸法度",
+            "isCorrect": false
+          },
+          {
+            "id": "3860783c",
+            "text": "目安箱",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '参勤交代は、大名の経済力を削ぎ、幕府への反乱を防ぐ目的がありました。',
-        imageUrl: null,
-        order: 1,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "大名の経済力を削ぐ目的がありました。",
+        "imageUrl": null,
+        "order": 1
       },
       {
-        type: 'multiple-choice',
-        text: '江戸時代、幕府がキリスト教を禁止するために、キリストやマリアの像を踏ませた行事は何ですか？',
-        choices: [
-          { id: generateId(), text: '絵踏（踏絵）', isCorrect: true },
-          { id: generateId(), text: '宗門改', isCorrect: false },
-          { id: generateId(), text: '檀家制度', isCorrect: false },
-          { id: generateId(), text: '五人組', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "江戸幕府がキリスト教を禁止するために行った、宗教調査は？",
+        "choices": [
+          {
+            "id": "94e8740d",
+            "text": "宗門改（しゅうもんあらため）",
+            "isCorrect": true
+          },
+          {
+            "id": "6e34c8bc",
+            "text": "絵踏",
+            "isCorrect": false
+          },
+          {
+            "id": "660a88f7",
+            "text": "檀家制度",
+            "isCorrect": false
+          },
+          {
+            "id": "ad7f627d",
+            "text": "五人組",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '絵踏は、キリスト教徒を見つけ出すための手段として行われました。',
-        imageUrl: null,
-        order: 2,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "寺請制度とともに民衆を管理しました。",
+        "imageUrl": null,
+        "order": 2
       },
       {
-        type: 'multiple-choice',
-        text: '「享保の改革」を行い、目安箱の設置や公事方御定書を定めた八代将軍は誰ですか？',
-        choices: [
-          { id: generateId(), text: '徳川吉宗', isCorrect: true },
-          { id: generateId(), text: '徳川綱吉', isCorrect: false },
-          { id: generateId(), text: '徳川慶喜', isCorrect: false },
-          { id: generateId(), text: '徳川家斉', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "幕府がオランダ・中国以外との交流を断った政策を何という？",
+        "choices": [
+          {
+            "id": "42054176",
+            "text": "鎖国",
+            "isCorrect": true
+          },
+          {
+            "id": "7465cbc7",
+            "text": "海禁",
+            "isCorrect": false
+          },
+          {
+            "id": "961a1a0a",
+            "text": "攘夷",
+            "isCorrect": false
+          },
+          {
+            "id": "451c3ff4",
+            "text": "開国",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '徳川吉宗は「米将軍」とも呼ばれ、幕府の財政再建に努めました。',
-        imageUrl: null,
-        order: 3,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "長崎の出島などが窓口となりました。",
+        "imageUrl": null,
+        "order": 3
       },
       {
-        type: 'multiple-choice',
-        text: '江戸時代中期、上方（京都・大坂）を中心に栄えた、町人の活気あふれる文化は何ですか？',
-        choices: [
-          { id: generateId(), text: '元禄文化', isCorrect: true },
-          { id: generateId(), text: '化政文化', isCorrect: false },
-          { id: generateId(), text: '桃山文化', isCorrect: false },
-          { id: generateId(), text: '東山文化', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "「享保の改革」を行い、目安箱を設置した八代将軍は？",
+        "choices": [
+          {
+            "id": "5c44915a",
+            "text": "徳川吉宗",
+            "isCorrect": true
+          },
+          {
+            "id": "11f17a65",
+            "text": "徳川綱吉",
+            "isCorrect": false
+          },
+          {
+            "id": "bd6f3e21",
+            "text": "徳川家斉",
+            "isCorrect": false
+          },
+          {
+            "id": "45e2b113",
+            "text": "徳川慶喜",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '元禄文化では、松尾芭蕉の俳諧や近松門左衛門の人形浄瑠璃などが有名です。',
-        imageUrl: null,
-        order: 4,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "「米将軍」と呼ばれ財政再建に努めました。",
+        "imageUrl": null,
+        "order": 4
       },
       {
-        type: 'multiple-choice',
-        text: '江戸時代後期、江戸を中心に栄えた、皮肉や滑稽さを特徴とする文化は何ですか？',
-        choices: [
-          { id: generateId(), text: '化政文化', isCorrect: true },
-          { id: generateId(), text: '元禄文化', isCorrect: false },
-          { id: generateId(), text: '天平文化', isCorrect: false },
-          { id: generateId(), text: '国風文化', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "「寛政の改革」を行い、厳しい倹約を強いた老中は？",
+        "choices": [
+          {
+            "id": "471162df",
+            "text": "松平定信",
+            "isCorrect": true
+          },
+          {
+            "id": "8eb93371",
+            "text": "田沼意次",
+            "isCorrect": false
+          },
+          {
+            "id": "988cbd91",
+            "text": "水野忠邦",
+            "isCorrect": false
+          },
+          {
+            "id": "71bdd9db",
+            "text": "井伊直弼",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '化政文化では、葛飾北斎や歌川広重の浮世絵、伊能忠敬の日本地図などが生まれました。',
-        imageUrl: null,
-        order: 5,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "朱子学以外の講義を禁止しました。",
+        "imageUrl": null,
+        "order": 5
       },
       {
-        type: 'multiple-choice',
-        text: '1853年、浦賀に黒船で来航し、幕府に開国を求めたアメリカの提督は誰ですか？',
-        choices: [
-          { id: generateId(), text: 'ペリー', isCorrect: true },
-          { id: generateId(), text: 'ハリス', isCorrect: false },
-          { id: generateId(), text: 'マッカーサー', isCorrect: false },
-          { id: generateId(), text: 'シャクシャイン', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "「天保の改革」を行い、株仲間の解散などを命じた老中は？",
+        "choices": [
+          {
+            "id": "925f4693",
+            "text": "水野忠邦",
+            "isCorrect": true
+          },
+          {
+            "id": "eb1f1aa3",
+            "text": "松平定信",
+            "isCorrect": false
+          },
+          {
+            "id": "2dab8664",
+            "text": "田沼意次",
+            "isCorrect": false
+          },
+          {
+            "id": "1228e9cb",
+            "text": "阿部正弘",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: 'ペリーの来航により、長年続いた「鎖国」が終わるきっかけとなりました。',
-        imageUrl: null,
-        order: 6,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "改革は短期間で失敗しました。",
+        "imageUrl": null,
+        "order": 6
       },
       {
-        type: 'multiple-choice',
-        text: '「解体新書」を出版し、蘭学の発展に貢献した人物は杉田玄白ともう一人は誰ですか？',
-        choices: [
-          { id: generateId(), text: '前野良沢', isCorrect: true },
-          { id: generateId(), text: '本居宣長', isCorrect: false },
-          { id: generateId(), text: '平賀源内', isCorrect: false },
-          { id: generateId(), text: '緒方洪庵', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "1853年、浦賀に黒船で来航し開国を求めたアメリカ人は？",
+        "choices": [
+          {
+            "id": "432037c5",
+            "text": "ペリー",
+            "isCorrect": true
+          },
+          {
+            "id": "9636a1ce",
+            "text": "ハリス",
+            "isCorrect": false
+          },
+          {
+            "id": "da6ca4de",
+            "text": "マッカーサー",
+            "isCorrect": false
+          },
+          {
+            "id": "a3032688",
+            "text": "カウベル",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '杉田玄白と前野良沢は、オランダ語の解剖書「ターヘル・アナトミア」を翻訳しました。',
-        imageUrl: null,
-        order: 7,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "日米和親条約の締結につながりました。",
+        "imageUrl": null,
+        "order": 7
       },
       {
-        type: 'multiple-choice',
-        text: '老中として「寛政の改革」を行い、厳しい倹約令を出した人物は誰ですか？',
-        choices: [
-          { id: generateId(), text: '松平定信', isCorrect: true },
-          { id: generateId(), text: '田沼意次', isCorrect: false },
-          { id: generateId(), text: '水野忠邦', isCorrect: false },
-          { id: generateId(), text: '井伊直弼', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "江戸時代中期、上方を中心に栄えた町人文化は？",
+        "choices": [
+          {
+            "id": "70ebfce4",
+            "text": "元禄文化",
+            "isCorrect": true
+          },
+          {
+            "id": "8f2447db",
+            "text": "化政文化",
+            "isCorrect": false
+          },
+          {
+            "id": "4b2f1f1a",
+            "text": "桃山文化",
+            "isCorrect": false
+          },
+          {
+            "id": "1090acea",
+            "text": "東山文化",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '松平定信は朱子学以外の講義を禁止するなど、保守的な政治を行いました。',
-        imageUrl: null,
-        order: 8,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "松尾芭蕉や近松門左衛門らが活躍しました。",
+        "imageUrl": null,
+        "order": 8
       },
       {
-        type: 'multiple-choice',
-        text: '1867年、政権を朝廷に返した出来事を何といいますか？',
-        choices: [
-          { id: generateId(), text: '大政奉還', isCorrect: true },
-          { id: generateId(), text: '王政復古の大号令', isCorrect: false },
-          { id: generateId(), text: '廃藩置県', isCorrect: false },
-          { id: generateId(), text: '明治維新', isCorrect: false },
+        "type": "multiple-choice",
+        "text": "江戸時代後期、江戸を中心に栄えた皮肉や滑稽な文化は？",
+        "choices": [
+          {
+            "id": "48bdbf7b",
+            "text": "化政文化",
+            "isCorrect": true
+          },
+          {
+            "id": "b2f5c35a",
+            "text": "元禄文化",
+            "isCorrect": false
+          },
+          {
+            "id": "f41a3819",
+            "text": "国風文化",
+            "isCorrect": false
+          },
+          {
+            "id": "4f894485",
+            "text": "天平文化",
+            "isCorrect": false
+          }
         ],
-        timeLimit: 20,
-        points: 1000,
-        explanation: '十五代将軍・徳川慶喜が大政奉還を行い、約260年続いた江戸幕府が幕を閉じました。',
-        imageUrl: null,
-        order: 9,
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "葛飾北斎や歌川広重の浮世絵が有名です。",
+        "imageUrl": null,
+        "order": 9
       },
-    ],
-  },
+      {
+        "type": "multiple-choice",
+        "text": "「解体新書」を出版し、蘭学の発展に貢献した人物は？",
+        "choices": [
+          {
+            "id": "7f2d3281",
+            "text": "杉田玄白",
+            "isCorrect": true
+          },
+          {
+            "id": "35feb9aa",
+            "text": "本居宣長",
+            "isCorrect": false
+          },
+          {
+            "id": "cb51d173",
+            "text": "伊能忠敬",
+            "isCorrect": false
+          },
+          {
+            "id": "1c199fbd",
+            "text": "平賀源内",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "前野良沢らと翻訳しました。",
+        "imageUrl": null,
+        "order": 10
+      },
+      {
+        "type": "multiple-choice",
+        "text": "日本全国を測量し、精密な日本地図を作った人物は？",
+        "choices": [
+          {
+            "id": "5b202c39",
+            "text": "伊能忠敬",
+            "isCorrect": true
+          },
+          {
+            "id": "27ce2e6f",
+            "text": "間宮林蔵",
+            "isCorrect": false
+          },
+          {
+            "id": "1d5c0d51",
+            "text": "最上徳内",
+            "isCorrect": false
+          },
+          {
+            "id": "7255277d",
+            "text": "シーボルト",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "50歳を過ぎてから測量を始めました。",
+        "imageUrl": null,
+        "order": 11
+      },
+      {
+        "type": "multiple-choice",
+        "text": "「古事記伝」を著し、国学を大成させた人物は？",
+        "choices": [
+          {
+            "id": "708e8e5a",
+            "text": "本居宣長",
+            "isCorrect": true
+          },
+          {
+            "id": "a44281f0",
+            "text": "賀茂真淵",
+            "isCorrect": false
+          },
+          {
+            "id": "d16c16a0",
+            "text": "荷田春満",
+            "isCorrect": false
+          },
+          {
+            "id": "bacf44fa",
+            "text": "平田篤胤",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "日本古来の精神を研究しました。",
+        "imageUrl": null,
+        "order": 12
+      },
+      {
+        "type": "multiple-choice",
+        "text": "江戸時代の身分制度で、支配層であったのは？",
+        "choices": [
+          {
+            "id": "6bbc8576",
+            "text": "武士",
+            "isCorrect": true
+          },
+          {
+            "id": "cf87e8ba",
+            "text": "農民",
+            "isCorrect": false
+          },
+          {
+            "id": "6f0231b2",
+            "text": "職人",
+            "isCorrect": false
+          },
+          {
+            "id": "3a380317",
+            "text": "商人",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "名字帯刀などの特権がありました。",
+        "imageUrl": null,
+        "order": 13
+      },
+      {
+        "type": "multiple-choice",
+        "text": "農民を管理するために作られた、5軒1組の連帯責任組織は？",
+        "choices": [
+          {
+            "id": "aace2d68",
+            "text": "五人組",
+            "isCorrect": true
+          },
+          {
+            "id": "f8b3bfb3",
+            "text": "惣",
+            "isCorrect": false
+          },
+          {
+            "id": "874db0d3",
+            "text": "座",
+            "isCorrect": false
+          },
+          {
+            "id": "9dcdc554",
+            "text": "株仲間",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "年貢の納入や犯罪防止を監視させました。",
+        "imageUrl": null,
+        "order": 14
+      },
+      {
+        "type": "multiple-choice",
+        "text": "幕府が長崎の出島でのみ貿易を許したヨーロッパの国は？",
+        "choices": [
+          {
+            "id": "664f280b",
+            "text": "オランダ",
+            "isCorrect": true
+          },
+          {
+            "id": "005828f6",
+            "text": "スペイン",
+            "isCorrect": false
+          },
+          {
+            "id": "9ad45284",
+            "text": "ポルトガル",
+            "isCorrect": false
+          },
+          {
+            "id": "7c1b27cd",
+            "text": "イギリス",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "オランダ風説書を通じて海外情報を得ていました。",
+        "imageUrl": null,
+        "order": 15
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1867年、徳川慶喜が政権を朝廷に返した出来事は？",
+        "choices": [
+          {
+            "id": "786d10d4",
+            "text": "大政奉還",
+            "isCorrect": true
+          },
+          {
+            "id": "b64e4487",
+            "text": "王政復古",
+            "isCorrect": false
+          },
+          {
+            "id": "6ad7c327",
+            "text": "廃藩置県",
+            "isCorrect": false
+          },
+          {
+            "id": "df5c5a7b",
+            "text": "明治維新",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "江戸幕府が終焉を迎えました。",
+        "imageUrl": null,
+        "order": 16
+      },
+      {
+        "type": "multiple-choice",
+        "text": "幕末、薩摩藩と長州藩が結んだ軍事同盟を何という？",
+        "choices": [
+          {
+            "id": "6d1e1001",
+            "text": "薩長同盟",
+            "isCorrect": true
+          },
+          {
+            "id": "682c4d82",
+            "text": "日米同盟",
+            "isCorrect": false
+          },
+          {
+            "id": "5ce22a03",
+            "text": "四国同盟",
+            "isCorrect": false
+          },
+          {
+            "id": "06de249b",
+            "text": "公武合体",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "坂本龍馬の仲介で成立しました。",
+        "imageUrl": null,
+        "order": 17
+      },
+      {
+        "type": "multiple-choice",
+        "text": "江戸時代、子供たちに読み・書き・算盤を教えた教育機関は？",
+        "choices": [
+          {
+            "id": "d798ad5c",
+            "text": "寺子屋",
+            "isCorrect": true
+          },
+          {
+            "id": "8e86c5d6",
+            "text": "藩校",
+            "isCorrect": false
+          },
+          {
+            "id": "776cf2da",
+            "text": "私塾",
+            "isCorrect": false
+          },
+          {
+            "id": "4d7c9ebb",
+            "text": "大学",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "庶民の識字率向上に大きく貢献しました。",
+        "imageUrl": null,
+        "order": 18
+      },
+      {
+        "type": "multiple-choice",
+        "text": "1837年、大飢饉の中で民衆を救うために挙兵した元役人は？",
+        "choices": [
+          {
+            "id": "32358d8b",
+            "text": "大塩平八郎",
+            "isCorrect": true
+          },
+          {
+            "id": "7c73f4e5",
+            "text": "由井正雪",
+            "isCorrect": false
+          },
+          {
+            "id": "e191f8b4",
+            "text": "天草四郎",
+            "isCorrect": false
+          },
+          {
+            "id": "01267500",
+            "text": "鼠小僧",
+            "isCorrect": false
+          }
+        ],
+        "timeLimit": 20,
+        "points": 1000,
+        "explanation": "幕府の元役人が反乱を起こした衝撃は大きかったです。",
+        "imageUrl": null,
+        "order": 19
+      }
+    ]
+  }
 ];
