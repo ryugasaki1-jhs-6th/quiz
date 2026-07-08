@@ -81,7 +81,8 @@ export function HostRoomPage() {
         qs = shuffleArray(qs);
       }
       setQuestions(qs);
-    } catch {
+    } catch (error) {
+      console.error('fetchInitialData error:', error);
       alert('データの取得に失敗しました');
     } finally {
       setIsLoading(false);
@@ -116,9 +117,14 @@ export function HostRoomPage() {
 
   const handleStartGame = async () => {
     if (!roomId || questions.length === 0) return;
-    playSound('gameStart', settings.soundEnabled);
-    await updateRoomStatus(roomId, 'playing', { currentQuestionIndex: 0 });
-    showNextQuestion(0);
+    try {
+      playSound('gameStart', settings.soundEnabled);
+      await updateRoomStatus(roomId, 'playing', { currentQuestionIndex: 0 });
+      showNextQuestion(0);
+    } catch (error) {
+      console.error('handleStartGame error:', error);
+      alert('ゲームの開始に失敗しました。');
+    }
   };
 
   const showNextQuestion = async (index: number) => {
