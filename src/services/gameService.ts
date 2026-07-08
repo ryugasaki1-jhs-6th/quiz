@@ -19,9 +19,17 @@ const gamesRef = collection(db, COLLECTIONS.GAMES);
 
 /** Get all games for a host */
 export async function getGamesByHost(hostId: string): Promise<Game[]> {
-  const q = query(gamesRef, where('hostId', '==', hostId), orderBy('updatedAt', 'desc'));
-  const snapshot = await getDocs(q);
-  return snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Game));
+  try {
+    // 複合インデックスが必要なため、エラーが出る場合はソートを外してクライアント側でソートする
+    const q = query(gamesRef, where('hostId', '==', hostId));
+    const snapshot = await getDocs(q);
+    const games = snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Game));
+    // クライアント側でソート
+    return games.sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
+  } catch (error) {
+    console.error('Error fetching games by host:', error);
+    throw error;
+  }
 }
 
 /** Get a single game */
@@ -116,4 +124,30 @@ export async function duplicateQuestion(gameId: string, questionId: string): Pro
   void _id; void _c; void _u;
 
   return addQuestion(gameId, { ...rest, order: questions.length, choices: original.choices.map(c => ({ ...c, id: generateId() })) });
+}
+
+/** Create a game from a template */
+export async function createGameFromTemplate(
+  hostId: string, 
+  template: { 
+    title: string; 
+    description: string; 
+    questions: Omit<Question, 'id' | 'createdAt' | 'updatedAt' | 'gameId'>[] 
+  }
+): Promise<string> {
+  const gameId = await createGame({
+    title: template.title,
+    description: template.description,
+    hostId,
+    questionCount: 0,
+    shuffleQuestions: true,
+    shuffleChoices: true,
+  });
+
+  // シーケンシャルに追加して不整合を防ぐ
+  for (const q of template.questions) {
+    await addQuestion(gameId, q as any);
+  }
+
+  return gameId;
 }
