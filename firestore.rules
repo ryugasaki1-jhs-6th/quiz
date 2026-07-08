@@ -1,0 +1,208 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function userPath(uid) {
+      return /databases/$(database)/documents/users/$(uid);
+    }
+
+    function roomPath(roomId) {
+      return /databases/$(database)/documents/rooms/$(roomId);
+    }
+
+    function gamePath(gameId) {
+      return /databases/$(database)/documents/games/$(gameId);
+    }
+
+    function playerPath(roomId, playerId) {
+      return /databases/$(database)/documents/rooms/$(roomId)/players/$(playerId);
+    }
+
+    function isTeacher() {
+      return signedIn()
+        && exists(userPath(request.auth.uid))
+        && get(userPath(request.auth.uid)).data.role == 'teacher';
+    }
+
+    function isGameOwner(gameId) {
+      return isTeacher()
+        && exists(gamePath(gameId))
+        && get(gamePath(gameId)).data.hostId == request.auth.uid;
+    }
+
+    function isRoomHost(roomId) {
+      return isTeacher()
+        && exists(roomPath(roomId))
+        && get(roomPath(roomId)).data.hostId == request.auth.uid;
+    }
+
+    function isRoomHostAfter(roomId) {
+      return isTeacher()
+        && existsAfter(roomPath(roomId))
+        && getAfter(roomPath(roomId)).data.hostId == request.auth.uid;
+    }
+
+    function isRoomPlayer(roomId, playerId) {
+      return isSelf(playerId) && exists(playerPath(roomId, playerId));
+    }
+
+    function validStudentProfile(userId) {
+      return request.resource.data.keys().hasOnly([
+        'uid',
+        'email',
+        'displayName',
+        'role',
+        'createdAt',
+        'updatedAt'
+      ])
+      && request.resource.data.uid == userId
+      && request.resource.data.role == 'student';
+    }
+
+    function keepsExistingRole() {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role']);
+    }
+
+    function validRoomCreate() {
+      return request.resource.data.hostId == request.auth.uid
+        && request.resource.data.keys().hasAll([
+          'gameId',
+          'hostId',
+          'pin',
+          'status',
+          'currentQuestionIndex',
+          'currentQuestionStartedAt',
+          'playerCount',
+          'createdAt',
+          'updatedAt'
+        ]);
+    }
+
+    function validOwnPlayerCreate(roomId, playerId) {
+      return isSelf(playerId)
+        && request.resource.data.keys().hasOnly([
+          'roomId',
+          'uid',
+          'nickname',
+          'isConnected',
+          'joinedAt',
+          'updatedAt'
+        ])
+        && request.resource.data.roomId == roomId
+        && request.resource.data.uid == playerId;
+    }
+
+    function validOwnPlayerUpdate() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'nickname',
+        'isConnected',
+        'updatedAt'
+      ]);
+    }
+
+    function validPublicQuestion() {
+      return request.resource.data.keys().hasOnly([
+        'type',
+        'text',
+        'choices',
+        'timeLimit',
+        'points',
+        'imageUrl',
+        'order',
+        'createdAt',
+        'updatedAt'
+      ]);
+    }
+
+    match /users/{userId} {
+      allow get: if isSelf(userId);
+      allow list: if false;
+      allow create: if isSelf(userId) && validStudentProfile(userId);
+      allow update: if isSelf(userId) && keepsExistingRole();
+      allow delete: if false;
+    }
+
+    match /games/{gameId} {
+      allow read: if isGameOwner(gameId);
+      allow create: if isTeacher() && request.resource.data.hostId == request.auth.uid;
+      allow update: if isGameOwner(gameId)
+        && request.resource.data.hostId == resource.data.hostId;
+      allow delete: if isGameOwner(gameId);
+
+      match /questions/{questionId} {
+        allow read, write: if isGameOwner(gameId);
+      }
+    }
+
+    match /roomPins/{pin} {
+      allow get: if signedIn();
+      allow list: if false;
+      allow create: if isTeacher()
+        && request.resource.data.keys().hasOnly(['roomId', 'status', 'createdAt', 'updatedAt'])
+        && existsAfter(roomPath(request.resource.data.roomId))
+        && getAfter(roomPath(request.resource.data.roomId)).data.hostId == request.auth.uid;
+      allow update, delete: if isTeacher()
+        && exists(roomPath(resource.data.roomId))
+        && get(roomPath(resource.data.roomId)).data.hostId == request.auth.uid;
+    }
+
+    match /rooms/{roomId} {
+      allow read: if isRoomHost(roomId);
+      allow create: if isTeacher() && validRoomCreate();
+      allow update: if isRoomHost(roomId)
+        && request.resource.data.hostId == resource.data.hostId
+        && request.resource.data.pin == resource.data.pin;
+      allow delete: if isRoomHost(roomId);
+
+      match /public/{documentId} {
+        allow get, list: if isRoomHost(roomId) || (signedIn() && isRoomPlayer(roomId, request.auth.uid));
+        allow write: if isRoomHost(roomId) || isRoomHostAfter(roomId);
+      }
+
+      match /publicQuestions/{questionId} {
+        allow read: if isRoomHost(roomId) || (signedIn() && isRoomPlayer(roomId, request.auth.uid));
+        allow create, update: if (isRoomHost(roomId) || isRoomHostAfter(roomId)) && validPublicQuestion();
+        allow delete: if isRoomHost(roomId);
+      }
+
+      match /players/{playerId} {
+        allow read: if isRoomHost(roomId) || isSelf(playerId);
+        allow create: if validOwnPlayerCreate(roomId, playerId);
+        allow update: if isSelf(playerId) && validOwnPlayerUpdate();
+        allow delete: if isRoomHost(roomId);
+      }
+
+      match /answers/{answerId} {
+        allow read: if isRoomHost(roomId);
+        allow write: if false;
+      }
+
+      match /answerSubmissions/{questionId}/players/{playerId} {
+        allow create: if !exists(/databases/$(database)/documents/rooms/$(roomId)/answerSubmissions/$(questionId)/players/$(playerId))
+          && isSelf(playerId)
+          && isRoomPlayer(roomId, playerId)
+          && get(roomPath(roomId)).data.status == 'accepting-answers'
+          && get(roomPath(roomId)).data.currentPublicQuestionId == questionId
+          && request.resource.data.keys().hasOnly(['choiceId'])
+          && request.resource.data.choiceId is string;
+        allow read, update, delete: if false;
+      }
+
+      match /results/{resultId} {
+        allow read, write: if isRoomHost(roomId);
+      }
+    }
+
+    match /settings/{settingId} {
+      allow read, write: if isTeacher();
+    }
+  }
+}
