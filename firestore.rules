@@ -38,10 +38,18 @@ service cloud.firestore {
         && get(gamePath(gameId)).data.hostId == request.auth.uid;
     }
 
+    function isGameOwnerResource() {
+      return isTeacher() && resource.data.hostId == request.auth.uid;
+    }
+
     function isRoomHost(roomId) {
       return isTeacher()
         && exists(roomPath(roomId))
         && get(roomPath(roomId)).data.hostId == request.auth.uid;
+    }
+
+    function isRoomHostResource() {
+      return isTeacher() && resource.data.hostId == request.auth.uid;
     }
 
     function isRoomHostAfter(roomId) {
@@ -131,7 +139,7 @@ service cloud.firestore {
     }
 
     match /games/{gameId} {
-      allow read: if isGameOwner(gameId);
+      allow get, list: if isGameOwnerResource();
       allow create: if isTeacher() && request.resource.data.hostId == request.auth.uid;
       allow update: if isGameOwner(gameId)
         && request.resource.data.hostId == resource.data.hostId;
@@ -155,7 +163,7 @@ service cloud.firestore {
     }
 
     match /rooms/{roomId} {
-      allow read: if isRoomHost(roomId);
+      allow get, list: if isRoomHostResource();
       allow create: if isTeacher() && validRoomCreate();
       allow update: if isRoomHost(roomId)
         && request.resource.data.hostId == resource.data.hostId

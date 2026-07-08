@@ -1,4 +1,19 @@
 {
-  "indexes": [],
+  "indexes": [
+    {
+      "collectionGroup": "games",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "hostId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
   "fieldOverrides": []
 }
