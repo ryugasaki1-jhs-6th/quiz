@@ -162,6 +162,9 @@ export async function joinRoom(roomId: string, uid: string, nickname: string): P
     roomId,
     uid,
     nickname,
+    score: 0,
+    correctCount: 0,
+    streak: 0,
     isConnected: true,
     joinedAt: Date.now(),
     updatedAt: Date.now(),
@@ -178,7 +181,8 @@ export async function removePlayer(roomId: string, playerId: string): Promise<vo
 /** Get players in a room */
 export async function getPlayers(roomId: string): Promise<Player[]> {
   const playersRef = collection(db, COLLECTIONS.ROOMS, roomId, COLLECTIONS.PLAYERS);
-  const q = query(playersRef, orderBy('score', 'desc'));
+  // Sort by joinedAt to ensure all players (even those with 0 score) are visible
+  const q = query(playersRef, orderBy('joinedAt', 'asc'));
   const snapshot = await getDocs(q);
   return snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Player));
 }
@@ -248,7 +252,8 @@ export async function getPublicQuestions(roomId: string): Promise<PublicQuestion
 /** Subscribe to players in a room */
 export function subscribeToPlayers(roomId: string, callback: (players: Player[]) => void): Unsubscribe {
   const playersRef = collection(db, COLLECTIONS.ROOMS, roomId, COLLECTIONS.PLAYERS);
-  const q = query(playersRef, orderBy('score', 'desc'));
+  // Sort by joinedAt to ensure all players (even those with 0 score) are visible
+  const q = query(playersRef, orderBy('joinedAt', 'asc'));
   return onSnapshot(q, (snapshot) => {
     const players = snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Player));
     callback(players);
