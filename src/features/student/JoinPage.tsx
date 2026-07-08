@@ -56,8 +56,9 @@ export function JoinPage() {
       await joinRoom(room.roomId, currentUser.uid, data.nickname);
       setSavedNickname(data.nickname);
       navigate(`/room/${room.roomId}/play`);
-    } catch {
-      setError('参加に失敗しました');
+    } catch (err: any) {
+      console.error('Join error:', err);
+      setError(`参加に失敗しました: ${err.message || '不明なエラー'}`);
     } finally {
       setIsLoading(false);
     }
