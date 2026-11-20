@@ -1,0 +1,20 @@
+{
+  "name": "SONORA — Personal Music Station",
+  "short_name": "SONORA",
+  "description": "音楽と時計を自分好みにカスタマイズするミュージックステーション",
+  "id": "./index.html",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10131c",
+  "theme_color": "#10131c",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
